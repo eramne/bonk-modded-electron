@@ -1,14 +1,9 @@
 <html>
+
 <head>
 
-	<link rel="icon" 
-      type="image/png" 
-      href="graphics/tt/favicon-16x16.png"
-	  sizes="16x16">
-	<link rel="icon" 
-	      type="image/png" 
-	      href="graphics/tt/favicon-32x32.png"
-		  sizes="32x32">
+	<link rel="icon" type="image/png" href="graphics/tt/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="graphics/tt/favicon-32x32.png" sizes="32x32">
 
 	<meta charset="utf-8">
 	<title>bonk.io - Electron Desktop Version by eramne</title>
@@ -35,594 +30,460 @@
 
 
 	<style>
-	
-	@font-face {
-		font-family: futurept_book;
-		src: url(fonts/fptbook.otf);
-	}
-	@font-face {
-		font-family: futurept_demi;
-		src: url(fonts/futurapt_demi.otf);
-	}
-	@font-face {
-		font-family: futurept_light;
-		src: url(fonts/fptl.otf);
-	}
-	@font-face {
-		font-family: futurept_book_fixed;
-		src: url(fonts/fptbook_fixed_5.otf);
-	}
-	@font-face {
-		font-family: futurept_medium;
-		src: url(fonts/fptmed.otf);
-	}
-	@font-face{
-		font-family: futurept_b1;
-		src: url(fonts/futurept_7a255.otf);
-	}
-	@font-face{
-		font-family: futurept_bold;
-		src: url(fonts/fptb.otf);
-	}
-	@font-face {
-		font-family: futurept_demi_oblique;
-		src: url(fonts/fptdo.otf);
-	}
-	@font-face {
-		font-family: futurept_medium_oblique;
-		src: url(fonts/fptmo.otf);
-	}
+		@font-face {
+			font-family: futurept_book;
+			src: url(fonts/fptbook.otf);
+		}
 
-	html, body {
-		overflow: hidden;
-	}
+		@font-face {
+			font-family: futurept_demi;
+			src: url(fonts/futurapt_demi.otf);
+		}
 
-	#bgreplay{
-		width:100%;
-		height:100%;
-		overflow: hidden;
-		position: absolute;
-		top:0;
-	}
+		@font-face {
+			font-family: futurept_light;
+			src: url(fonts/fptl.otf);
+		}
 
-	#gamerenderer{
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top:0px;
-		left:0px;
+		@font-face {
+			font-family: futurept_book_fixed;
+			src: url(fonts/fptbook_fixed_5.otf);
+		}
 
-		margin: auto;
-		overflow: hidden;
-		visibility: hidden;
-	}
+		@font-face {
+			font-family: futurept_medium;
+			src: url(fonts/fptmed.otf);
+		}
 
-	#r3dcanvas{
-		position : absolute;
-		left: 50%;
-		top: 50%;
-		-webkit-transform: translate(-50%, -50%);
-		-moz-transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-	}
+		@font-face {
+			font-family: futurept_b1;
+			src: url(fonts/futurept_7a255.otf);
+		}
 
-	canvas {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-	}
+		@font-face {
+			font-family: futurept_bold;
+			src: url(fonts/fptb.otf);
+		}
 
-	#gamethumbbox {
-		width: 150px;
-		display: inline-block;
-		text-align: center;
-		text-decoration: none;
-		color:#ffffff;
-		text-shadow: 1px 1px 3px #000000;
-		font-family: Tahoma, Geneva, sans-serif;
-    	font-size: 13px;
-	}
+		@font-face {
+			font-family: futurept_demi_oblique;
+			src: url(fonts/fptdo.otf);
+		}
 
-	#gamethumbbox a, a:visited{
-		text-decoration: none;
-		color: #ffffff; 
-	}
+		@font-face {
+			font-family: futurept_medium_oblique;
+			src: url(fonts/fptmo.otf);
+		}
 
-	#gamethumbbox img { 
-		border: 3px solid #222644; 
-	}
+		html,
+		body {
+			overflow: hidden;
+		}
 
-	.thumbbox_name{
-		display: block;
-    	margin-top: -17px;
-	}
-	.thumbbox_count{
-		margin-top: -15px;
-    	display: block;
-	}
+		#bgreplay {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+		}
 
-	@keyframes shakeanim {
-		0% { transform: translate(2px, 1px) rotate(0deg); }
-		10% { transform: translate(-1px, -2px) rotate(-1deg); }
-		20% { transform: translate(-3px, 0px) rotate(1deg); }
-		30% { transform: translate(0px, 2px) rotate(0deg); }
-		40% { transform: translate(1px, -1px) rotate(1deg); }
-		50% { transform: translate(-1px, 2px) rotate(-1deg); }
-		60% { transform: translate(-3px, 1px) rotate(0deg); }
-		70% { transform: translate(2px, 1px) rotate(-1deg); }
-		80% { transform: translate(-1px, -1px) rotate(1deg); }
-		90% { transform: translate(2px, 2px) rotate(0deg); }
-		100% { transform: translate(1px, -2px) rotate(-1deg); }
-	}
-	.shake:hover,
-	.shake:focus {
-		animation-name: shakeanim;
-		animation-duration: 0.4s;
-		transform-origin:50% 50%;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-	}
-	.shake {
-		display:inline-block
-	}
-</style>
+		#gamerenderer {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			margin: auto;
+			overflow: hidden;
+			visibility: hidden;
+		}
+
+		#r3dcanvas {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+
+		#gamethumbbox {
+			width: 150px;
+			display: inline-block;
+			text-align: center;
+			text-decoration: none;
+			color: #ffffff;
+			text-shadow: 1px 1px 3px #000000;
+			font-family: Tahoma, Geneva, sans-serif;
+			font-size: 13px;
+		}
+
+		#gamethumbbox a,
+		a:visited {
+			text-decoration: none;
+			color: #ffffff;
+		}
+
+		#gamethumbbox img {
+			border: 3px solid #222644;
+		}
+
+		.thumbbox_name {
+			display: block;
+			margin-top: -17px;
+		}
+
+		.thumbbox_count {
+			margin-top: -15px;
+			display: block;
+		}
+
+		@keyframes shakeanim {
+			0% {
+				transform: translate(2px, 1px) rotate(0deg);
+			}
+
+			10% {
+				transform: translate(-1px, -2px) rotate(-1deg);
+			}
+
+			20% {
+				transform: translate(-3px, 0px) rotate(1deg);
+			}
+
+			30% {
+				transform: translate(0px, 2px) rotate(0deg);
+			}
+
+			40% {
+				transform: translate(1px, -1px) rotate(1deg);
+			}
+
+			50% {
+				transform: translate(-1px, 2px) rotate(-1deg);
+			}
+
+			60% {
+				transform: translate(-3px, 1px) rotate(0deg);
+			}
+
+			70% {
+				transform: translate(2px, 1px) rotate(-1deg);
+			}
+
+			80% {
+				transform: translate(-1px, -1px) rotate(1deg);
+			}
+
+			90% {
+				transform: translate(2px, 2px) rotate(0deg);
+			}
+
+			100% {
+				transform: translate(1px, -2px) rotate(-1deg);
+			}
+		}
+
+		.shake:hover,
+		.shake:focus {
+			animation-name: shakeanim;
+			animation-duration: 0.4s;
+			transform-origin: 50% 50%;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.shake {
+			display: inline-block
+		}
+	</style>
 
 </head>
 
 <body>
 
-<div id="pagecontainer">
+	<div id="pagecontainer">
 
-<div id="bonkiocontainer">
+		<div id="bonkiocontainer">
 
-	<div id="newbonkgamecontainer">
-		<div id="newbonklobby">
-			<div id="newbonklobby_playerbox" class="windowShadow">
-				<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Playing</div>
+			<div id="newbonkgamecontainer">
+				<div id="newbonklobby">
+					<div id="newbonklobby_playerbox" class="windowShadow">
+						<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Playing</div>
 
-				<div id="newbonklobby_playerbox_elementcontainer" class="newbonklobby_elementcontainer">
-					
-					<div id="newbonklobby_playerbox_leftelementcontainer"></div>
-					<div id="newbonklobby_playerbox_rightelementcontainer"></div>
-					<div id="newbonklobby_playerbox_middleline"></div>
+						<div id="newbonklobby_playerbox_elementcontainer" class="newbonklobby_elementcontainer">
 
-				</div>
-				<div id="newbonklobby_ffabutton" class="brownButton brownButton_classic buttonShadow">JOIN</div>
-				<div id="newbonklobby_teambuttonscontainer">
-					<div id="newbonklobby_bluebutton" class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN BLUE</div>
-					<div id="newbonklobby_redbutton" class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN RED</div>
-					<div id="newbonklobby_greenbutton" class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN GREEN</div>
-					<div id="newbonklobby_yellowbutton" class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN YELLOW</div>
+							<div id="newbonklobby_playerbox_leftelementcontainer"></div>
+							<div id="newbonklobby_playerbox_rightelementcontainer"></div>
+							<div id="newbonklobby_playerbox_middleline"></div>
 
-				</div>
-			</div>
-			<div id="newbonklobby_teamlockbutton" class="brownButton brownButton_classic buttonShadow"></div>
-			<div id="newbonklobby_specbox" class="windowShadow">
-				<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Spectating</div>
-				<div id="newbonklobby_specbox_elementcontainer" class="newbonklobby_elementcontainer"></div>
-				<div id="newbonklobby_specbutton" class="brownButton brownButton_classic buttonShadow">SPECTATE</div>
-			</div>
-			<div id="newbonklobby_chatbox" class="windowShadow">
-				<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Chat</div>
-				<div id="newbonklobby_chat_lowerline"></div>
-				<div id="newbonklobby_chat_lowerinstruction">Press enter to send a message</div>
-				<input id="newbonklobby_chat_input" type="text">
-				<div id="newbonklobby_chat_content"></div>
-			</div>
-			<div id="newbonklobby_settingsbox" class="windowShadow">
-				<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Game Settings</div>
-				<div id="newbonklobby_modetext"></div>
-				<div id="newbonklobby_mappreviewcontainer"></div>
-				<div id="newbonklobby_maptext"></div>
-				<div id="newbonklobby_mapauthortext"></div>
-				<div id="newbonklobby_roundslabel">Rounds to win</div>
-				<input id="newbonklobby_roundsinput" type="text" maxlength="1">
-				<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow" id="newbonklobby_startbutton">START</div>
-				<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow" id="newbonklobby_mapbutton">MAP</div>
-				<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow" id="newbonklobby_readybutton">READY</div>
-				<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow" id="newbonklobby_modebutton">MODE</div>
-				<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow" id="newbonklobby_teamsbutton"><span id="newbonklobby_teams_middletext">TEAMS OFF</span></div>
-				<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow" id="newbonklobby_editorbutton">EDITOR</div>
-				<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow" id="newbonklobby_linkbutton"></div>
-				
-			</div>
-			<div id="newbonklobby_tooltip"></div>
-
-			<div id="newbonklobby_votewindow_container">
-				<div id="newbonklobby_votewindow_fade"></div>
-				<div id="newbonklobby_votewindow" class="windowShadow">
-
-					<div id="newbonklobby_votewindow_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-					<div id="newbonklobby_votewindow_top">Map Vote</div>
-					<div id="newbonklobby_votewindow_thumbcontainer"></div>
-					<div id="newbonklobby_votewindow_maptitle">
-						<span id="newbonklobby_votewindow_maptitle_name">Apocalypse</span>
-					</div>
-					<div id="newbonklobby_votewindow_mapauthor">
-						<span id="newbonklobby_votewindow_maptitle_by">by </span>
-						<span id="newbonklobby_votewindow_maptitle_author">MuadDib</span>
-					</div>
-
-					<div id="newbonklobby_votewindow_flexcontainer">
-						<div class="newbonklobby_votewindow_flexitem">
-							<span class="newbonklobby_votewindow_votelabel">Vote Down</span>
-							<div class="newbonklobby_votewindow_votebutton brownButton brownButton_classic buttonShadow" id="newbonklobby_votewindow_votebutton_down"></div>
-							<span class="newbonklobby_votewindow_votecount" id="newbonklobby_votewindow_votecount_down">321</span>
 						</div>
-						<div class="newbonklobby_votewindow_flexitem">
-							<span class="newbonklobby_votewindow_votelabel">Vote Up</span>
-							<div class="newbonklobby_votewindow_votebutton brownButton brownButton_classic buttonShadow" id="newbonklobby_votewindow_votebutton_up"></div>
-							<span class="newbonklobby_votewindow_votecount" id="newbonklobby_votewindow_votecount_up">988</span>
-						</div>
-						<div class="newbonklobby_votewindow_flexitem">
-							<span class="newbonklobby_votewindow_votelabel">Favourite</span>
-							<div class="newbonklobby_votewindow_votebutton brownButton brownButton_classic buttonShadow" id="newbonklobby_votewindow_votebutton_favourite"></div>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-
-		<div id="mapeditorcontainer">
-			<div id="mapeditor">
-
-				<div id="mapeditor_leftbox">
-					<div class="windowTopBar windowTopBar_classic">Elements</div>
-					<div id="mapeditor_leftbox_scrollcontainer">
-					
-
-					</div>
-					<div id="mapeditor_leftbox_bottombuttoncontainer">
-						<div id="mapeditor_leftbox_addbutton" class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton"></div>
-						<div id="mapeditor_leftbox_deletebutton" class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton"></div>
-						<div id="mapeditor_leftbox_copybutton" class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton"></div>
-						<div id="mapeditor_leftbox_upbutton" class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton"></div>
-						<div id="mapeditor_leftbox_downbutton" class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton"></div>
-						<div id="mapeditor_leftbox_newcolorbox"></div>
-					</div>
-					<div id="mapeditor_leftbox_copywindow">
-						<div class="mapeditor_leftbox_copywindowtitle">
-							Move
-						</div>
-						<div class="mapeditor_leftbox_copywindowitemrow">
-							<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox" id="mapeditor_leftbox_copywindow_mvx"/><label for="mapeditor_leftbox_copywindow_mvx">Invert X</label></div>
-							<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox" id="mapeditor_leftbox_copywindow_mvy"/><label for="mapeditor_leftbox_copywindow_mvy">Invert Y</div>
-						</div>
-						<div class="mapeditor_leftbox_copywindowtitle">
-							Mirror
-						</div>
-						<div class="mapeditor_leftbox_copywindowitemrow">
-							<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox" id="mapeditor_leftbox_copywindow_mix"/><label for="mapeditor_leftbox_copywindow_mix">X</label></div>
-							<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox" id="mapeditor_leftbox_copywindow_miy"/><label for="mapeditor_leftbox_copywindow_miy">Y</label></div>
-						</div>
-						<div class="mapeditor_leftbox_copywindowtitle">
-							Rotate
-						</div>
-						<div class="mapeditor_leftbox_copywindowitemrow">
-							<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox" id="mapeditor_leftbox_copywindow_r-90"/><label for="mapeditor_leftbox_copywindow_r-90">-90</label></div>
-							<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox" id="mapeditor_leftbox_copywindow_r180"/><label for="mapeditor_leftbox_copywindow_r180">180</label></div>
-							<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox" id="mapeditor_leftbox_copywindow_r90"/><label for="mapeditor_leftbox_copywindow_r90">+90</label></div>
-						</div>
-						<div id="mapeditor_leftbox_copywindowbutton" class="brownButton brownButton_classic buttonShadow">COPY</div>
-					</div>
-					<div id="mapeditor_leftbox_createmenucontainerleft">
-						<div id="mapeditor_leftbox_createmenu_spawn" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Spawn</div>
-						<div id="mapeditor_leftbox_createmenu_capzone" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Cap Zone</div>
-						<div id="mapeditor_leftbox_createmenu_platform_np" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Platform: No-physics</div>
-						<div id="mapeditor_leftbox_createmenu_platform_d" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Platform: Moving </div>
-						<div id="mapeditor_leftbox_createmenu_platform_s" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Platform: Stationary</div>
-						
-					</div>
-					<div id="mapeditor_leftbox_createmenucontainerright">
-						<div id="mapeditor_leftbox_createmenu_platformmenu">
-							<div id="mapeditor_leftbox_createmenu_platform_polygon" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Polygon</div>
-							<div id="mapeditor_leftbox_createmenu_platform_circle" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Circle</div>
-							<div id="mapeditor_leftbox_createmenu_platform_rectangle" class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">Rectangle</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="mapeditor_midbox">
-					<div class="windowTopBar windowTopBar_classic">Preview</div>
-					
-					<div id="mapeditor_midbox_flexcontainer">
-
-						<div id="mapeditor_midbox_previewcontainer">
-							<div id="mapeditor_midbox_leftbuttoncontainer">
-								<div id="mapeditor_midbox_undobutton" class="brownButton brownButton_classic buttonShadow"></div>
-								<div id="mapeditor_midbox_redobutton" class="brownButton brownButton_classic buttonShadow"></div>
-								<div id="mapeditor_midbox_settingsbutton" class="brownButton brownButton_classic buttonShadow"></div>
-								<div id="mapeditor_midbox_grid" class="brownButton brownButton_classic buttonShadow"></div>
+						<div id="newbonklobby_ffabutton" class="brownButton brownButton_classic buttonShadow">JOIN</div>
+						<div id="newbonklobby_teambuttonscontainer">
+							<div id="newbonklobby_bluebutton"
+								class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN BLUE
 							</div>
-							<div id="mapeditor_midbox_rightbuttoncontainer">
-								
-								<div id="mapeditor_midbox_zoom_reset" class="brownButton brownButton_classic buttonShadow"></div>
-								<div id="mapeditor_midbox_zoom_out" class="brownButton brownButton_classic buttonShadow"></div>
-								
-								<div id="mapeditor_midbox_zoom_in" class="brownButton brownButton_classic buttonShadow"></div>
-								<div id="mapeditor_midbox_playbutton" class="brownButton brownButton_classic buttonShadow"></div>
-								<div id="mapeditor_midbox_testbutton" class="brownButton brownButton_classic buttonShadow"></div>
+							<div id="newbonklobby_redbutton"
+								class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN RED
 							</div>
-							<span id="mapeditor_midbox_cancel_drawing" class="mapeditor_zoomtext">CANCEL DRAWING</span>
-						</div>
-
-						<div id="mapeditor_midbox_flexother">
-
-							<div id="mapeditor_midbox_shapecount"></div>
-							<div id="mapeditor_midbox_modebox">
-								<span>For mode:</span>
+							<div id="newbonklobby_greenbutton"
+								class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN GREEN
 							</div>
-							<div id="mapeditor_midbox_explain" class="windowShadow"></div>
-
-							<div id="mapeditor_midbox_buttoncontainer">
-								<div id="mapeditor_midbox_newbutton" class="brownButton brownButton_classic buttonShadow mapeditor_midbox_bottombuttons">NEW</div>
-								<div id="mapeditor_midbox_loadbutton" class="brownButton brownButton_classic buttonShadow mapeditor_midbox_bottombuttons">LOAD</div>
-								<div id="mapeditor_midbox_savebutton" class="brownButton brownButton_classic buttonShadow mapeditor_midbox_bottombuttons">SAVE</div>
+							<div id="newbonklobby_yellowbutton"
+								class="newbonklobby_teambutton brownButton brownButton_classic buttonShadow">JOIN YELLOW
 							</div>
 
 						</div>
+					</div>
+					<div id="newbonklobby_teamlockbutton" class="brownButton brownButton_classic buttonShadow"></div>
+					<div id="newbonklobby_specbox" class="windowShadow">
+						<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Spectating</div>
+						<div id="newbonklobby_specbox_elementcontainer" class="newbonklobby_elementcontainer"></div>
+						<div id="newbonklobby_specbutton" class="brownButton brownButton_classic buttonShadow">SPECTATE
+						</div>
+					</div>
+					<div id="newbonklobby_chatbox" class="windowShadow">
+						<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Chat</div>
+						<div id="newbonklobby_chat_lowerline"></div>
+						<div id="newbonklobby_chat_lowerinstruction">Press enter to send a message</div>
+						<input id="newbonklobby_chat_input" type="text">
+						<div id="newbonklobby_chat_content"></div>
+					</div>
+					<div id="newbonklobby_settingsbox" class="windowShadow">
+						<div class="newbonklobby_boxtop newbonklobby_boxtop_classic">Game Settings</div>
+						<div id="newbonklobby_modetext"></div>
+						<div id="newbonklobby_mappreviewcontainer"></div>
+						<div id="newbonklobby_maptext"></div>
+						<div id="newbonklobby_mapauthortext"></div>
+						<div id="newbonklobby_roundslabel">Rounds to win</div>
+						<input id="newbonklobby_roundsinput" type="text" maxlength="1">
+						<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow"
+							id="newbonklobby_startbutton">START</div>
+						<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow"
+							id="newbonklobby_mapbutton">MAP</div>
+						<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow"
+							id="newbonklobby_readybutton">READY</div>
+						<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow"
+							id="newbonklobby_modebutton">MODE</div>
+						<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow"
+							id="newbonklobby_teamsbutton"><span id="newbonklobby_teams_middletext">TEAMS OFF</span>
+						</div>
+						<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow"
+							id="newbonklobby_editorbutton">EDITOR</div>
+						<div class="newbonklobby_settings_button brownButton brownButton_classic buttonShadow"
+							id="newbonklobby_linkbutton"></div>
 
 					</div>
+					<div id="newbonklobby_tooltip"></div>
 
-					
-					
+					<div id="newbonklobby_votewindow_container">
+						<div id="newbonklobby_votewindow_fade"></div>
+						<div id="newbonklobby_votewindow" class="windowShadow">
+
+							<div id="newbonklobby_votewindow_close"
+								class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+							<div id="newbonklobby_votewindow_top">Map Vote</div>
+							<div id="newbonklobby_votewindow_thumbcontainer"></div>
+							<div id="newbonklobby_votewindow_maptitle">
+								<span id="newbonklobby_votewindow_maptitle_name">Apocalypse</span>
+							</div>
+							<div id="newbonklobby_votewindow_mapauthor">
+								<span id="newbonklobby_votewindow_maptitle_by">by </span>
+								<span id="newbonklobby_votewindow_maptitle_author">MuadDib</span>
+							</div>
+
+							<div id="newbonklobby_votewindow_flexcontainer">
+								<div class="newbonklobby_votewindow_flexitem">
+									<span class="newbonklobby_votewindow_votelabel">Vote Down</span>
+									<div class="newbonklobby_votewindow_votebutton brownButton brownButton_classic buttonShadow"
+										id="newbonklobby_votewindow_votebutton_down"></div>
+									<span class="newbonklobby_votewindow_votecount"
+										id="newbonklobby_votewindow_votecount_down">321</span>
+								</div>
+								<div class="newbonklobby_votewindow_flexitem">
+									<span class="newbonklobby_votewindow_votelabel">Vote Up</span>
+									<div class="newbonklobby_votewindow_votebutton brownButton brownButton_classic buttonShadow"
+										id="newbonklobby_votewindow_votebutton_up"></div>
+									<span class="newbonklobby_votewindow_votecount"
+										id="newbonklobby_votewindow_votecount_up">988</span>
+								</div>
+								<div class="newbonklobby_votewindow_flexitem">
+									<span class="newbonklobby_votewindow_votelabel">Favourite</span>
+									<div class="newbonklobby_votewindow_votebutton brownButton brownButton_classic buttonShadow"
+										id="newbonklobby_votewindow_votebutton_favourite"></div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
 
 				</div>
 
-				<div id="mapeditor_rightbox">
-					<div class="windowTopBar windowTopBar_classic">Properties</div>
-					<input type="text" id="mapeditor_rightbox_namefield" class="fieldShadow" value="">
-					<div id="mapeditor_rightbox_scrollcontainer">
-						<div id="mapeditor_rightbox_platformparams">
+				<div id="mapeditorcontainer">
+					<div id="mapeditor">
 
-							<div id="mapeditor_rightbox_basicheading" class="mapeditor_table_heading_div">
-								<span class="mapeditor_rightbox_heading">Basic Properties</span><span class="mapeditor_rightbox_heading_pm">+</span>
+						<div id="mapeditor_leftbox">
+							<div class="windowTopBar windowTopBar_classic">Elements</div>
+							<div id="mapeditor_leftbox_scrollcontainer">
+
+
 							</div>
-							<table id="mapeditor_rightbox_table_simple" class="mapeditor_rightbox_table">
-
-								<tr id="mapeditor_bp_type">
-									<td class="mapeditor_rightbox_table_leftcell">Move Type</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-									<select id="mapeditor_rightbox_table_type">
-										<option value="s">Stationary</option>
-										<option value="d">Free Moving</option>
-										<option value="k">Kinematic</option>
-									</select>
-									</td>
-								</tr>
-								<tr id="mapeditor_bp_x">
-									<td class="mapeditor_rightbox_table_leftcell">X</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_x_down">-</div>
-										<input id="mapeditor_rightbox_table_x" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_x_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_bp_y">
-									<td class="mapeditor_rightbox_table_leftcell">Y</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_y_down">-</div>
-										<input id="mapeditor_rightbox_table_y" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_y_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_bp_angle">
-									<td class="mapeditor_rightbox_table_leftcell">Angle</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_angle_down">-</div>
-										<input id="mapeditor_rightbox_table_angle" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_angle_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_bp_bounciness">
-									<td class="mapeditor_rightbox_table_leftcell">Bounciness</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_restitution_down">-</div>
-										<input id="mapeditor_rightbox_table_restitution" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_restitution_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_bp_density">
-									<td class="mapeditor_rightbox_table_leftcell">Density</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_density_down">-</div>
-										<input id="mapeditor_rightbox_table_density" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_density_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_bp_friction">
-									<td class="mapeditor_rightbox_table_leftcell">Friction</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_friction_down">-</div>
-										<input id="mapeditor_rightbox_table_friction" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_friction_up">+</div>
-									</td>
-								</tr>
-								<tr id="mapeditor_bp_fricplayers">
-									<td class="mapeditor_rightbox_table_leftcell">Fric Players</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<select id="mapeditor_rightbox_table_frictionplayers">
-											<option value="true">Yes</option>
-											<option value="false">No</option>
-										</select>
-									</td>
-								</tr>
-								<tr id="mapeditor_bp_bullet">
-									<td class="mapeditor_rightbox_table_leftcell">Anti Tunnel</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<input type="checkbox" id="mapeditor_rightbox_table_bullet"/>
-									</td>
-								</tr>
-								<tr id="mapeditor_bp_collidegroup">
-									<td class="mapeditor_rightbox_table_leftcell">Collide Group</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<select id="mapeditor_rightbox_table_filtercategory">
-											<option value="a">A</option>
-											<option value="b">B</option>
-											<option value="c">C</option>
-											<option value="d">D</option>
-										</select>
-									</td>
-								</tr>
-								<tr  id="mapeditor_bp_collidewith">
-									<td class="mapeditor_rightbox_table_leftcell">Collide With</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<input type="checkbox" id="mapeditor_rightbox_table_collideP"/><label for="mapeditor_rightbox_table_collideP">Players</label><br>
-										<input type="checkbox" id="mapeditor_rightbox_table_collideA"/><label for="mapeditor_rightbox_table_collideA">A</label>
-										<input type="checkbox" id="mapeditor_rightbox_table_collideB"/><label for="mapeditor_rightbox_table_collideB">B</label> <br>
-										<input type="checkbox" id="mapeditor_rightbox_table_collideC"/><label for="mapeditor_rightbox_table_collideC">C</label>
-										<input type="checkbox" id="mapeditor_rightbox_table_collideD"/><label for="mapeditor_rightbox_table_collideD">D</label>
-									</td>
-								</tr>
-
-								
-							</table>
-							<div id="mapeditor_rightbox_dynamicheading" class="mapeditor_table_heading_div">
-								<span id="mapeditor_rightbox_dynamic_header" class="mapeditor_rightbox_heading">Movement Properties</span><span class="mapeditor_rightbox_heading_pm">+</span>
+							<div id="mapeditor_leftbox_bottombuttoncontainer">
+								<div id="mapeditor_leftbox_addbutton"
+									class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton">
+								</div>
+								<div id="mapeditor_leftbox_deletebutton"
+									class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton">
+								</div>
+								<div id="mapeditor_leftbox_copybutton"
+									class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton">
+								</div>
+								<div id="mapeditor_leftbox_upbutton"
+									class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton">
+								</div>
+								<div id="mapeditor_leftbox_downbutton"
+									class="brownButton brownButton_classic buttonShadow mapeditor_leftbox_bottombutton">
+								</div>
+								<div id="mapeditor_leftbox_newcolorbox"></div>
 							</div>
-							<table id="mapeditor_rightbox_table_dynamic" class="mapeditor_rightbox_table">
-								<tr id="mapeditor_mv_xv">
-									<td class="mapeditor_rightbox_table_leftcell">Start Speed X</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_xvel_down">-</div>
-										<input id="mapeditor_rightbox_table_xvel" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_xvel_up">+</div>
-									</td>
-								</tr>
-
-								<tr  id="mapeditor_mv_yv">
-									<td class="mapeditor_rightbox_table_leftcell">Start Speed Y</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_yvel_down">-</div>
-										<input id="mapeditor_rightbox_table_yvel" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_yvel_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_startspin">
-									<td class="mapeditor_rightbox_table_leftcell">Start Spin</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_sspin_down">-</div>
-										<input id="mapeditor_rightbox_table_av" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_sspin_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_lineardrag">
-									<td class="mapeditor_rightbox_table_leftcell">Linear Drag</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_ld_down">-</div>
-										<input id="mapeditor_rightbox_table_ld" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_ld_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_spindrag">
-									<td class="mapeditor_rightbox_table_leftcell">Spin Drag</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_sd_down">-</div>
-										<input id="mapeditor_rightbox_table_ad" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_sd_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_fixedrotation">
-									<td class="mapeditor_rightbox_table_leftcell">Fixed Rotation</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<select id="mapeditor_rightbox_table_fixedrotation">
-											<option value="true">Yes</option>
-											<option value="false">No</option>
-										</select>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_xforce">
-									<td class="mapeditor_rightbox_table_leftcell">Apply X Force</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfx_down">-</div>
-										<input id="mapeditor_rightbox_table_cfx" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfx_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_yforce">
-									<td class="mapeditor_rightbox_table_leftcell">Apply Y Force</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfy_down">-</div>
-										<input id="mapeditor_rightbox_table_cfy" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfy_up">+</div>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_fd">
-									<td class="mapeditor_rightbox_table_leftcell">Force Direction</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<select id="mapeditor_rightbox_table_forcedirection">
-											<option value="false">Relative</option>
-											<option value="true">Absolute</option>
-										</select>
-									</td>
-								</tr>
-
-								<tr id="mapeditor_mv_at">
-									<td class="mapeditor_rightbox_table_leftcell">Apply Torque</td>
-									<td class="mapeditor_rightbox_table_rightcell">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_cft_down">-</div>
-										<input id="mapeditor_rightbox_table_cft" type="text" class="mapeditor_field fieldShadow" value="0.23">
-										<div class="mapeditor_field_button fieldShadow" id="mapeditor_cft_up">+</div>
-									</td>
-								</tr>
-						
-							</table>
-
-
-							<div id="mapeditor_rightbox_jointheading" class="mapeditor_table_heading_div">
-								<span class="mapeditor_rightbox_heading">Joint Properties</span><span class="mapeditor_rightbox_heading_pm">+</span>
+							<div id="mapeditor_leftbox_copywindow">
+								<div class="mapeditor_leftbox_copywindowtitle">
+									Move
+								</div>
+								<div class="mapeditor_leftbox_copywindowitemrow">
+									<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox"
+											id="mapeditor_leftbox_copywindow_mvx" /><label
+											for="mapeditor_leftbox_copywindow_mvx">Invert X</label></div>
+									<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox"
+											id="mapeditor_leftbox_copywindow_mvy" /><label
+											for="mapeditor_leftbox_copywindow_mvy">Invert Y</div>
+								</div>
+								<div class="mapeditor_leftbox_copywindowtitle">
+									Mirror
+								</div>
+								<div class="mapeditor_leftbox_copywindowitemrow">
+									<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox"
+											id="mapeditor_leftbox_copywindow_mix" /><label
+											for="mapeditor_leftbox_copywindow_mix">X</label></div>
+									<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox"
+											id="mapeditor_leftbox_copywindow_miy" /><label
+											for="mapeditor_leftbox_copywindow_miy">Y</label></div>
+								</div>
+								<div class="mapeditor_leftbox_copywindowtitle">
+									Rotate
+								</div>
+								<div class="mapeditor_leftbox_copywindowitemrow">
+									<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox"
+											id="mapeditor_leftbox_copywindow_r-90" /><label
+											for="mapeditor_leftbox_copywindow_r-90">-90</label></div>
+									<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox"
+											id="mapeditor_leftbox_copywindow_r180" /><label
+											for="mapeditor_leftbox_copywindow_r180">180</label></div>
+									<div class="mapeditor_leftbox_copywindowitem"><input type="checkbox"
+											id="mapeditor_leftbox_copywindow_r90" /><label
+											for="mapeditor_leftbox_copywindow_r90">+90</label></div>
+								</div>
+								<div id="mapeditor_leftbox_copywindowbutton"
+									class="brownButton brownButton_classic buttonShadow">COPY</div>
 							</div>
-							<div id="mapeditor_rightbox_jointtablecontainer">
+							<div id="mapeditor_leftbox_createmenucontainerleft">
+								<div id="mapeditor_leftbox_createmenu_spawn"
+									class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+									Spawn</div>
+								<div id="mapeditor_leftbox_createmenu_capzone"
+									class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+									Cap Zone</div>
+								<div id="mapeditor_leftbox_createmenu_platform_np"
+									class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+									Platform: No-physics</div>
+								<div id="mapeditor_leftbox_createmenu_platform_d"
+									class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+									Platform: Moving </div>
+								<div id="mapeditor_leftbox_createmenu_platform_s"
+									class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+									Platform: Stationary</div>
 
-								<div id="mapeditor_rightbox_jointwarning">Remember to set Basic Properties > Move Type to "Free Moving" or joints will do nothing</div>
-								
-								<div id="mapeditor_rightbox_newjointmenucontainer">
-									<div id="mapeditor_rightbox_newjointbutton" class="brownButton brownButton_classic buttonShadow">Add New Joint</div>
-									<div id="mapeditor_rightbox_newjointmenu">
-										<div id="mapeditor_rightbox_newjointmenu_rv" class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">Rotating</div>
-										<div id="mapeditor_rightbox_newjointmenu_rod" class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">Rod</div>
-										<div id="mapeditor_rightbox_newjointmenu_lpj" class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">Follows Path</div>
-										<div id="mapeditor_rightbox_newjointmenu_lsj" class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">Springy</div>
-										
-									</div>
+							</div>
+							<div id="mapeditor_leftbox_createmenucontainerright">
+								<div id="mapeditor_leftbox_createmenu_platformmenu">
+									<div id="mapeditor_leftbox_createmenu_platform_polygon"
+										class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+										Polygon</div>
+									<div id="mapeditor_leftbox_createmenu_platform_circle"
+										class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+										Circle</div>
+									<div id="mapeditor_leftbox_createmenu_platform_rectangle"
+										class="mapeditor_leftbox_createbutton brownButton brownButton_classic buttonShadow">
+										Rectangle</div>
 								</div>
 							</div>
+						</div>
 
+						<div id="mapeditor_midbox">
+							<div class="windowTopBar windowTopBar_classic">Preview</div>
 
-							<div id="mapeditor_rightbox_shapeheading" class="mapeditor_table_heading_div">
-								<span class="mapeditor_rightbox_heading">Shape Properties</span><span class="mapeditor_rightbox_heading_pm">+</span>
-							</div>
-							<div id="mapeditor_rightbox_shapetablecontainer">
-								
-								<div id="mapeditor_rightbox_shapeaddcontainer">
-									<div id="mapeditor_rightbox_addnewshapebutton" class="brownButton brownButton_classic buttonShadow">
-									Add New Shape</div>
+							<div id="mapeditor_midbox_flexcontainer">
 
-									<div id="mapeditor_rightbox_shapeaddmenucontainer">
-										
-										<div id="mapeditor_rightbox_shapeaddmenu_polygon" class="buttonShadow brownButton brownButton_classic">Polygon</div>
-										<div id="mapeditor_rightbox_shapeaddmenu_circle" class="buttonShadow brownButton brownButton_classic">Circle</div>
-										<div id="mapeditor_rightbox_shapeaddmenu_rectangle" class="buttonShadow brownButton brownButton_classic">Rectangle</div>
-										
+								<div id="mapeditor_midbox_previewcontainer">
+									<div id="mapeditor_midbox_leftbuttoncontainer">
+										<div id="mapeditor_midbox_undobutton"
+											class="brownButton brownButton_classic buttonShadow"></div>
+										<div id="mapeditor_midbox_redobutton"
+											class="brownButton brownButton_classic buttonShadow"></div>
+										<div id="mapeditor_midbox_settingsbutton"
+											class="brownButton brownButton_classic buttonShadow"></div>
+										<div id="mapeditor_midbox_grid"
+											class="brownButton brownButton_classic buttonShadow"></div>
+									</div>
+									<div id="mapeditor_midbox_rightbuttoncontainer">
+
+										<div id="mapeditor_midbox_zoom_reset"
+											class="brownButton brownButton_classic buttonShadow"></div>
+										<div id="mapeditor_midbox_zoom_out"
+											class="brownButton brownButton_classic buttonShadow"></div>
+
+										<div id="mapeditor_midbox_zoom_in"
+											class="brownButton brownButton_classic buttonShadow"></div>
+										<div id="mapeditor_midbox_playbutton"
+											class="brownButton brownButton_classic buttonShadow"></div>
+										<div id="mapeditor_midbox_testbutton"
+											class="brownButton brownButton_classic buttonShadow"></div>
+									</div>
+									<span id="mapeditor_midbox_cancel_drawing" class="mapeditor_zoomtext">CANCEL
+										DRAWING</span>
+								</div>
+
+								<div id="mapeditor_midbox_flexother">
+
+									<div id="mapeditor_midbox_shapecount"></div>
+									<div id="mapeditor_midbox_modebox">
+										<span>For mode:</span>
+									</div>
+									<div id="mapeditor_midbox_explain" class="windowShadow"></div>
+
+									<div id="mapeditor_midbox_buttoncontainer">
+										<div id="mapeditor_midbox_newbutton"
+											class="brownButton brownButton_classic buttonShadow mapeditor_midbox_bottombuttons">
+											NEW</div>
+										<div id="mapeditor_midbox_loadbutton"
+											class="brownButton brownButton_classic buttonShadow mapeditor_midbox_bottombuttons">
+											LOAD</div>
+										<div id="mapeditor_midbox_savebutton"
+											class="brownButton brownButton_classic buttonShadow mapeditor_midbox_bottombuttons">
+											SAVE</div>
 									</div>
 
 								</div>
@@ -631,632 +492,1099 @@
 
 
 
-							
-						</div>
-
-						<div id="mapeditor_rightbox_spawnparams">
-
-							<table id="mapeditor_rightbox_table_spawn" class="mapeditor_rightbox_table">
-
-
-							</table>
 
 						</div>
 
-						<div id="mapeditor_rightbox_capzoneparams">
+						<div id="mapeditor_rightbox">
+							<div class="windowTopBar windowTopBar_classic">Properties</div>
+							<input type="text" id="mapeditor_rightbox_namefield" class="fieldShadow" value="">
+							<div id="mapeditor_rightbox_scrollcontainer">
+								<div id="mapeditor_rightbox_platformparams">
 
-							<table id="mapeditor_rightbox_table_capzone" class="mapeditor_rightbox_table">
+									<div id="mapeditor_rightbox_basicheading" class="mapeditor_table_heading_div">
+										<span class="mapeditor_rightbox_heading">Basic Properties</span><span
+											class="mapeditor_rightbox_heading_pm">+</span>
+									</div>
+									<table id="mapeditor_rightbox_table_simple" class="mapeditor_rightbox_table">
+
+										<tr id="mapeditor_bp_type">
+											<td class="mapeditor_rightbox_table_leftcell">Move Type</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<select id="mapeditor_rightbox_table_type">
+													<option value="s">Stationary</option>
+													<option value="d">Free Moving</option>
+													<option value="k">Kinematic</option>
+												</select>
+											</td>
+										</tr>
+										<tr id="mapeditor_bp_x">
+											<td class="mapeditor_rightbox_table_leftcell">X</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_x_down">-
+												</div>
+												<input id="mapeditor_rightbox_table_x" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_x_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_bp_y">
+											<td class="mapeditor_rightbox_table_leftcell">Y</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_y_down">-
+												</div>
+												<input id="mapeditor_rightbox_table_y" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_y_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_bp_angle">
+											<td class="mapeditor_rightbox_table_leftcell">Angle</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_angle_down">-</div>
+												<input id="mapeditor_rightbox_table_angle" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_angle_up">
+													+</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_bp_bounciness">
+											<td class="mapeditor_rightbox_table_leftcell">Bounciness</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_restitution_down">-</div>
+												<input id="mapeditor_rightbox_table_restitution" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_restitution_up">+</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_bp_density">
+											<td class="mapeditor_rightbox_table_leftcell">Density</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_density_down">-</div>
+												<input id="mapeditor_rightbox_table_density" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_density_up">+</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_bp_friction">
+											<td class="mapeditor_rightbox_table_leftcell">Friction</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_friction_down">-</div>
+												<input id="mapeditor_rightbox_table_friction" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_friction_up">+</div>
+											</td>
+										</tr>
+										<tr id="mapeditor_bp_fricplayers">
+											<td class="mapeditor_rightbox_table_leftcell">Fric Players</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<select id="mapeditor_rightbox_table_frictionplayers">
+													<option value="true">Yes</option>
+													<option value="false">No</option>
+												</select>
+											</td>
+										</tr>
+										<tr id="mapeditor_bp_bullet">
+											<td class="mapeditor_rightbox_table_leftcell">Anti Tunnel</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<input type="checkbox" id="mapeditor_rightbox_table_bullet" />
+											</td>
+										</tr>
+										<tr id="mapeditor_bp_collidegroup">
+											<td class="mapeditor_rightbox_table_leftcell">Collide Group</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<select id="mapeditor_rightbox_table_filtercategory">
+													<option value="a">A</option>
+													<option value="b">B</option>
+													<option value="c">C</option>
+													<option value="d">D</option>
+												</select>
+											</td>
+										</tr>
+										<tr id="mapeditor_bp_collidewith">
+											<td class="mapeditor_rightbox_table_leftcell">Collide With</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<input type="checkbox" id="mapeditor_rightbox_table_collideP" /><label
+													for="mapeditor_rightbox_table_collideP">Players</label><br>
+												<input type="checkbox" id="mapeditor_rightbox_table_collideA" /><label
+													for="mapeditor_rightbox_table_collideA">A</label>
+												<input type="checkbox" id="mapeditor_rightbox_table_collideB" /><label
+													for="mapeditor_rightbox_table_collideB">B</label> <br>
+												<input type="checkbox" id="mapeditor_rightbox_table_collideC" /><label
+													for="mapeditor_rightbox_table_collideC">C</label>
+												<input type="checkbox" id="mapeditor_rightbox_table_collideD" /><label
+													for="mapeditor_rightbox_table_collideD">D</label>
+											</td>
+										</tr>
 
 
-							</table>
+									</table>
+									<div id="mapeditor_rightbox_dynamicheading" class="mapeditor_table_heading_div">
+										<span id="mapeditor_rightbox_dynamic_header"
+											class="mapeditor_rightbox_heading">Movement Properties</span><span
+											class="mapeditor_rightbox_heading_pm">+</span>
+									</div>
+									<table id="mapeditor_rightbox_table_dynamic" class="mapeditor_rightbox_table">
+										<tr id="mapeditor_mv_xv">
+											<td class="mapeditor_rightbox_table_leftcell">Start Speed X</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_xvel_down">-</div>
+												<input id="mapeditor_rightbox_table_xvel" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_xvel_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_yv">
+											<td class="mapeditor_rightbox_table_leftcell">Start Speed Y</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_yvel_down">-</div>
+												<input id="mapeditor_rightbox_table_yvel" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_yvel_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_startspin">
+											<td class="mapeditor_rightbox_table_leftcell">Start Spin</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow"
+													id="mapeditor_sspin_down">-</div>
+												<input id="mapeditor_rightbox_table_av" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_sspin_up">
+													+</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_lineardrag">
+											<td class="mapeditor_rightbox_table_leftcell">Linear Drag</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_ld_down">-
+												</div>
+												<input id="mapeditor_rightbox_table_ld" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_ld_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_spindrag">
+											<td class="mapeditor_rightbox_table_leftcell">Spin Drag</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_sd_down">-
+												</div>
+												<input id="mapeditor_rightbox_table_ad" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_sd_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_fixedrotation">
+											<td class="mapeditor_rightbox_table_leftcell">Fixed Rotation</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<select id="mapeditor_rightbox_table_fixedrotation">
+													<option value="true">Yes</option>
+													<option value="false">No</option>
+												</select>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_xforce">
+											<td class="mapeditor_rightbox_table_leftcell">Apply X Force</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfx_down">
+													-</div>
+												<input id="mapeditor_rightbox_table_cfx" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfx_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_yforce">
+											<td class="mapeditor_rightbox_table_leftcell">Apply Y Force</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfy_down">
+													-</div>
+												<input id="mapeditor_rightbox_table_cfy" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_cfy_up">+
+												</div>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_fd">
+											<td class="mapeditor_rightbox_table_leftcell">Force Direction</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<select id="mapeditor_rightbox_table_forcedirection">
+													<option value="false">Relative</option>
+													<option value="true">Absolute</option>
+												</select>
+											</td>
+										</tr>
+
+										<tr id="mapeditor_mv_at">
+											<td class="mapeditor_rightbox_table_leftcell">Apply Torque</td>
+											<td class="mapeditor_rightbox_table_rightcell">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_cft_down">
+													-</div>
+												<input id="mapeditor_rightbox_table_cft" type="text"
+													class="mapeditor_field fieldShadow" value="0.23">
+												<div class="mapeditor_field_button fieldShadow" id="mapeditor_cft_up">+
+												</div>
+											</td>
+										</tr>
+
+									</table>
+
+
+									<div id="mapeditor_rightbox_jointheading" class="mapeditor_table_heading_div">
+										<span class="mapeditor_rightbox_heading">Joint Properties</span><span
+											class="mapeditor_rightbox_heading_pm">+</span>
+									</div>
+									<div id="mapeditor_rightbox_jointtablecontainer">
+
+										<div id="mapeditor_rightbox_jointwarning">Remember to set Basic Properties >
+											Move Type to "Free Moving" or joints will do nothing</div>
+
+										<div id="mapeditor_rightbox_newjointmenucontainer">
+											<div id="mapeditor_rightbox_newjointbutton"
+												class="brownButton brownButton_classic buttonShadow">Add New Joint</div>
+											<div id="mapeditor_rightbox_newjointmenu">
+												<div id="mapeditor_rightbox_newjointmenu_rv"
+													class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">
+													Rotating</div>
+												<div id="mapeditor_rightbox_newjointmenu_rod"
+													class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">
+													Rod</div>
+												<div id="mapeditor_rightbox_newjointmenu_lpj"
+													class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">
+													Follows Path</div>
+												<div id="mapeditor_rightbox_newjointmenu_lsj"
+													class="brownButton brownButton_classic buttonShadow mapeditor_rightbox_newjointmenu_item">
+													Springy</div>
+
+											</div>
+										</div>
+									</div>
+
+
+									<div id="mapeditor_rightbox_shapeheading" class="mapeditor_table_heading_div">
+										<span class="mapeditor_rightbox_heading">Shape Properties</span><span
+											class="mapeditor_rightbox_heading_pm">+</span>
+									</div>
+									<div id="mapeditor_rightbox_shapetablecontainer">
+
+										<div id="mapeditor_rightbox_shapeaddcontainer">
+											<div id="mapeditor_rightbox_addnewshapebutton"
+												class="brownButton brownButton_classic buttonShadow">
+												Add New Shape</div>
+
+											<div id="mapeditor_rightbox_shapeaddmenucontainer">
+
+												<div id="mapeditor_rightbox_shapeaddmenu_polygon"
+													class="buttonShadow brownButton brownButton_classic">Polygon</div>
+												<div id="mapeditor_rightbox_shapeaddmenu_circle"
+													class="buttonShadow brownButton brownButton_classic">Circle</div>
+												<div id="mapeditor_rightbox_shapeaddmenu_rectangle"
+													class="buttonShadow brownButton brownButton_classic">Rectangle</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+
+								</div>
+
+								<div id="mapeditor_rightbox_spawnparams">
+
+									<table id="mapeditor_rightbox_table_spawn" class="mapeditor_rightbox_table">
+
+
+									</table>
+
+								</div>
+
+								<div id="mapeditor_rightbox_capzoneparams">
+
+									<table id="mapeditor_rightbox_table_capzone" class="mapeditor_rightbox_table">
+
+
+									</table>
+
+								</div>
+
+								<div id="mapeditor_rightbox_mapparams">
+
+									<table id="mapeditor_rightbox_table_mapparams" class="mapeditor_rightbox_table">
+
+
+									</table>
+
+								</div>
+
+							</div>
+
+							<div id="mapeditor_colorpicker">
+
+								<span id="mapeditor_colorpicker_currentlabel">New</span>
+								<span id="mapeditor_colorpicker_newlabel">Current</span>
+								<br>
+								<div id="mapeditor_colorpicker_lefttile"></div>
+								<div id="mapeditor_colorpicker_righttile"></div>
+								<div id="mapeditor_colorpicker_canvas_container">
+									<canvas id="mapeditor_colorpicker_canvas" width="200" height="250"></canvas>
+									<canvas id="mapeditor_colorpicker_canvas_crosshair" width="200"
+										height="250"></canvas>
+								</div>
+								<span id="mapeditor_colorpicker_saturationlabel">Saturation</span>
+								<input type="range" class="compactSlider compactSlider_classic" min="0" max="1"
+									value="0.5" step="0.01" class="slider" id="mapeditor_colorpicker_brightness_slider">
+
+
+
+								<div id="mapeditor_colorpicker_existingcontainer"></div>
+
+
+								<div id="mapeditor_colorpicker_cancelbutton"
+									class="brownButton brownButton_classic buttonShadow">CANCEL</div>
+								<div id="mapeditor_colorpicker_savebutton"
+									class="brownButton brownButton_classic buttonShadow">SAVE</div>
+								<image src="graphics/mapedtior_colorpicker_crosshair.png" style="display:none;"
+									id="mapeditor_colorpicker_crosshaircache">
+
+							</div>
 
 						</div>
 
-						<div id="mapeditor_rightbox_mapparams">
 
-							<table id="mapeditor_rightbox_table_mapparams" class="mapeditor_rightbox_table">
+						<div id="mapeditor_save_window" class="windowShadow">
+							<div class="windowTopBar windowTopBar_classic">Save Map</div>
+							<span id="mapeditor_save_window_label">Map name</span>
+							<input id="mapeditor_save_window_field" maxlength="25" class="whiteInputField windowShadow"
+								spellcheck="false">
+							<select id="mapeditor_save_window_public">
+								<option value="0">Private</option>
+								<option value="1">Public</option>
+							</select>
+							<div id="mapeditor_save_window_cancel" class="brownButton brownButton_classic buttonShadow">
+								CANCEL</div>
+							<div id="mapeditor_save_window_save" class="brownButton brownButton_classic buttonShadow">
+								<span>SAVE</span>
+								<div class="loader"></div>
+							</div>
+						</div>
+
+						<div id="mapeditor_save_overwrite_window" class="windowShadow">
+							<div class="windowTopBar windowTopBar_classic">Overwrite Map</div>
+							<span id="mapeditor_save_overwrite_window_label">You already have a map saved with that
+								name. Overwrite it?</span>
+							<div id="mapeditor_save_overwrite_window_cancel"
+								class="brownButton brownButton_classic buttonShadow">CANCEL</div>
+							<div id="mapeditor_save_overwrite_window_save"
+								class="brownButton brownButton_classic buttonShadow">
+								<span>OVERWRITE</span>
+								<div class="loader"></div>
+							</div>
+						</div>
+
+					</div>
+					<div id="mapeditor_close" class="windowCloseButton brownButton brownButton_classic buttonShadow">
+					</div>
+				</div>
+
+				<div id="maploadwindowcontainer">
+					<div id="maploadwindow">
+						<div id="maploadwindowtopbar" class="windowTopBar_classic">Level Select</div>
+
+						<div id="maploadwindowgreybar"></div>
+						<input type="text" id="maploadwindowsearchinput" spellcheck="false" autocomplete="off" value=""
+							class="fieldShadow">
+						<div id="maploadwindowsearchbutton" class="brownButton brownButton_classic buttonShadow">SEARCH
+						</div>
+						<span id="maploadwindowstatustext"></span>
+						<div id="maploadwindowmapscontainer"></div>
+
+						<div id="maploadwindowhotnessslider">
+							<span id="maploadwindowhotnessnewestspan">NEWEST</span>
+							<span id="maploadwindowhotnesshighestratedspan">TOP RATED</span>
+
+							<input type="range" class="compactSlider compactSlider_classic" min="1" max="7" value="4"
+								step="1" id="maploadwindowhotnesssliderinput">
+						</div>
+
+						<div class="dropdown-container buttonShadow" id="maploadtypedropdown">
+							<img class="dropdown-arrow" id="maploadtypedropdownarrow"
+								src="graphics/dropdownarrow_light.png">
+							<div class="dropdown-title dropdown_classic" id="maploadtypedropdowntitle">Select...</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption11">PICKS</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption8">HOT</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption_hotdeatharrows">
+								DEATH ARROWS</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption7">MY MAPS</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption10">MY FAVS</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption1">BONK 1: TOP
+								RATED</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption2">BONK 1:
+								COMMUNITY PICKS</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption3">BONK 1: MY
+								MAPS</div>
+							<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption4">BONK 1: MY
+								FAVS</div>
 
 
-							</table>
+						</div>
 
+						<div id="maploadwindowsearchoptions">
+							<div id="maploadwindowsearchoptions_nameindicator" class="maploadwindowoptionselected">
+							</div>
+							<div id="maploadwindowsearchoptions_namelabel">MAP NAME</div>
+							<div id="maploadwindowsearchoptions_authorindicator" class="maploadwindowoptionselected">
+							</div>
+							<div id="maploadwindowsearchoptions_authorlabel">AUTHOR</div>
+							<div id="maploadwindowsearchoptions_sortby">SORT BY: BEST</div>
 						</div>
 
 					</div>
 
-					<div id="mapeditor_colorpicker">
+					<div id="maploadwindow_close"
+						class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
 
-						<span id="mapeditor_colorpicker_currentlabel">New</span>
-						<span id="mapeditor_colorpicker_newlabel">Current</span>
+				</div>
+
+				<div id="gamerenderer"></div>
+				<div id="ingamechatbox">
+					<div id="ingamechatcontent"></div>
+					<input type="text" id="ingamechatinputtext" spellcheck="false">
+				</div>
+				<div id="ingametutorial">
+					<span id="ingametutorial_title"></span>
+					<span id="ingametutorial_text"></span>
+				</div>
+				<div id="ingamevotewindow">
+					<span id="ingamevotewindow_title">Good Map?</span>
+					<div id="ingamevotewindow_upvote" class="brownButton brownButton_classic buttonShadow"></div>
+					<div id="ingamevotewindow_downvote" class="brownButton brownButton_classic buttonShadow"></div>
+				</div>
+				<div id="ingamewinner">
+					<div id="ingamewinner_skin">
+						<div id="ingamewinner_skin_skin"></div>
+						<svg id="ingamewinner_skin_x" width="200" height="200">
+							<circle cx="100" cy="91" r="82" stroke="white" stroke-width="5" fill="none" />
+						</svg>
+					</div>
+					<div id="ingamewinner_top"></div>
+					<div id="ingamewinner_bottom"></div>
+					<div id="ingamewinner_scores">
+						<div id="ingamewinner_scores_top"></div>
+						<div id="ingamewinner_scores_left"></div>
+						<div id="ingamewinner_scores_right"></div>
+					</div>
+				</div>
+				<div id="ingamecountdown">
+					<div id="ingamecountdown_top">Round starts in</div>
+					<div id="ingamecountdown_text">3</div>
+				</div>
+				<div id="ingamemapcredit">
+					<div id="ingamemapcredit_name">Meridian</div>
+					<div id="ingamemapcredit_by">by</div>
+					<div id="ingamemapcredit_author">Fantao</div>
+				</div>
+				<div id="ingametextwarnings">
+					<div class="ingametextwarnings_warning" id="ingametextwarning_spectating">
+						<p>You are currently spectating. You will join this game at the start of the next round.</p>
+					</div>
+					<div class="ingametextwarnings_warning" id="ingametextwarning_afk">
+						<p>You are about to be kicked for inactivity, press any movement key to stay in this room!</p>
+					</div>
+					<div class="ingametextwarnings_warning" id="ingametextwarning_matchedsoon">
+						<p>You will be matched with other players soon</p>
+					</div>
+				</div>
+				<div id="leaveconfirmwindowcontainer">
+					<div id="behindblocker"></div>
+					<div id="leaveconfirmwindow" class="windowShadow">
+						<div id="leaveconfirmwindow_top">Leave Game?</div>
+						<div id="leaveconfirmwindow_text1">You are about to leave this game.</div>
+						<div id="leaveconfirmwindow_text2">Are you sure?</div>
+						<div id="leaveconfirmwindow_cancelbutton" class="brownButton brownButton_classic buttonShadow">
+							CANCEL</div>
+						<div id="leaveconfirmwindow_okbutton" class="brownButton brownButton_classic buttonShadow">OK
+						</div>
+					</div>
+				</div>
+				<div id="hostleaveconfirmwindowcontainer">
+					<div id="behindblocker"></div>
+					<div id="hostleaveconfirmwindow" class="windowShadow">
+						<div id="hostleaveconfirmwindow_top">Leave Game?</div>
+						<div id="hostleaveconfirmwindow_text1">You are about to leave this game.</div>
+						<div id="hostleaveconfirmwindow_text2">Are you sure?</div>
+						<div id="hostleaveconfirmwindow_cancelbutton"
+							class="brownButton brownButton_classic buttonShadow">CANCEL</div>
+						<div id="hostleaveconfirmwindow_okbutton" class="brownButton brownButton_classic buttonShadow">
+							OK</div>
+						<div id="hostleaveconfirmwindow_endbutton" class="brownButton brownButton_classic buttonShadow">
+							END ROOM</div>
+					</div>
+				</div>
+
+
+
+
+			</div>
+			<!--end newbonkgamecontainer-->
+
+
+
+			<div id="mainmenuelements">
+
+				<div id="bgreplay">
+					<input type="range" id="bgreplay_timescrub" min="0.1" max="1" step="0.01" value="1">
+
+				</div>
+
+				<div id="classicmenu">
+					<div id="classic_mid">
+
+						<div id="classic_mid_quickplay" class="brownButton brownButton_classic classic_mid_buttons">
+							QUICK PLAY</div>
+						<div id="classic_mid_customgame" class="brownButton brownButton_classic classic_mid_buttons">
+							CUSTOM GAME</div>
+						<div id="classic_mid_news" class="brownButton brownButton_classic classic_mid_buttons">NEWS
+						</div>
+						<div id="classic_mid_skins" class="brownButton brownButton_classic classic_mid_buttons">SKINS
+						</div>
+						<div id="classic_mid_friendlist" class="brownButton brownButton_classic classic_mid_buttons">
+							FRIEND LIST</div>
+						<div id="classic_mid_tutorial" class="brownButton brownButton_classic classic_mid_buttons">
+							TUTORIAL</div>
+
+					</div>
+
+				</div>
+
+				<div id="autoLoginContainer" class="windowShadow">
+					<div id="autoLogin_topbar" class="windowTopBar windowTopBar_classic">Welcome Back</div>
+					<div id="autoLogin_text" class="windowShadow"></div>
+					<div id="autoLogin_cancelButton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
+
+				</div>
+
+				<div id="guestOrAccountContainer">
+
+					<div id="guestOrAccountContainer_guestBox" class="windowShadow">
+						<div class="windowTopBar windowTopBar_classic">Play as Guest</div>
+						<div class="guestOrAccountContainerLabelBox guestOrAccountContainerLabelSingleLine">Play without
+							an account</div>
+						<div id="guestOrAccountContainer_guestButton"
+							class="brownButton brownButton_classic buttonShadow">PLAY AS GUEST</div>
+					</div>
+
+					<div id="guestOrAccountContainer_accountBox" class="windowShadow">
+						<div class="windowTopBar windowTopBar_classic">Login or Register</div>
+						<div class="guestOrAccountContainerLabelBox">Log in or create a new account here. Creating an
+							account allows you to level up, create maps, and add friends.</div>
+						<div id="guestOrAccountContainer_accountButton"
+							class="brownButton brownButton_classic buttonShadow">LOGIN/REGISTER</div>
+					</div>
+
+
+
+
+
+				</div>
+
+				<div id="guestContainer" class="windowShadow">
+
+
+					<div id="guest_topbar" class="windowTopBar windowTopBar_classic">Play as Guest</div>
+					<div id="guest_skinbox"></div>
+					<div id="guest_namelabel">Guest Name</div>
+					<input type="text" id="guest_nametext" class="loginwindow_field fieldShadow" value="New Player"
+						maxlength="15">
+					<div id="guest_colorlabel">Color</div>
+					<div id="guestPlayButton" class="brownButton brownButton_classic buttonShadow">PLAY</div>
+					<div id="guest_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+
+				</div>
+
+
+
+				<div id="accountContainer">
+
+					<div id="loginwindow" class="windowShadow">
+						<div id="loginwindow_topbar" class="windowTopBar windowTopBar_classic">Log In</div>
+						<div id="loginwindow_usernamelabel">Username</div>
+						<div id="loginwindow_passwordlabel">Password</div>
+						<form>
+							<input type="text" id="loginwindow_username" class="loginwindow_field fieldShadow"
+								spellcheck="false" required autocomplete="username">
+							<input type="password" id="loginwindow_password" class="loginwindow_field fieldShadow"
+								spellcheck="false" required autocomplete="current-password">
+						</form>
+
+						<label class="control control-checkbox login_remember_container">
+							<div id="loginwindow_remember_label">Stay logged in</div>
+							<input type="checkbox" id="loginwindow_remember_checkbox" />
+							<div class="control_indicator"></div>
+						</label>
+
+						<div id="loginwindow_submitbutton" class="brownButton brownButton_classic buttonShadow">
+							<span class="nomouse">LOG IN</span>
+							<div class="loader"></div>
+						</div>
+					</div>
+
+
+
+					<div id="registerwindow" class="windowShadow">
+
+						<div id="registerwindow_topbar" class="windowTopBar windowTopBar_classic">Register</div>
+						<div id="registerwindow_usernamelabel">Choose a username</div>
+						<div id="registerwindow_passwordlabel">Choose a password</div>
+						<div id="registerwindow_explain"></div>
+						<form>
+							<input type="text" id="registerwindow_username" class="loginwindow_field fieldShadow"
+								spellcheck="false" required autocomplete="username">
+							<input type="password" id="registerwindow_password" class="loginwindow_field fieldShadow"
+								spellcheck="false" required autocomplete="new-password">
+						</form>
+
+						<label class="control control-checkbox register_remember_container">
+							<div id="registerwindow_remember_label">Stay logged in</div>
+							<input type="checkbox" id="registerwindow_remember_checkbox" />
+							<div class="control_indicator"></div>
+						</label>
+
+						<div id="registerwindow_submitbutton" class="brownButton brownButton_classic buttonShadow">
+							<span class="nomouse">REGISTER</span>
+							<div class="loader"></div>
+						</div>
+
+
+
+
+					</div>
+
+					<div id="account_close" class="windowCloseButton brownButton brownButton_classic buttonShadow">
+					</div>
+
+					<div id="loginfieldtip">
+						<div id="loginfieldtippointer"></div>
+						<span id="loginfieldtip_text">Start Text</span>
+					</div>
+
+					<div id="registerfieldtip">
+						<div id="registerfieldtippointer"></div>
+						<span id="registerfieldtip_text">Start Text</span>
+					</div>
+
+				</div>
+
+
+
+				<div id="skinmanager" class="windowShadow">
+					<div class="windowTopBar windowTopBar_classic">Skin Manager</div>
+					<div id="skinmanager_allicons">
+						<div id="skinmanager_skin1" class="skinmanager_iconcontainer">
+							<div id="skinmanager_skin1_icon" class="skinmanager_icon"></div>
+							<span id="skinmanager_skin1_activetext" class="skinmanager_activetext">Active</span>
+						</div>
+						<div id="skinmanager_skin2" class="skinmanager_iconcontainer">
+							<div id="skinmanager_skin2_icon" class="skinmanager_icon"></div>
+							<span id="skinmanager_skin2_activetext" class="skinmanager_activetext">Active</span>
+						</div>
+						<div id="skinmanager_skin3" class="skinmanager_iconcontainer">
+							<div id="skinmanager_skin3_icon" class="skinmanager_icon"></div>
+							<span id="skinmanager_skin3_activetext" class="skinmanager_activetext">Active</span>
+						</div>
+						<div id="skinmanager_skin4" class="skinmanager_iconcontainer">
+							<div id="skinmanager_skin4_icon" class="skinmanager_icon"></div>
+							<span id="skinmanager_skin4_activetext" class="skinmanager_activetext">Active</span>
+						</div>
+						<div id="skinmanager_skin5" class="skinmanager_iconcontainer">
+							<div id="skinmanager_skin5_icon" class="skinmanager_icon"></div>
+							<span id="skinmanager_skin5_activetext" class="skinmanager_activetext">Active</span>
+						</div>
+					</div>
+					<div id="skinmanager_setactive" class="brownButton brownButton_classic buttonShadow">SET ACTIVE
+					</div>
+					<div id="skinmanager_edit" class="brownButton brownButton_classic buttonShadow">EDIT</div>
+					<div id="skinmanager_close" class="windowCloseButton brownButton brownButton_classic buttonShadow">
+					</div>
+				</div>
+
+				<div id="skineditorcontainer">
+					<div id="behindblocker"></div>
+					<div id="skineditor_layerbox" class="windowShadow">
+						<div class="windowTopBar windowTopBar_classic">Layers</div>
+						<div id="skineditor_layerbox_scrollcontainer">
+							<table id="skineditor_layerbox_layertable">
+								<tr>
+									<td><span class="skineditor_layerbox_layername">Rectangle 1</td>
+								</tr>
+								<tr>
+									<td><span class="skineditor_layerbox_layername">Rectangle 2</td>
+								</tr>
+								<tr>
+									<td><span class="skineditor_layerbox_layername">Rectangle 3</td>
+								</tr>
+								<tr>
+									<td><span class="skineditor_layerbox_layername">Empty</td>
+								</tr>
+								<tr>
+									<td><span class="skineditor_layerbox_layername">Face 1</td>
+								</tr>
+
+							</table>
+						</div>
+						<span id="skineditor_layerbox_baselabel">Base Color</span>
+						<div id="skineditor_layerbox_colorrect"></div>
+					</div>
+					<div id="skineditor_previewbox" class="windowShadow">
+						<div class="windowTopBar windowTopBar_classic">Preview</div>
+						<div id="skineditor_previewbox_skincontainer"></div>
+						<div id="skineditor_cancelbutton" class="brownButton brownButton_classic buttonShadow">CANCEL
+						</div>
+						<div id="skineditor_savebutton" class="brownButton brownButton_classic buttonShadow">SAVE</div>
+						<div class="dropdown-container buttonShadow" id="skineditor_previewbox_teamdropdown">
+							<img class="dropdown-arrow" id="skineditor_previewbox_teamdropdown_arrow"
+								src="graphics/dropdownarrow_light.png">
+							<div class="dropdown-title dropdown_classic" id="skineditor_previewbox_teamdropdown_title">
+								FREE FOR ALL</div>
+							<div class="dropdown-option dropdown_classic"
+								id="skineditor_previewbox_teamdropdown_option1">FREE FOR ALL</div>
+							<div class="dropdown-option dropdown_classic"
+								id="skineditor_previewbox_teamdropdown_option2">RED TEAM</div>
+							<div class="dropdown-option dropdown_classic"
+								id="skineditor_previewbox_teamdropdown_option3">BLUE TEAM</div>
+							<div class="dropdown-option dropdown_classic"
+								id="skineditor_previewbox_teamdropdown_option4">GREEN TEAM</div>
+							<div class="dropdown-option dropdown_classic"
+								id="skineditor_previewbox_teamdropdown_option5">YELLOW TEAM</div>
+						</div>
+
+
+					</div>
+
+					<div id="skineditor_propertiesbox" class="windowShadow">
+
+
+						<table id="skineditor_propertiesbox_table">
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">Shape</td>
+								<td class="skineditor_propertiesbox_table_rightcell"><span
+										id="skineditor_propertiesbox_table_shape"
+										class="skineditor_propertiesbox_table_righttext">Rectangle 1</span></td>
+							</tr>
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">X</td>
+								<td class="skineditor_propertiesbox_table_rightcell">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_x_down">-</div>
+									<input id="skineditor_propertiesbox_table_x" type="text"
+										class="skineditor_field fieldShadow" value="0.23">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_x_up">+</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">Y</td>
+								<td class="skineditor_propertiesbox_table_rightcell">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_y_down">-</div>
+									<input id="skineditor_propertiesbox_table_y" type="text"
+										class="skineditor_field fieldShadow" value="3.22">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_y_up">+</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">Angle</td>
+								<td class="skineditor_propertiesbox_table_rightcell">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_angle_down">-</div>
+									<input id="skineditor_propertiesbox_table_angle" type="text"
+										class="skineditor_field fieldShadow" value="90">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_angle_up">+</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">Scale</td>
+								<td class="skineditor_propertiesbox_table_rightcell">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_scale_down">-</div>
+									<input id="skineditor_propertiesbox_table_scale" type="text"
+										class="skineditor_field fieldShadow" value="0.256">
+									<div class="skineditor_field_button fieldShadow" id="skineditor_scale_up">+</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">Flip L/R</td>
+								<td class="skineditor_propertiesbox_table_rightcell "><span
+										id="skineditor_propertiesbox_table_flipx"
+										class="skineditor_propertiesbox_table_righttext">True</span></td>
+							</tr>
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">Flip U/D</td>
+								<td class="skineditor_propertiesbox_table_rightcell "><span
+										id="skineditor_propertiesbox_table_flipy"
+										class="skineditor_propertiesbox_table_righttext">False</span></td>
+							</tr>
+							<tr>
+								<td class="skineditor_propertiesbox_table_leftcell">Color</td>
+								<td class="skineditor_propertiesbox_table_rightcell">
+									<div id="skineditor_propertiesbox_colorrect"></div>
+								</td>
+							</tr>
+						</table>
+						<div class="brownButton brownButton_classic buttonShadow skineditor_propertiesbox_layerbutton"
+							id="skineditor_propertiesbox_upbutton">MOVE LAYER UP</div>
+						<div class="brownButton brownButton_classic buttonShadow skineditor_propertiesbox_layerbutton"
+							id="skineditor_propertiesbox_downbutton">MOVE LAYER DOWN</div>
+						<div class="brownButton brownButton_classic buttonShadow skineditor_propertiesbox_layerbutton"
+							id="skineditor_propertiesbox_deletebutton">DELETE LAYER</div>
+						<div id="skineditor_propertiesbox_blocker">No Layer Selected</div>
+						<div class="windowTopBar windowTopBar_classic">Layer Properties</div>
+					</div>
+
+
+					<div id="skineditor_colorpicker">
+
+						<span id="skineditor_colorpicker_currentlabel">New</span>
+						<span id="skineditor_colorpicker_newlabel">Old</span>
 						<br>
-						<div id="mapeditor_colorpicker_lefttile"></div>
-						<div id="mapeditor_colorpicker_righttile"></div>
-						<div id="mapeditor_colorpicker_canvas_container">
-							<canvas id="mapeditor_colorpicker_canvas" width="200" height="250"></canvas>
-							<canvas id="mapeditor_colorpicker_canvas_crosshair" width="200" height="250"></canvas>
+						<div id="skineditor_colorpicker_lefttile"></div>
+						<div id="skineditor_colorpicker_righttile"></div>
+						<div id="skineditor_colorpicker_canvas_container">
+							<canvas id="skineditor_colorpicker_canvas" width="169" height="293"></canvas>
+							<canvas id="skineditor_colorpicker_canvas_crosshair" width="169" height="293"></canvas>
 						</div>
-						<span id="mapeditor_colorpicker_saturationlabel">Saturation</span>
-						<input type="range" class="compactSlider compactSlider_classic" min="0" max="1" value="0.5" step="0.01" class="slider" id="mapeditor_colorpicker_brightness_slider">
+						<span id="skineditor_colorpicker_saturationlabel">Saturation</span>
+						<input type="range" class="compactSlider compactSlider_classic" min="0" max="1" value="0.5"
+							step="0.01" class="slider" id="skineditor_colorpicker_brightness_slider">
 
 
 
-						<div id="mapeditor_colorpicker_existingcontainer"></div>
+						<div id="skineditor_colorpicker_existingcontainer"></div>
 
-						
-						<div id="mapeditor_colorpicker_cancelbutton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-						<div id="mapeditor_colorpicker_savebutton" class="brownButton brownButton_classic buttonShadow">SAVE</div>
-						<image src="graphics/mapedtior_colorpicker_crosshair.png" style="display:none;" id="mapeditor_colorpicker_crosshaircache">
+
+						<div id="skineditor_colorpicker_cancelbutton"
+							class="brownButton brownButton_classic buttonShadow">CANCEL</div>
+						<div id="skineditor_colorpicker_savebutton"
+							class="brownButton brownButton_classic buttonShadow">SAVE</div>
+						<image src="graphics/mapedtior_colorpicker_crosshair.png" style="display:none;"
+							id="skineditor_colorpicker_crosshaircache">
 
 					</div>
+
 
 				</div>
 
 
-				<div id="mapeditor_save_window" class="windowShadow">
-					<div class="windowTopBar windowTopBar_classic">Save Map</div>
-					<span id="mapeditor_save_window_label">Map name</span>
-					<input id="mapeditor_save_window_field" maxlength="25" class="whiteInputField windowShadow" spellcheck="false">
-					<select id="mapeditor_save_window_public">
-						<option value="0">Private</option>
-						<option value="1">Public</option>
-					</select>
-					<div id="mapeditor_save_window_cancel" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-					<div id="mapeditor_save_window_save" class="brownButton brownButton_classic buttonShadow">
-						<span>SAVE</span>
+				<div id="quickPlayWindow" class="windowShadow">
+					<div id="quickPlayWindowtopbar" class="windowTopBar windowTopBar_classic">Quick Play Mode Selection
+					</div>
+					<div id="quickPlayWindow_close"
+						class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+
+					<div id="quickPlayWindowModeContainer">
+						<div id="quickPlayWindow_ClassicButton" class="quickPlayWindowModeDiv">
+							<img src="graphics/thumb_classic_nb.jpg" class="quickPlayWindowModeThumb">
+							<span class="quickPlayWindowText1">Classic</span>
+							<span id="quickPlayWindow_ClassicPlayerCount" class="quickPlayWindowText2">? players
+								online</span>
+							<span class="quickPlayWindowText3">The original Quick Play. A selection of some of the best
+								classic maps combined with new ones too.</span>
+
+						</div>
+						<div id="quickPlayWindow_ArrowsButton" class="quickPlayWindowModeDiv">
+							<img src="graphics/thumb_arrows_nb.jpg" class="quickPlayWindowModeThumb">
+							<span class="quickPlayWindowText1">Arrows</span>
+							<span id="quickPlayWindow_ArrowsPlayerCount" class="quickPlayWindowText2">? players
+								online</span>
+							<span class="quickPlayWindowText3">Use the special key to charge up and fire arrows at your
+								opponents. You can't aim and move at the same time! A static map rotation of simple,
+								balanced maps.</span>
+						</div>
+						<div id="quickPlayWindow_GrappleButton" class="quickPlayWindowModeDiv">
+							<img src="graphics/thumb_grapple_nb.jpg" class="quickPlayWindowModeThumb">
+							<span class="quickPlayWindowText1">Grapple</span>
+							<span id="quickPlayWindow_GrapplePlayerCount" class="quickPlayWindowText2">? players
+								online</span>
+							<span class="quickPlayWindowText3">Use the special key to swing around the map, but if an
+								enemy touches you while you're on your grapple you'll be knocked off. Static map
+								rotation.</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div id="newPlayerGuideContainer" class="windowShadow">
+					<div class="windowTopBar windowTopBar_classic">Tutorial</div>
+					<div id="newPlayerGuide_text">Click here to get into a multiplayer game!</div>
+					<div id="newPlayerGuide_close"
+						class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+				</div>
+
+
+
+				<div id="newswindow" class="windowShadow">
+
+
+					<div id="newswindow_topbar" class="windowTopBar windowTopBar_classic">News</div>
+					<div id="newswindow_white" class="windowShadow">
+						<span id="newswindow_title"></span>
+						<span id="newswindow_content"></span>
+					</div>
+
+					<div id="newswindow_back" class="brownButton brownButton_classic buttonShadow newswindow_button">
+					</div>
+					<div id="newswindow_forward" class="brownButton brownButton_classic buttonShadow newswindow_button">
+					</div>
+					<div id="news_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+
+
+				</div>
+
+				<div id="friendsContainer" class="windowShadow">
+					<div id="friends_topbar" class="windowTopBar windowTopBar_classic">Friend List</div>
+					<div id="friends_close" class="windowCloseButton brownButton brownButton_classic buttonShadow">
+					</div>
+					<div id="friends_scrollcontainer">
+						<div id="friends_title_requests" class="friends_titles">Incoming Friend Requests</div>
+						<table id="friends_requests_table" class="friends_table">
+							<tr>
+								<td class="friends_cell_name"></td>
+								<td>
+									<div class="friends_request_button brownButton brownButton_classic buttonShadow">
+										DELETE</div>
+								</td>
+								<td>
+									<div class="friends_request_button brownButton brownButton_classic buttonShadow">
+										ACCEPT</div>
+								</td>
+
+							</tr>
+
+						</table>
+						<div id="friends_title_online" class="friends_titles">Online Friends</div>
+						<table id="friends_online_table" class="friends_table">
+							<tr>
+								<td class="friends_cell_name"></td>
+								<td>
+									<div class="friends_request_button brownButton brownButton_classic buttonShadow">
+										REMOVE</div>
+								</td>
+								<td>
+									<div class="friends_request_button brownButton brownButton_classic buttonShadow">
+										JOIN</div>
+								</td>
+							</tr>
+
+						</table>
+						<div id="friends_title_offline" class="friends_titles">Offline Friends</div>
+						<table id="friends_offline_table" class="friends_table">
+							<tr>
+								<td class="friends_cell_name"></td>
+								<td>
+									<div class="friends_request_button brownButton brownButton_classic buttonShadow">
+										REMOVE</div>
+								</td>
+								<td class="friends_empty_cell"></td>
+							</tr>
+						</table>
+						<div id="friends_title_legacy" class="friends_titles">Friends From Flash Version +</div>
+						<table id="friends_legacy_table" class="friends_table">
+
+						</table>
+					</div>
+
+					<div class="friendsBottomButton brownButton brownButton_classic buttonShadow"
+						id="friends_refresh_button">
+						<span>REFRESH</span>
 						<div class="loader"></div>
 					</div>
+					<div class="friendsBottomButton brownButton brownButton_classic buttonShadow"
+						id="friends_add_button">ADD BY NAME</div>
+
 				</div>
 
-				<div id="mapeditor_save_overwrite_window" class="windowShadow">
-					<div class="windowTopBar windowTopBar_classic">Overwrite Map</div>
-					<span id="mapeditor_save_overwrite_window_label">You already have a map saved with that name. Overwrite it?</span>
-					<div id="mapeditor_save_overwrite_window_cancel" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-					<div id="mapeditor_save_overwrite_window_save" class="brownButton brownButton_classic buttonShadow">
-						<span>OVERWRITE</span>
-						<div class="loader"></div>
+				<div id="friendsSendWindowContainer">
+					<div id="behindblocker"></div>
+					<div id="friendsSendWindow" class="windowShadow">
+						<div class="windowTopBar windowTopBar_classic">Send Friend Request</div>
+						<span id="friendsSendWindow_label">Who do you want to add as a friend?</span>
+						<span id="friendsSendWindow_responselabel"></span>
+
+
+						<input type="text" id="friendsSendWindow_name" class="whiteInputField windowShadow"
+							spellcheck="false">
+						<div id="friendsSendWindow_cancel"
+							class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">CANCEL</div>
+						<div id="friendsSendWindow_send"
+							class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">
+							<span>SEND</span>
+							<div class="loader"></div>
+						</div>
 					</div>
 				</div>
 
-			</div>
-			<div id="mapeditor_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-		</div>
 
-		<div id="maploadwindowcontainer">
-			<div id="maploadwindow">
-				<div id="maploadwindowtopbar" class="windowTopBar_classic">Level Select</div>
-				
-				<div id="maploadwindowgreybar"></div>
-				<input type="text" id="maploadwindowsearchinput" spellcheck="false" autocomplete="off" value="" class="fieldShadow">
-				<div id="maploadwindowsearchbutton" class="brownButton brownButton_classic buttonShadow">SEARCH</div>
-				<span id="maploadwindowstatustext"></span>
-				<div id="maploadwindowmapscontainer"></div>
 
-				<div id="maploadwindowhotnessslider">
-					<span id="maploadwindowhotnessnewestspan">NEWEST</span>
-					<span id="maploadwindowhotnesshighestratedspan">TOP RATED</span>
 
-				  <input type="range" class="compactSlider compactSlider_classic" min="1" max="7" value="4" step="1" id="maploadwindowhotnesssliderinput">
-				</div>
+				<div id="roomListContainer">
+					<div id="roomlistflexpadding"></div>
+					<div id="roomlist" class="roomlist_classic">
 
-				<div class="dropdown-container buttonShadow" id="maploadtypedropdown">
-					<img class="dropdown-arrow" id = "maploadtypedropdownarrow" src="graphics/dropdownarrow_light.png">
-					<div class="dropdown-title dropdown_classic" id="maploadtypedropdowntitle">Select...</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption11">PICKS</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption8">HOT</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption_hotdeatharrows">DEATH ARROWS</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption7">MY MAPS</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption10">MY FAVS</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption1">BONK 1: TOP RATED</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption2">BONK 1: COMMUNITY PICKS</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption3">BONK 1: MY MAPS</div>
-					<div class="dropdown-option dropdown_classic" id="maploadtypedropdownoption4">BONK 1: MY FAVS</div>
-					
+						<div id="roomlisttopbar" class="classicTopBar"></div>
 
-				</div>
 
-				<div id="maploadwindowsearchoptions">
-					<div id="maploadwindowsearchoptions_nameindicator" class="maploadwindowoptionselected"></div>
-					<div id="maploadwindowsearchoptions_namelabel">MAP NAME</div>
-					<div id="maploadwindowsearchoptions_authorindicator" class="maploadwindowoptionselected"></div>
-					<div id="maploadwindowsearchoptions_authorlabel">AUTHOR</div>
-					<div id="maploadwindowsearchoptions_sortby">SORT BY: BEST</div>
-				</div>
 
-			</div>
 
-			<div id="maploadwindow_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+						<div id="roomlist_close" class="windowCloseButton brownButton brownButton_classic buttonShadow">
+						</div>
 
-		</div>
+						<label class="control control-checkbox">
+							<div id="roomlisthidepasswordedcheckboxlabel">Hide Passworded</div>
+							<input type="checkbox" id="roomlisthidepasswordedcheckbox" />
+							<div class="control_indicator"></div>
+						</label>
 
-		<div id="gamerenderer"></div>
-		<div id="ingamechatbox">
-			<div id="ingamechatcontent"></div>
-			<input type="text" id ="ingamechatinputtext" spellcheck="false">
-		</div>
-		<div id="ingametutorial">
-			<span id="ingametutorial_title"></span>
-			<span id="ingametutorial_text"></span>
-		</div>
-		<div id="ingamevotewindow">
-			<span id="ingamevotewindow_title">Good Map?</span>
-			<div id="ingamevotewindow_upvote" class="brownButton brownButton_classic buttonShadow"></div>
-			<div id="ingamevotewindow_downvote" class="brownButton brownButton_classic buttonShadow"></div>
-		</div>
-		<div id="ingamewinner">
-			<div id="ingamewinner_skin">
-				<div id="ingamewinner_skin_skin"></div>
-				<svg id="ingamewinner_skin_x" width="200" height="200">
-				   <circle cx="100" cy="91" r="82" stroke="white" stroke-width="5" fill="none" />
-				</svg> 
-			</div>
-			<div id="ingamewinner_top"></div>
-			<div id="ingamewinner_bottom"></div>
-			<div id="ingamewinner_scores">
-				<div id="ingamewinner_scores_top"></div>
-				<div id="ingamewinner_scores_left"></div>
-				<div id="ingamewinner_scores_right"></div>
-			</div>
-		</div>
-		<div id="ingamecountdown">
-			<div id="ingamecountdown_top">Round starts in</div>
-			<div id="ingamecountdown_text">3</div>
-		</div>
-		<div id="ingamemapcredit">
-			<div id="ingamemapcredit_name">Meridian</div>
-			<div id="ingamemapcredit_by">by</div>
-			<div id="ingamemapcredit_author">Fantao</div>
-		</div>
-		<div id="ingametextwarnings">
-			<div class="ingametextwarnings_warning" id="ingametextwarning_spectating">
-				<p>You are currently spectating. You will join this game at the start of the next round.</p>
-			</div>
-			<div class="ingametextwarnings_warning" id="ingametextwarning_afk">
-				<p>You are about to be kicked for inactivity, press any movement key to stay in this room!</p>
-			</div>
-			<div class="ingametextwarnings_warning" id="ingametextwarning_matchedsoon">
-				<p>You will be matched with other players soon</p>
-			</div>
-		</div>
-		<div id="leaveconfirmwindowcontainer">
-			<div id="behindblocker"></div>
-			<div id = "leaveconfirmwindow" class="windowShadow">
-				<div id="leaveconfirmwindow_top">Leave Game?</div>
-				<div id="leaveconfirmwindow_text1">You are about to leave this game.</div>
-				<div id="leaveconfirmwindow_text2">Are you sure?</div>
-				<div id="leaveconfirmwindow_cancelbutton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-				<div id="leaveconfirmwindow_okbutton" class="brownButton brownButton_classic buttonShadow">OK</div>
-			</div>
-		</div>
-		<div id="hostleaveconfirmwindowcontainer">
-			<div id="behindblocker"></div>
-			<div id = "hostleaveconfirmwindow" class="windowShadow">
-				<div id="hostleaveconfirmwindow_top">Leave Game?</div>
-				<div id="hostleaveconfirmwindow_text1">You are about to leave this game.</div>
-				<div id="hostleaveconfirmwindow_text2">Are you sure?</div>
-				<div id="hostleaveconfirmwindow_cancelbutton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-				<div id="hostleaveconfirmwindow_okbutton" class="brownButton brownButton_classic buttonShadow">OK</div>
-				<div id="hostleaveconfirmwindow_endbutton" class="brownButton brownButton_classic buttonShadow">END ROOM</div>
-			</div>
-		</div>
 
 
-		
+						<div id="roomlisttableheadercontainer">
+							<div id="roomlisttableheader_roomname">ROOM NAME</div>
+							<div id="roomlisttableheader_players">PLAYERS</div>
+							<div id="roomlisttableheader_mode">MODE</div>
 
-	</div><!--end newbonkgamecontainer-->
+							<div id="roomlisttableheader_password">PASSWORD</div>
+							<div id="roomlisttableheader_levelrequired">PLAYER LEVEL</div>
+							<div id="roomlisttableheader_distance">DISTANCE</div>
+						</div>
 
+						<div id="roomliststatustext"></div>
 
-
-	<div id="mainmenuelements">
-
-		<div id="bgreplay">
-			<input type="range" id="bgreplay_timescrub" min="0.1" max="1" step="0.01" value="1">
-			
-		</div>
-
-		<div id="classicmenu">
-			<div id="classic_mid">
-
-				<div id="classic_mid_quickplay" class="brownButton brownButton_classic classic_mid_buttons">QUICK PLAY</div>
-				<div id="classic_mid_customgame" class="brownButton brownButton_classic classic_mid_buttons">CUSTOM GAME</div>
-				<div id="classic_mid_news" class="brownButton brownButton_classic classic_mid_buttons">NEWS</div>
-				<div id="classic_mid_skins" class="brownButton brownButton_classic classic_mid_buttons">SKINS</div>
-				<div id="classic_mid_friendlist" class="brownButton brownButton_classic classic_mid_buttons">FRIEND LIST</div>
-				<div id="classic_mid_tutorial" class="brownButton brownButton_classic classic_mid_buttons">TUTORIAL</div>
-
-			</div>
-			
-		</div>
-
-		<div id="autoLoginContainer" class="windowShadow">
-			<div id="autoLogin_topbar" class="windowTopBar windowTopBar_classic">Welcome Back</div>
-			<div id="autoLogin_text" class="windowShadow"></div>
-			<div id="autoLogin_cancelButton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-
-		</div>
-
-		<div id="guestOrAccountContainer">
-
-			<div id="guestOrAccountContainer_guestBox" class="windowShadow">
-				<div class="windowTopBar windowTopBar_classic">Play as Guest</div>
-				<div class="guestOrAccountContainerLabelBox guestOrAccountContainerLabelSingleLine">Play without an account</div>
-				<div id="guestOrAccountContainer_guestButton" class="brownButton brownButton_classic buttonShadow">PLAY AS GUEST</div>
-			</div>
-
-			<div id="guestOrAccountContainer_accountBox" class="windowShadow">
-				<div class="windowTopBar windowTopBar_classic">Login or Register</div>
-				<div class="guestOrAccountContainerLabelBox">Log in or create a new account here. Creating an account allows you to level up, create maps, and add friends.</div>
-				<div id="guestOrAccountContainer_accountButton" class="brownButton brownButton_classic buttonShadow">LOGIN/REGISTER</div>
-			</div>
-
-
-			
-			
-
-		</div>
-
-		<div id="guestContainer" class="windowShadow">
-
-			
-			<div id="guest_topbar" class="windowTopBar windowTopBar_classic">Play as Guest</div>
-			<div id="guest_skinbox"></div>
-			<div id="guest_namelabel">Guest Name</div>
-			<input type="text" id="guest_nametext" class="loginwindow_field fieldShadow" value="New Player" maxlength="15">
-			<div id="guest_colorlabel">Color</div>
-			<div id="guestPlayButton" class="brownButton brownButton_classic buttonShadow">PLAY</div>
-			<div id="guest_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-		</div>
-
-		
-
-		<div id="accountContainer">
-
-			<div id="loginwindow" class="windowShadow">
-				<div id="loginwindow_topbar" class="windowTopBar windowTopBar_classic">Log In</div>
-				<div id="loginwindow_usernamelabel">Username</div>
-				<div id="loginwindow_passwordlabel">Password</div>
-				<form>
-				<input type="text" id="loginwindow_username" class="loginwindow_field fieldShadow" spellcheck="false" required autocomplete="username">
-				<input type="password" id="loginwindow_password" class="loginwindow_field fieldShadow" spellcheck="false" required autocomplete="current-password">
-				</form>
-				
-				<label class="control control-checkbox login_remember_container">
-					<div id="loginwindow_remember_label">Stay logged in</div>
-					<input type="checkbox" id="loginwindow_remember_checkbox"/>
-					<div class="control_indicator"></div>
-				</label>
-			
-				<div id="loginwindow_submitbutton" class="brownButton brownButton_classic buttonShadow">
-					<span class="nomouse">LOG IN</span>
-					<div class="loader"></div>
-				</div>
-			</div>
-
-
-
-			<div id="registerwindow" class="windowShadow">
-				
-				<div id="registerwindow_topbar" class="windowTopBar windowTopBar_classic">Register</div>
-				<div id="registerwindow_usernamelabel">Choose a username</div>
-				<div id="registerwindow_passwordlabel">Choose a password</div>
-				<div id="registerwindow_explain"></div>
-				<form>
-				<input type="text" id="registerwindow_username" class="loginwindow_field fieldShadow" spellcheck="false" required autocomplete="username">
-				<input type="password" id="registerwindow_password" class="loginwindow_field fieldShadow" spellcheck="false" required autocomplete="new-password">
-				</form>
-				
-				<label class="control control-checkbox register_remember_container">
-					<div id="registerwindow_remember_label">Stay logged in</div>
-					<input type="checkbox" id="registerwindow_remember_checkbox"/>
-					<div class="control_indicator"></div>
-				</label>
-
-				<div id="registerwindow_submitbutton" class="brownButton brownButton_classic buttonShadow">
-					<span class="nomouse">REGISTER</span>
-					<div class="loader"></div>
-				</div>
-
-
-
-
-			</div>
-
-			<div id="account_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-			<div id="loginfieldtip">
-				<div id="loginfieldtippointer"></div>
-				<span id="loginfieldtip_text">Start Text</span>
-			</div>
-
-			<div id="registerfieldtip">
-				<div id="registerfieldtippointer"></div>
-				<span id="registerfieldtip_text">Start Text</span>
-			</div>
-
-		</div>
-
-
-
-		<div id="skinmanager" class="windowShadow">
-			<div class="windowTopBar windowTopBar_classic">Skin Manager</div>
-			<div id="skinmanager_allicons">
-				<div id="skinmanager_skin1" class="skinmanager_iconcontainer">
-					<div id="skinmanager_skin1_icon" class="skinmanager_icon"></div>
-					<span id="skinmanager_skin1_activetext" class="skinmanager_activetext">Active</span>
-				</div>
-				<div id="skinmanager_skin2" class="skinmanager_iconcontainer">
-					<div id="skinmanager_skin2_icon" class="skinmanager_icon"></div>
-					<span id="skinmanager_skin2_activetext" class="skinmanager_activetext">Active</span>
-				</div>
-				<div id="skinmanager_skin3" class="skinmanager_iconcontainer">
-					<div id="skinmanager_skin3_icon" class="skinmanager_icon"></div>
-					<span id="skinmanager_skin3_activetext" class="skinmanager_activetext">Active</span>
-				</div>
-				<div id="skinmanager_skin4" class="skinmanager_iconcontainer">
-					<div id="skinmanager_skin4_icon" class="skinmanager_icon"></div>
-					<span id="skinmanager_skin4_activetext" class="skinmanager_activetext">Active</span>
-				</div>
-				<div id="skinmanager_skin5" class="skinmanager_iconcontainer">
-					<div id="skinmanager_skin5_icon" class="skinmanager_icon"></div>
-					<span id="skinmanager_skin5_activetext" class="skinmanager_activetext">Active</span>
-				</div>
-			</div>
-			<div id="skinmanager_setactive" class="brownButton brownButton_classic buttonShadow">SET ACTIVE</div>
-			<div id="skinmanager_edit" class="brownButton brownButton_classic buttonShadow">EDIT</div>
-			<div id="skinmanager_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-		</div>
-
-		<div id="skineditorcontainer">
-			<div id="behindblocker"></div>
-			<div id="skineditor_layerbox" class="windowShadow">
-				<div class="windowTopBar windowTopBar_classic">Layers</div>
-				<div id="skineditor_layerbox_scrollcontainer">
-					<table id="skineditor_layerbox_layertable">
-						<tr><td><span class="skineditor_layerbox_layername">Rectangle 1</td></tr>
-						<tr><td><span class="skineditor_layerbox_layername">Rectangle 2</td></tr>
-						<tr><td><span class="skineditor_layerbox_layername">Rectangle 3</td></tr>
-						<tr><td><span class="skineditor_layerbox_layername">Empty</td></tr>
-						<tr><td><span class="skineditor_layerbox_layername">Face 1</td></tr>
-
-					</table>
-				</div>
-				<span id="skineditor_layerbox_baselabel">Base Color</span>
-				<div id="skineditor_layerbox_colorrect"></div>
-			</div>
-			<div id="skineditor_previewbox" class="windowShadow">
-				<div class="windowTopBar windowTopBar_classic">Preview</div>
-				<div id="skineditor_previewbox_skincontainer"></div>
-				<div id="skineditor_cancelbutton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-				<div id="skineditor_savebutton" class="brownButton brownButton_classic buttonShadow">SAVE</div>
-				<div class="dropdown-container buttonShadow" id="skineditor_previewbox_teamdropdown">
-					<img class="dropdown-arrow" id = "skineditor_previewbox_teamdropdown_arrow" src="graphics/dropdownarrow_light.png">
-					<div class="dropdown-title dropdown_classic" id="skineditor_previewbox_teamdropdown_title">FREE FOR ALL</div>
-					<div class="dropdown-option dropdown_classic" id="skineditor_previewbox_teamdropdown_option1">FREE FOR ALL</div>
-					<div class="dropdown-option dropdown_classic" id="skineditor_previewbox_teamdropdown_option2">RED TEAM</div>
-					<div class="dropdown-option dropdown_classic" id="skineditor_previewbox_teamdropdown_option3">BLUE TEAM</div>
-					<div class="dropdown-option dropdown_classic" id="skineditor_previewbox_teamdropdown_option4">GREEN TEAM</div>
-					<div class="dropdown-option dropdown_classic" id="skineditor_previewbox_teamdropdown_option5">YELLOW TEAM</div>
-				</div>
-				
-
-			</div>
-			
-			<div id="skineditor_propertiesbox" class="windowShadow">
-				
-
-				<table id="skineditor_propertiesbox_table">	
-					<tr><td class="skineditor_propertiesbox_table_leftcell">Shape</td><td class="skineditor_propertiesbox_table_rightcell"><span id="skineditor_propertiesbox_table_shape" class="skineditor_propertiesbox_table_righttext">Rectangle 1</span></td></tr>
-					<tr><td class="skineditor_propertiesbox_table_leftcell">X</td><td class="skineditor_propertiesbox_table_rightcell">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_x_down">-</div>
-						<input id="skineditor_propertiesbox_table_x" type="text" class="skineditor_field fieldShadow" value="0.23">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_x_up">+</div>
-					</td></tr>
-					<tr><td class="skineditor_propertiesbox_table_leftcell">Y</td><td class="skineditor_propertiesbox_table_rightcell">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_y_down">-</div>
-						<input id="skineditor_propertiesbox_table_y" type="text" class="skineditor_field fieldShadow" value="3.22">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_y_up">+</div>
-					</td></tr>
-					<tr><td class="skineditor_propertiesbox_table_leftcell">Angle</td><td class="skineditor_propertiesbox_table_rightcell">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_angle_down">-</div>
-						<input id="skineditor_propertiesbox_table_angle"  type="text" class="skineditor_field fieldShadow" value="90">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_angle_up">+</div>
-					</td></tr>
-					<tr><td class="skineditor_propertiesbox_table_leftcell">Scale</td><td class="skineditor_propertiesbox_table_rightcell">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_scale_down">-</div>
-						<input id="skineditor_propertiesbox_table_scale" type="text" class="skineditor_field fieldShadow" value="0.256">
-						<div class="skineditor_field_button fieldShadow" id="skineditor_scale_up">+</div>
-					</td></tr>
-					<tr><td class="skineditor_propertiesbox_table_leftcell">Flip L/R</td><td class="skineditor_propertiesbox_table_rightcell "><span id="skineditor_propertiesbox_table_flipx" class="skineditor_propertiesbox_table_righttext">True</span></td></tr>
-					<tr><td class="skineditor_propertiesbox_table_leftcell">Flip U/D</td><td class="skineditor_propertiesbox_table_rightcell "><span id="skineditor_propertiesbox_table_flipy" class="skineditor_propertiesbox_table_righttext">False</span></td></tr>
-					<tr><td class="skineditor_propertiesbox_table_leftcell">Color</td><td class="skineditor_propertiesbox_table_rightcell"><div id="skineditor_propertiesbox_colorrect"></div></td></tr>
-				</table>
-				<div class="brownButton brownButton_classic buttonShadow skineditor_propertiesbox_layerbutton" id="skineditor_propertiesbox_upbutton">MOVE LAYER UP</div>
-				<div class="brownButton brownButton_classic buttonShadow skineditor_propertiesbox_layerbutton" id="skineditor_propertiesbox_downbutton">MOVE LAYER DOWN</div>
-				<div class="brownButton brownButton_classic buttonShadow skineditor_propertiesbox_layerbutton" id="skineditor_propertiesbox_deletebutton">DELETE LAYER</div>
-				<div id="skineditor_propertiesbox_blocker">No Layer Selected</div>
-				<div class="windowTopBar windowTopBar_classic">Layer Properties</div>
-			</div>
-
-
-			<div id="skineditor_colorpicker">
-
-				<span id="skineditor_colorpicker_currentlabel">New</span>
-				<span id="skineditor_colorpicker_newlabel">Old</span>
-				<br>
-				<div id="skineditor_colorpicker_lefttile"></div>
-				<div id="skineditor_colorpicker_righttile"></div>
-				<div id="skineditor_colorpicker_canvas_container">
-					<canvas id="skineditor_colorpicker_canvas" width="169" height="293"></canvas>
-					<canvas id="skineditor_colorpicker_canvas_crosshair" width="169" height="293"></canvas>
-				</div>
-				<span id="skineditor_colorpicker_saturationlabel">Saturation</span>
-				<input type="range" class="compactSlider compactSlider_classic" min="0" max="1" value="0.5" step="0.01" class="slider" id="skineditor_colorpicker_brightness_slider">
-
-
-
-				<div id="skineditor_colorpicker_existingcontainer"></div>
-
-				
-				<div id="skineditor_colorpicker_cancelbutton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-				<div id="skineditor_colorpicker_savebutton" class="brownButton brownButton_classic buttonShadow">SAVE</div>
-				<image src="graphics/mapedtior_colorpicker_crosshair.png" style="display:none;" id="skineditor_colorpicker_crosshaircache">
-
-			</div>
-
-
-		</div>
-
-		
-		<div id="quickPlayWindow" class="windowShadow">
-			<div id="quickPlayWindowtopbar" class="windowTopBar windowTopBar_classic">Quick Play Mode Selection</div>
-			<div id="quickPlayWindow_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-			<div id="quickPlayWindowModeContainer">
-				<div id="quickPlayWindow_ClassicButton" class="quickPlayWindowModeDiv">
-					<img src="graphics/thumb_classic_nb.jpg" class="quickPlayWindowModeThumb">
-					<span class="quickPlayWindowText1">Classic</span>
-					<span id="quickPlayWindow_ClassicPlayerCount" class="quickPlayWindowText2">? players online</span>
-					<span class="quickPlayWindowText3">The original Quick Play. A selection of some of the best classic maps combined with new ones too.</span>
-
-				</div>
-				<div id="quickPlayWindow_ArrowsButton" class="quickPlayWindowModeDiv">
-					<img src="graphics/thumb_arrows_nb.jpg" class="quickPlayWindowModeThumb">
-					<span class="quickPlayWindowText1">Arrows</span>
-					<span id="quickPlayWindow_ArrowsPlayerCount" class="quickPlayWindowText2">? players online</span>
-					<span class="quickPlayWindowText3">Use the special key to charge up and fire arrows at your opponents. You can't aim and move at the same time! A static map rotation of simple, balanced maps.</span>
-				</div>
-				<div id="quickPlayWindow_GrappleButton" class="quickPlayWindowModeDiv">
-					<img src="graphics/thumb_grapple_nb.jpg" class="quickPlayWindowModeThumb">
-					<span class="quickPlayWindowText1">Grapple</span>
-					<span id="quickPlayWindow_GrapplePlayerCount" class="quickPlayWindowText2">? players online</span>
-					<span class="quickPlayWindowText3">Use the special key to swing around the map, but if an enemy touches you while you're on your grapple you'll be knocked off. Static map rotation.</span>
-				</div>
-			</div>
-
-		</div>
-
-		<div id="newPlayerGuideContainer" class="windowShadow">
-			<div class="windowTopBar windowTopBar_classic">Tutorial</div>
-			<div id="newPlayerGuide_text">Click here to get into a multiplayer game!</div>
-			<div id="newPlayerGuide_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-		</div>
-
-
-		
-		<div id="newswindow" class="windowShadow">
-
-
-			<div id="newswindow_topbar" class="windowTopBar windowTopBar_classic">News</div>
-			<div id="newswindow_white" class="windowShadow">
-				<span id="newswindow_title"></span>
-				<span id="newswindow_content"></span>
-			</div>
-
-			<div id="newswindow_back" class="brownButton brownButton_classic buttonShadow newswindow_button"></div>
-			<div id="newswindow_forward" class="brownButton brownButton_classic buttonShadow newswindow_button"></div>
-			<div id="news_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-
-		</div>
-
-		<div id="friendsContainer" class="windowShadow">
-			<div id="friends_topbar" class="windowTopBar windowTopBar_classic">Friend List</div>
-			<div id="friends_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-			<div id="friends_scrollcontainer">
-				<div id="friends_title_requests" class="friends_titles">Incoming Friend Requests</div>
-				<table id="friends_requests_table" class="friends_table">
-					<tr>
-						<td class="friends_cell_name"></td>
-						<td> <div class="friends_request_button brownButton brownButton_classic buttonShadow">DELETE</div> </td>
-						<td> <div class = "friends_request_button brownButton brownButton_classic buttonShadow">ACCEPT</div> </td>
-						
-					</tr>
-
-				</table>
-				<div id="friends_title_online" class="friends_titles">Online Friends</div>
-				<table id="friends_online_table" class="friends_table">
-					<tr>
-						<td class="friends_cell_name"></td>
-						<td> <div class="friends_request_button brownButton brownButton_classic buttonShadow">REMOVE</div> </td>
-						<td> <div class = "friends_request_button brownButton brownButton_classic buttonShadow">JOIN</div> </td>
-					</tr>
-
-				</table>
-				<div id="friends_title_offline" class="friends_titles">Offline Friends</div>
-				<table id="friends_offline_table" class="friends_table">
-					<tr>
-						<td class="friends_cell_name"></td>
-						<td> <div class="friends_request_button brownButton brownButton_classic buttonShadow">REMOVE</div> </td>
-						<td class="friends_empty_cell"></td>
-					</tr>
-				</table>
-				<div id="friends_title_legacy" class="friends_titles">Friends From Flash Version +</div>
-				<table id="friends_legacy_table" class="friends_table">
-					
-				</table>
-			</div>
-
-			<div class="friendsBottomButton brownButton brownButton_classic buttonShadow" id="friends_refresh_button">
-				<span>REFRESH</span>
-				<div class="loader"></div>
-			</div>
-			<div class="friendsBottomButton brownButton brownButton_classic buttonShadow" id="friends_add_button">ADD BY NAME</div>
-
-		</div>
-
-		<div id="friendsSendWindowContainer">
-			<div id="behindblocker"></div>
-			<div id = "friendsSendWindow" class="windowShadow">
-				<div class="windowTopBar windowTopBar_classic">Send Friend Request</div>
-				<span id="friendsSendWindow_label">Who do you want to add as a friend?</span>
-				<span id="friendsSendWindow_responselabel"></span>
-
-
-				<input type="text" id="friendsSendWindow_name" class="whiteInputField windowShadow" spellcheck="false">
-				<div id="friendsSendWindow_cancel" class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">CANCEL</div>
-				<div id="friendsSendWindow_send" class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">
-					<span>SEND</span>
-					<div class="loader"></div>
-				</div>
-			</div>
-		</div>
-	
-
-		
-
-		<div id="roomListContainer">
-			<div id="roomlistflexpadding"></div>
-			<div id="roomlist" class="roomlist_classic">
-
-				<div id="roomlisttopbar" class="classicTopBar"></div>
-				
-
-				
-
-				<div id="roomlist_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-				<label class="control control-checkbox">
-					<div id="roomlisthidepasswordedcheckboxlabel">Hide Passworded</div>
-					<input type="checkbox" id="roomlisthidepasswordedcheckbox"/>
-					<div class="control_indicator"></div>
-				</label>
-
-
-
-				<div id="roomlisttableheadercontainer">
-					<div id="roomlisttableheader_roomname">ROOM NAME</div>
-					<div id="roomlisttableheader_players">PLAYERS</div>
-					<div id="roomlisttableheader_mode">MODE</div>
-					
-					<div id="roomlisttableheader_password">PASSWORD</div>
-					<div id="roomlisttableheader_levelrequired">PLAYER LEVEL</div>
-					<div id="roomlisttableheader_distance">DISTANCE</div>
-				</div>
-
-				<div id="roomliststatustext"></div>
-
-				<div id="roomlistscrollbox" class="ROOMLIST">
-					<table  id="roomlisttable">
-						<!--<col width=56>
+						<div id="roomlistscrollbox" class="ROOMLIST">
+							<table id="roomlisttable">
+								<!--<col width=56>
 						<col width=10>
 						<col width=10>
 						<col width=10>
@@ -1264,340 +1592,399 @@
 						<col width=3>
 						<tr>
 						</tr>-->
-					</table>
-				</div>
-
-				<div id="friendsToolTip">
-					<span id="friendsToolTip_title">Friends in this room:</span>
-					<span id="friendsToolTip_list"></span>
-				</div>
-
-				<div class="roomlistbottombutton brownButton brownButton_classic buttonShadow" id="roomlistjoinbutton">JOIN</div>
-				<div class="roomlistbottombutton brownButton brownButton_classic buttonShadow" id="roomlistrefreshbutton">
-					<span>REFRESH</span>
-					<div class="loader"></div>
-				</div>
-				<div id="roomlistfilterbutton" class="roomlistbottombutton_dynamic roomlistbottombutton brownButton brownButton_classic buttonShadow">FILTER MODES</div>
-				<div class="roomlistbottombutton brownButton brownButton_classic buttonShadow" id="roomlistcreatebutton">CREATE</div>
-				<div id="roomlistfilterwindow" class="windowShadow">
-					<div id="roomlistfilterwindow_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-					<div id="roomlistfilterwindow_title">Show these modes</div>
-					<div class="roomlistfilterwindow_b"><input type="checkbox" class="roomlistfilterwindowcheckbox" id="roomlistfilterwindow_check_classic"/><label for="roomlistfilterwindow_check_classic" class="roomlistfilterwindowlabel">Classic</label></div>
-					<div class="roomlistfilterwindow_a"><input type="checkbox" class="roomlistfilterwindowcheckbox" id="roomlistfilterwindow_check_arrows"/><label for="roomlistfilterwindow_check_arrows" class="roomlistfilterwindowlabel">Arrows</label></div>
-					<div class="roomlistfilterwindow_b"><input type="checkbox" class="roomlistfilterwindowcheckbox" id="roomlistfilterwindow_check_deatharrows"/><label for="roomlistfilterwindow_check_deatharrows" class="roomlistfilterwindowlabel">Death Arrows</label></div>
-					<div class="roomlistfilterwindow_a"><input type="checkbox" class="roomlistfilterwindowcheckbox" id="roomlistfilterwindow_check_grapple"/><label for="roomlistfilterwindow_check_grapple" class="roomlistfilterwindowlabel">Grapple</label></div>
-					<div class="roomlistfilterwindow_b"><input type="checkbox" class="roomlistfilterwindowcheckbox" id="roomlistfilterwindow_check_football"/><label for="roomlistfilterwindow_check_football" class="roomlistfilterwindowlabel">Football</label></div>
-
-
-
-				</div>
-			</div>
-			<div id="roomlistflexpadding"></div>
-
-			
-
-
-			
-			<div id="roomlistcreatewindowcontainer">
-				<div id="behindblocker"></div>
-				<div id="roomlistcreatewindow" class="windowShadow">
-
-					<div class="windowTopBar windowTopBar_classic"><p id="roomlistcreatewindowtoptext">Create Game</p></div>
-
-					<div id="roomlist_create_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-
-					<div id="roomlistcreatewindowlabel1" class="roomlistcreatewindowlabel">Game name</div>
-					<input type="text" id="roomlistcreatewindowgamename" class="roomlistcreatewindowinput fieldShadow" spellcheck="false" maxlength="40">
-
-					<div id="roomlistcreatewindowlabel2" class="roomlistcreatewindowlabel">Password (optional)</div>
-					<input type="text" id="roomlistcreatewindowpassword" class="roomlistcreatewindowinput fieldShadow" spellcheck="false">
-
-					<div id="roomlistcreatewindowlabel3" class="roomlistcreatewindowlabel">Max players</div>
-					<input type="text" min="1" max="8" id="roomlistcreatewindowmaxplayers" class="roomlistcreatewindowinput fieldShadow">
-
-					<div id="roomlistcreatewindowlabel4" class="roomlistcreatewindowlabel">Min level</div>
-					<input type="text" id="roomlistcreatewindowminlevel" class="roomlistcreatewindowinput fieldShadow" value="0" maxlength="3">
-					<div id="roomlistcreatewindowlabel5" class="roomlistcreatewindowlabel">Max level</div>
-					<input type="text" id="roomlistcreatewindowmaxlevel" class="roomlistcreatewindowinput fieldShadow" value = "999" maxlength="3">
-
-					<label id="roomlistcreatewindowunlisted" class="control control-checkbox">
-						
-						<div id="roomlistcreatewindowunlistedlabel" class="roomlistcreatewindowlabel">
-						Unlisted room
+							</table>
 						</div>
 
-						<input type="checkbox" id="roomlistcreatewindowunlistedcheckbox" />
+						<div id="friendsToolTip">
+							<span id="friendsToolTip_title">Friends in this room:</span>
+							<span id="friendsToolTip_list"></span>
+						</div>
+
+						<div class="roomlistbottombutton brownButton brownButton_classic buttonShadow"
+							id="roomlistjoinbutton">JOIN</div>
+						<div class="roomlistbottombutton brownButton brownButton_classic buttonShadow"
+							id="roomlistrefreshbutton">
+							<span>REFRESH</span>
+							<div class="loader"></div>
+						</div>
+						<div id="roomlistfilterbutton"
+							class="roomlistbottombutton_dynamic roomlistbottombutton brownButton brownButton_classic buttonShadow">
+							FILTER MODES</div>
+						<div class="roomlistbottombutton brownButton brownButton_classic buttonShadow"
+							id="roomlistcreatebutton">CREATE</div>
+						<div id="roomlistfilterwindow" class="windowShadow">
+							<div id="roomlistfilterwindow_close"
+								class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+							<div id="roomlistfilterwindow_title">Show these modes</div>
+							<div class="roomlistfilterwindow_b"><input type="checkbox"
+									class="roomlistfilterwindowcheckbox"
+									id="roomlistfilterwindow_check_classic" /><label
+									for="roomlistfilterwindow_check_classic"
+									class="roomlistfilterwindowlabel">Classic</label></div>
+							<div class="roomlistfilterwindow_a"><input type="checkbox"
+									class="roomlistfilterwindowcheckbox" id="roomlistfilterwindow_check_arrows" /><label
+									for="roomlistfilterwindow_check_arrows"
+									class="roomlistfilterwindowlabel">Arrows</label></div>
+							<div class="roomlistfilterwindow_b"><input type="checkbox"
+									class="roomlistfilterwindowcheckbox"
+									id="roomlistfilterwindow_check_deatharrows" /><label
+									for="roomlistfilterwindow_check_deatharrows" class="roomlistfilterwindowlabel">Death
+									Arrows</label></div>
+							<div class="roomlistfilterwindow_a"><input type="checkbox"
+									class="roomlistfilterwindowcheckbox"
+									id="roomlistfilterwindow_check_grapple" /><label
+									for="roomlistfilterwindow_check_grapple"
+									class="roomlistfilterwindowlabel">Grapple</label></div>
+							<div class="roomlistfilterwindow_b"><input type="checkbox"
+									class="roomlistfilterwindowcheckbox"
+									id="roomlistfilterwindow_check_football" /><label
+									for="roomlistfilterwindow_check_football"
+									class="roomlistfilterwindowlabel">Football</label></div>
+
+
+
+						</div>
+					</div>
+					<div id="roomlistflexpadding"></div>
+
+
+
+
+
+					<div id="roomlistcreatewindowcontainer">
+						<div id="behindblocker"></div>
+						<div id="roomlistcreatewindow" class="windowShadow">
+
+							<div class="windowTopBar windowTopBar_classic">
+								<p id="roomlistcreatewindowtoptext">Create Game</p>
+							</div>
+
+							<div id="roomlist_create_close"
+								class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+
+
+							<div id="roomlistcreatewindowlabel1" class="roomlistcreatewindowlabel">Game name</div>
+							<input type="text" id="roomlistcreatewindowgamename"
+								class="roomlistcreatewindowinput fieldShadow" spellcheck="false" maxlength="40">
+
+							<div id="roomlistcreatewindowlabel2" class="roomlistcreatewindowlabel">Password (optional)
+							</div>
+							<input type="text" id="roomlistcreatewindowpassword"
+								class="roomlistcreatewindowinput fieldShadow" spellcheck="false">
+
+							<div id="roomlistcreatewindowlabel3" class="roomlistcreatewindowlabel">Max players</div>
+							<input type="text" min="1" max="8" id="roomlistcreatewindowmaxplayers"
+								class="roomlistcreatewindowinput fieldShadow">
+
+							<div id="roomlistcreatewindowlabel4" class="roomlistcreatewindowlabel">Min level</div>
+							<input type="text" id="roomlistcreatewindowminlevel"
+								class="roomlistcreatewindowinput fieldShadow" value="0" maxlength="3">
+							<div id="roomlistcreatewindowlabel5" class="roomlistcreatewindowlabel">Max level</div>
+							<input type="text" id="roomlistcreatewindowmaxlevel"
+								class="roomlistcreatewindowinput fieldShadow" value="999" maxlength="3">
+
+							<label id="roomlistcreatewindowunlisted" class="control control-checkbox">
+
+								<div id="roomlistcreatewindowunlistedlabel" class="roomlistcreatewindowlabel">
+									Unlisted room
+								</div>
+
+								<input type="checkbox" id="roomlistcreatewindowunlistedcheckbox" />
+								<div class="control_indicator"></div>
+							</label>
+
+							<div id="roomlistcreatecreatebutton"
+								class="roomlistcreatebottombutton brownButton brownButton_classic buttonShadow">CREATE
+							</div>
+							<div id="roomlistcreatecancelbutton"
+								class="roomlistcreatebottombutton brownButton brownButton_classic buttonShadow">CANCEL
+							</div>
+
+						</div>
+					</div>
+
+					<div id="roomlistjoinpasswordwindowcontainer">
+						<div id="behindblocker"></div>
+						<div id="roomlistjoinpasswordwindow" class="windowShadow">
+							<div id="roomlistjoinpasswordtop" class="windowTopBar windowTopBar_classic">Password
+								Required</div>
+							<div id="roomlistjoinpasswordwindowlabel">Password</div>
+							<input type="text" id="roomlistjoinpasswordtext" class="whiteInputField windowShadow"
+								spellcheck="false">
+							<div id="roomlistpassjoinbutton"
+								class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">JOIN</div>
+							<div id="roomlistpasscancelbutton"
+								class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">CANCEL
+							</div>
+						</div>
+					</div>
+				</div> <!-- end roomListContainer -->
+
+				<div id="sm_connectingContainer">
+					<div id="behindblocker"></div>
+					<div id="sm_connectingWindow" class="windowShadow">
+						<div id="sm_connectingWindow_topbar" class="windowTopBar windowTopBar_classic">Creating Game
+						</div>
+						<div id="sm_connectingWindow_text" class="windowShadow">
+							Connecting to server...<br>test
+						</div>
+						<div class="brownButton brownButton_classic buttonShadow" id="sm_connectingWindowCancelButton">
+							CANCEL</div>
+					</div>
+				</div>
+
+				<div id="sm_gameChoiceWindow">
+
+					<div id="sm_gameChoiceSimple" class="gameChoiceButtons buttonShadow">
+						<span class="sm_gameChoiceT1">Simple</span>
+						<span id="sm_gameChoiceQuickSimpleCount" class="sm_gameChoiceT2">? online</span>
+					</div>
+
+					<div id="sm_gameChoiceClassic" class="gameChoiceButtons buttonShadow">
+						<span class="sm_gameChoiceT1">Classic</span>
+						<span id="sm_gameChoiceQuickClassicCount" class="sm_gameChoiceT2">? online</span>
+					</div>
+					<div id="sm_gameChoiceArrows" class="gameChoiceButtons buttonShadow">
+						<span class="sm_gameChoiceT1">Arrows</span>
+						<span id="sm_gameChoiceQuickArrowsCount" class="sm_gameChoiceT2">? online</span>
+					</div>
+					<div id="sm_gameChoiceGrapple" class="gameChoiceButtons buttonShadow">
+						<span class="sm_gameChoiceT1">Grapple</span>
+						<span id="sm_gameChoiceQuickGrappleCount" class="sm_gameChoiceT2">Coming Soon™</span>
+					</div>
+					<div id="sm_gameChoiceCustom" class="gameChoiceButtons buttonShadow">
+						<span class="sm_gameChoiceT1">Custom Game</span>
+						<span id="sm_gameChoiceCustomCount" class="sm_gameChoiceT2">? online</span>
+					</div>
+
+
+				</div>
+
+
+
+
+
+
+			</div> <!-- end mainmenuelements -->
+
+
+			<div id="prettymenu">
+
+				<div id="pretty_top">
+
+					<div id="pretty_top_bar" class="niceborderbottom">
+
+						<div id="pretty_top_small_preview"></div>
+						<div id="pretty_top_name" class="niceborderright"></div>
+						<div id="pretty_top_level" class="niceborderright"></div>
+						<div id="pretty_top_playercount" class="niceborderright">? online</div>
+
+						<div id="pretty_top_help" class="pretty_top_button niceborderleft">
+						</div>
+						<div id="pretty_top_replay" class="pretty_top_button niceborderleft">
+							<div id="pretty_top_replay_text" class="pretty_top_button niceborderleft niceborderbottom">
+							</div>
+							<div id="pretty_top_replay_fav" class="pretty_top_button niceborderleft niceborderbottom">
+								<div id="pretty_top_replay_fav_tooltip">Add this map to your favourites list</div>
+							</div>
+							<div id="pretty_top_replay_back" class="pretty_top_button  niceborderbottom niceborderleft">
+							</div>
+							<div id="pretty_top_replay_next" class="pretty_top_button niceborderleft niceborderbottom">
+							</div>
+
+							<div id="pretty_top_replay_report"
+								class="pretty_top_button niceborderleft niceborderright niceborderbottom">
+								<div id="pretty_top_replay_report_tooltip">Report this replay if it is inappropriate
+								</div>
+							</div>
+
+						</div>
+						<div id="pretty_top_volume" class="pretty_top_button niceborderleft">
+							<div id="pretty_top_volume_music"
+								class="pretty_top_button niceborderbottom niceborderleft niceborderright"></div>
+						</div>
+						<div id="pretty_top_settings" class="pretty_top_button niceborderleft"></div>
+						<div id="pretty_top_exit" class="pretty_top_button niceborderleft"></div>
+					</div>
+
+				</div>
+
+				<div id="pretty_bottom">
+					<div id="pretty_bottom_bar" class="nicebordertop">
+						<!--<div class="pretty_lighttopline"></div>-->
+					</div>
+
+
+					<div id="pretty_bottom_container">
+						<div id="pretty_newsbutton"
+							class="pretty_bottom_button pretty_bottom_button_0 nicebordertop niceborderleft">NEWS</div>
+						<div id="pretty_friendsbutton"
+							class="pretty_bottom_button pretty_bottom_button_1 nicebordertop niceborderleft">FRIENDS
+						</div>
+						<div id="pretty_playbutton"
+							class="pretty_bottom_button pretty_bottom_button_0 nicebordertop niceborderleft">PLAY</div>
+						<div id="pretty_skinsbutton"
+							class="pretty_bottom_button pretty_bottom_button_1 nicebordertop niceborderleft">SKINS</div>
+						<div id="pretty_tutorialbutton"
+							class="pretty_bottom_button pretty_bottom_button_0 nicebordertop niceborderleft niceborderright">
+							TUTORIAL</div>
+
+					</div>
+
+				</div>
+
+
+				<div id="settingsContainer" class="windowShadow">
+					<div id="settings_topBar" class="windowTopBar windowTopBar_classic">Settings</div>
+					<div id="settings_close" class="windowCloseButton brownButton brownButton_classic buttonShadow">
+					</div>
+
+					<span id="settings_heading_controls" class="settingsHeading">Change Controls</span>
+
+					<table id="redefineControls_table">
+						<tr>
+							<th>Action</th>
+							<th>Key 1</th>
+							<th>Key 2</th>
+							<th>Key 3</th>
+						</tr>
+					</table>
+
+					<span id="settings_heading_general" class="settingsHeading">General Options</span>
+
+					<label class="control control-checkbox settings_profanity_container">
+						<div id="settings_filterprofanity_label">Filter cursing</div>
+						<input type="checkbox" id="settings_filterprofanity_checkbox" />
 						<div class="control_indicator"></div>
 					</label>
-		
-					<div id="roomlistcreatecreatebutton" class="roomlistcreatebottombutton brownButton brownButton_classic buttonShadow">CREATE</div>
-					<div id="roomlistcreatecancelbutton" class="roomlistcreatebottombutton brownButton brownButton_classic buttonShadow">CANCEL</div>
-								
-				</div>
-			</div> 
 
-			<div id="roomlistjoinpasswordwindowcontainer">
-				<div id="behindblocker"></div>
-				<div id="roomlistjoinpasswordwindow" class="windowShadow">
-					<div id="roomlistjoinpasswordtop" class="windowTopBar windowTopBar_classic">Password Required</div>
-					<div id="roomlistjoinpasswordwindowlabel">Password</div>
-					<input type="text" id="roomlistjoinpasswordtext" class="whiteInputField windowShadow" spellcheck="false">
-					<div id="roomlistpassjoinbutton" class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">JOIN</div>
-					<div id="roomlistpasscancelbutton" class="roomlistpassbottombutton brownButton brownButton_classic buttonShadow">CANCEL</div>
-				</div>
-			</div>
-		</div>	<!-- end roomListContainer -->
-
-		<div id="sm_connectingContainer">
-			<div id="behindblocker"></div>
-			<div id="sm_connectingWindow" class="windowShadow">
-				<div id="sm_connectingWindow_topbar" class="windowTopBar windowTopBar_classic">Creating Game</div>
-				<div id="sm_connectingWindow_text" class="windowShadow">
-					Connecting to server...<br>test
-				</div>
-				<div class="brownButton brownButton_classic buttonShadow" id="sm_connectingWindowCancelButton">CANCEL</div>
-			</div>
-		</div>
-
-		<div id="sm_gameChoiceWindow">
-
-			<div id="sm_gameChoiceSimple" class="gameChoiceButtons buttonShadow">
-				<span class="sm_gameChoiceT1">Simple</span>
-				<span id ="sm_gameChoiceQuickSimpleCount" class="sm_gameChoiceT2">? online</span>
-			</div>
-
-			<div id="sm_gameChoiceClassic" class="gameChoiceButtons buttonShadow">
-				<span class="sm_gameChoiceT1">Classic</span>
-				<span id ="sm_gameChoiceQuickClassicCount" class="sm_gameChoiceT2">? online</span>
-			</div>
-			<div id="sm_gameChoiceArrows" class="gameChoiceButtons buttonShadow">
-				<span class="sm_gameChoiceT1">Arrows</span>
-				<span id ="sm_gameChoiceQuickArrowsCount" class="sm_gameChoiceT2">? online</span>
-			</div>
-			<div id="sm_gameChoiceGrapple" class="gameChoiceButtons buttonShadow">
-				<span class="sm_gameChoiceT1">Grapple</span>
-				<span id ="sm_gameChoiceQuickGrappleCount" class="sm_gameChoiceT2">Coming Soon™</span>
-			</div>
-			<div id="sm_gameChoiceCustom" class="gameChoiceButtons buttonShadow">
-				<span class="sm_gameChoiceT1">Custom Game</span>
-				<span id ="sm_gameChoiceCustomCount" class="sm_gameChoiceT2">? online</span>
-			</div>
+					<span id="settings_heading_performance" class="settingsHeading">Performance Options</span>
 
 
-		</div>
-
-
-
-
-
-
-	</div> <!-- end mainmenuelements -->
-
-
-	<div id="prettymenu">
-
-		<div id="pretty_top">
-
-			<div id="pretty_top_bar" class="niceborderbottom">
-
-				<div id="pretty_top_small_preview"></div>
-				<div id="pretty_top_name" class="niceborderright"></div>
-				<div id="pretty_top_level" class="niceborderright"></div>
-				<div id="pretty_top_playercount" class="niceborderright">? online</div>
-
-				<div id="pretty_top_help" class="pretty_top_button niceborderleft">
-				</div>
-				<div id="pretty_top_replay" class="pretty_top_button niceborderleft">
-					<div id="pretty_top_replay_text" class="pretty_top_button niceborderleft niceborderbottom"></div>
-					<div id="pretty_top_replay_fav" class="pretty_top_button niceborderleft niceborderbottom">
-						<div id="pretty_top_replay_fav_tooltip">Add this map to your favourites list</div>
-					</div>
-					<div id="pretty_top_replay_back" class="pretty_top_button  niceborderbottom niceborderleft"></div>
-					<div id="pretty_top_replay_next" class="pretty_top_button niceborderleft niceborderbottom"></div>
-					
-					<div id="pretty_top_replay_report" class="pretty_top_button niceborderleft niceborderright niceborderbottom" >
-						<div id="pretty_top_replay_report_tooltip">Report this replay if it is inappropriate</div>
+					<div id="settings_graphicsquality_container">
+						<span id="settings_graphicsquality_label">Graphics</span>
+						<select id="settings_graphicsquality">
+							<option value="1">Low</option>
+							<option value="2">Medium</option>
+							<option value="3">High</option>
+						</select>
 					</div>
 
+					<label class="control control-checkbox settings_fps_container">
+						<div id="settings_fps_label">Show FPS</div>
+						<input type="checkbox" id="settings_fps_checkbox" />
+						<div class="control_indicator"></div>
+					</label>
+
+					<span id="settings_heading_account" class="settingsHeading">Account Options</span>
+					<div id="settings_change_password_label">Change Password</div>
+
+					<div id="settings_cancelButton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
+					<div id="settings_saveButton" class="brownButton brownButton_classic buttonShadow">SAVE</div>
 				</div>
-				<div id="pretty_top_volume" class="pretty_top_button niceborderleft">
-					<div id="pretty_top_volume_music" class="pretty_top_button niceborderbottom niceborderleft niceborderright"></div>
+
+				<div id="passwordChangeContainer" class="windowShadow">
+					<div id="passwordChange_topBar" class="windowTopBar windowTopBar_classic">Change Password</div>
+					<div id="passwordChange_close"
+						class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
+
+					<span id="passwordChange_statuslabel"></span>
+
+					<span id="passwordChange_oldpasslabel" class="passwordChange_fieldlabel">Old password</span>
+					<input type="password" id="passwordChange_oldpass" class="passwordChange_field fieldShadow"
+						spellcheck="false" required="" autocomplete="current-password">
+					<span id="passwordChange_newpass1label" class="passwordChange_fieldlabel">New password</span>
+					<input type="password" id="passwordChange_newpass1" class="passwordChange_field fieldShadow"
+						spellcheck="false" required="" autocomplete="new-password">
+					<span id="passwordChange_newpass2label" class="passwordChange_fieldlabel">Confirm new
+						password</span>
+					<input type="password" id="passwordChange_newpass2" class="passwordChange_field fieldShadow"
+						spellcheck="false" required="" autocomplete="new-password">
+
+					<div id="passwordChange_cancelButton" class="brownButton brownButton_classic buttonShadow">CANCEL
+					</div>
+					<div id="passwordChange_saveButton" class="brownButton brownButton_classic buttonShadow">
+						<span>CHANGE</span>
+						<div class="loader"></div>
+					</div>
+
+
 				</div>
-				<div id="pretty_top_settings" class="pretty_top_button niceborderleft"></div>
-				<div id="pretty_top_exit" class="pretty_top_button niceborderleft"></div>
-			</div>
-
-		</div>
-
-		<div id="pretty_bottom">
-			<div id="pretty_bottom_bar" class="nicebordertop">
-				<!--<div class="pretty_lighttopline"></div>-->
-			</div>
-
-
-			<div id="pretty_bottom_container">
-				<div id="pretty_newsbutton" class="pretty_bottom_button pretty_bottom_button_0 nicebordertop niceborderleft">NEWS</div>
-				<div id="pretty_friendsbutton" class="pretty_bottom_button pretty_bottom_button_1 nicebordertop niceborderleft">FRIENDS</div>
-				<div id="pretty_playbutton" class="pretty_bottom_button pretty_bottom_button_0 nicebordertop niceborderleft">PLAY</div>
-				<div id="pretty_skinsbutton" class="pretty_bottom_button pretty_bottom_button_1 nicebordertop niceborderleft">SKINS</div>
-				<div id="pretty_tutorialbutton" class="pretty_bottom_button pretty_bottom_button_0 nicebordertop niceborderleft niceborderright">TUTORIAL</div>
 
 			</div>
 
-		</div>
 
 
-		<div id="settingsContainer" class="windowShadow">
-			<div id="settings_topBar" class="windowTopBar windowTopBar_classic">Settings</div>
-			<div id="settings_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-			<span id = "settings_heading_controls" class="settingsHeading">Change Controls</span>
-			
-			<table id="redefineControls_table">
-				<tr>
-				    <th>Action</th>
-				    <th>Key 1</th>
-				    <th>Key 2</th>
-				    <th>Key 3</th>
-				</tr>
-			</table>
-
-			<span id = "settings_heading_general" class="settingsHeading">General Options</span>
-
-			<label class="control control-checkbox settings_profanity_container">
-				<div id="settings_filterprofanity_label">Filter cursing</div>
-				<input type="checkbox" id="settings_filterprofanity_checkbox"/>
-				<div class="control_indicator"></div>
-			</label>
-
-			<span id = "settings_heading_performance" class="settingsHeading">Performance Options</span>
-
-
-			<div id="settings_graphicsquality_container">
-				<span id="settings_graphicsquality_label">Graphics</span>
-				<select id="settings_graphicsquality">
-					<option value="1">Low</option>
-					<option value="2">Medium</option>
-					<option value="3">High</option>
-				</select>
-			</div>
-
-			<label class="control control-checkbox settings_fps_container">
-				<div id="settings_fps_label">Show FPS</div>
-				<input type="checkbox" id="settings_fps_checkbox"/>
-				<div class="control_indicator"></div>
-			</label>
-
-			<span id = "settings_heading_account" class="settingsHeading">Account Options</span>
-				<div id="settings_change_password_label">Change Password</div>
-			
-			<div id="settings_cancelButton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-			<div id="settings_saveButton" class="brownButton brownButton_classic buttonShadow">SAVE</div>
-		</div>
-
-		<div id="passwordChangeContainer" class="windowShadow">
-			<div id="passwordChange_topBar" class="windowTopBar windowTopBar_classic">Change Password</div>
-			<div id="passwordChange_close" class="windowCloseButton brownButton brownButton_classic buttonShadow"></div>
-
-			<span id="passwordChange_statuslabel"></span>
-
-			<span id="passwordChange_oldpasslabel" class="passwordChange_fieldlabel">Old password</span>
-			<input type="password" id="passwordChange_oldpass" class="passwordChange_field fieldShadow" spellcheck="false" required="" autocomplete="current-password">
-			<span id="passwordChange_newpass1label" class="passwordChange_fieldlabel">New password</span>
-			<input type="password" id="passwordChange_newpass1" class="passwordChange_field fieldShadow" spellcheck="false" required="" autocomplete="new-password">
-			<span id="passwordChange_newpass2label" class="passwordChange_fieldlabel">Confirm new password</span>
-			<input type="password" id="passwordChange_newpass2" class="passwordChange_field fieldShadow" spellcheck="false" required="" autocomplete="new-password">
-
-			<div id="passwordChange_cancelButton" class="brownButton brownButton_classic buttonShadow">CANCEL</div>
-			<div id="passwordChange_saveButton" class="brownButton brownButton_classic buttonShadow">
-				<span>CHANGE</span>
-					<div class="loader"></div>
+			<div id="newbonkbackbutton" class="brownButton brownButton_classic buttonShadow"></div>
+			<div id="newbonkmutebutton" class="brownButton brownButton_classic buttonShadow newbonkmutebutton_on"></div>
+			<div id="newbonkmusicbutton" class="brownButton brownButton_classic buttonShadow newbonkmusicbutton_on">
 			</div>
 
 
+
+
+
+
+
+
+
+
+
+
+			<div id="simpleMenuContainer">
+
+
+
+				<div id="simpleMenuConainer_UIContainer">
+
+
+
+
+
+
+
+				</div> <!-- end ui container -->
+
+
+			</div> <!-- end simplemenucontainer -->
+
+
+
+
+
+
+		</div> <!-- end bonkio container -->
+
+		<div id="xpbarcontainer">
+
+			<div id="xpbar">
+				<div id="xpbarfill"></div>
+				<div id="xpbarsegmentcontainer">
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+					<div class="xpbarsegment"></div>
+
+				</div>
+				<span id="xpbartext">+100xp</span>
+
+			</div>
 		</div>
 
 	</div>
-
-
-
-	<div id="newbonkbackbutton" class="brownButton brownButton_classic buttonShadow"></div>
-	<div id="newbonkmutebutton" class="brownButton brownButton_classic buttonShadow newbonkmutebutton_on"></div>
-	<div id="newbonkmusicbutton" class="brownButton brownButton_classic buttonShadow newbonkmusicbutton_on"></div>
-
-
-	
-
-
-	
-
-
-
-	
-
-
-	<div id="simpleMenuContainer">
-
-		
-
-		<div id="simpleMenuConainer_UIContainer">
-
-
-			
-
-
-
-
-		</div> <!-- end ui container -->
-
-
-	</div> <!-- end simplemenucontainer -->
-
-
-
-	
-
-
-</div>	<!-- end bonkio container -->
-
-<div id="xpbarcontainer">
-
-	<div id="xpbar">
-		<div id="xpbarfill"></div>
-		<div id="xpbarsegmentcontainer">
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-			<div class="xpbarsegment"></div>
-
-		</div>
-		<span id="xpbartext">+100xp</span>
-
-	</div>
-</div>
-
-
-
-
-
-
-
-
-</div>
-
 
 </body>
 
+<script src="electron-cookie-polyfill.js"></script>
 <script src="js/Tween.js"></script>
 <script src="js/SafeTrig.js"></script>
 <script src="js/timesync.min.js"></script>
