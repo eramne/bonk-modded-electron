@@ -1,0 +1,871 @@
+#newbonklobby{
+
+	/*background-color: #304457;
+	border: 5px solid #090e13;*/
+	width:730px;
+	height:510px;
+	display:none;
+
+	position: absolute;
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    resize: both;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+
+
+#newbonklobby_teambuttonscontainer{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+    height: 24px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    bottom:-30px;
+}	
+	.newbonklobby_teambuttonscontainer_2{
+		justify-content: space-around !important;
+	}
+
+	.newbonklobby_teambutton{
+		width: 110px;
+	    height: 24px;
+	    line-height: 24px;
+	}
+
+#newbonklobby_ffabutton{
+	width: 100px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    bottom:-30px;
+}
+
+#newbonklobby_specbutton{
+	width: 100px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    bottom:-30px;
+}
+
+#newbonklobby_playerbox{
+
+	background-color: #cfd8dc;
+	width:64%;
+	height:35%;
+	position: absolute;
+	left:1%;
+	top:1%;
+	border-radius: 7px;
+
+}
+
+	#newbonklobby_playerbox_middleline{
+		position: absolute;
+	    height: calc(100% - 8px);
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    width: 1px;
+	    bottom: 0;
+	    margin: auto;
+	    border-left: 1px solid #a5acb0;
+	}
+
+#newbonklobby_specbox{
+
+	background-color: #cfd8dc;
+	width:31%;
+	height:35%;
+	position: absolute;
+	right:1%;
+	top:1%;
+	border-radius: 7px;
+
+}
+
+#newbonklobby_teamlockbutton{
+
+	width: 16px;
+    height: 35px;
+    border-radius: 2px;
+    position: absolute;
+    background-image: url(../graphics/lock-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    top: 17%;
+    right: calc(33.5% - 8px);
+
+}
+
+.newbonklobby_teamlockbutton_warn{
+	background-color: #a73e2d !important;
+	border-top: none !important;
+    border-bottom: none !important;
+}
+.newbonklobby_teamlockbutton_warn:hover{
+	background-color: #b75545 !important;
+}
+.newbonklobby_teamlockbutton_nomouse{
+	pointer-events: none !important;
+}
+	.newbonklobby_elementcontainer{
+		width:100%;
+		height: calc(100% - 32px);
+		position: absolute;
+		bottom:0;
+		overflow-y:auto;
+	}
+
+	.newbonklobby_elementcontainer::-webkit-scrollbar-track {
+		background-color: #cfd8dc;
+	}
+
+	.newbonklobby_elementcontainer::-webkit-scrollbar {
+	  height: 12px;
+	  width: 0.6em;
+	  background-color: #cfd8dc;
+	}
+
+	.newbonklobby_elementcontainer::-webkit-scrollbar-thumb {
+	  background-color: #757575;
+	}
+
+	#newbonklobby_playerbox_leftelementcontainer{
+		float:left;
+		width:50%;
+	}
+	#newbonklobby_playerbox_rightelementcontainer{
+		float:right;
+		width:50%;
+	}
+
+	.newbonklobby_playerentry{
+		width:100%;
+		height:47px;
+		font-family: "futurept_b1";
+		position: relative;
+		font-size: 15px;
+		cursor:pointer;
+		box-sizing: border-box;
+    	border-left: 4px solid #cfd8dc;
+	    border-right: 4px solid #cfd8dc;
+	    border-top: 4px solid #cfd8dc;
+	    vertical-align: top;
+    	background-color: rgba(0,0,0,0.02);
+	}
+	.newbonklobby_playerentry_half{
+		width: 50% !important;
+   		display: inline-block;
+	}
+
+	.newbonklobby_playerentry:hover{
+		background-color: rgba(100,100,100,0.10);
+	}
+	.newbonklobby_playerentry_menuhighlighted{
+		background-color: rgba(13, 125, 120, 0.12) !important;
+	}
+
+	.newbonklobby_playerentry_avatar{
+		position: absolute;
+		left:2px;
+		top:2px;
+		pointer-events: none;
+	}
+
+	.newbonklobby_playerentry_name{
+		color:#000000;
+		position: absolute;
+		left:42px;
+		top:2px;
+		pointer-events: none;
+	}
+	.newbonklobby_playerentry_level{
+		color:#505050;
+		position: absolute;
+		left:42px;
+		bottom:2px;
+		pointer-events: none;
+	}
+	.newbonklobby_playerentry_balance{
+		position: absolute;
+		right: 45px;
+    	bottom: 14px;
+		pointer-events: none;
+		font-size: 13px;
+	}
+		.newbonklobby_playerentry_balance_nerf{
+			color:#581515;
+		}
+		.newbonklobby_playerentry_balance_buff{
+			color:#155824;
+		}
+	.newbonklobby_playerentry_ping{
+		position: absolute;
+		right:20px;
+		top: 0;
+	    bottom: 0;
+	    margin: auto;
+	    pointer-events: none;
+	}
+	.newbonklobby_playerentry_pingtext{
+		position: absolute;
+	    right: 18px;
+	    top: 29px;
+	    bottom: 0;
+	    margin: auto;
+	    pointer-events: none;
+	    font-family: 'futurept_book';
+    	color: #4e4e4e;
+	    font-size: 9px;
+	   text-align: center;
+	    width: 25px;
+	}
+	.newbonklobby_playerentry_host{
+		position: absolute;
+		right:2px;
+		top: 0;
+	    bottom: 0;
+	    margin: auto;
+	    pointer-events: none;
+	}
+	.newbonklobby_playerentry_ready{
+		position: absolute;
+		left:17px;
+		top: 20px;
+	    pointer-events: none;
+	}
+
+
+	.newbonklobby_playerentry_menu{
+		background-color: #b8cdd0;
+		position: absolute;
+		padding: 5px;
+		z-index: 99;
+	}
+	.newbonklobby_playerentry_menu_button{
+		width: 120px;
+	    height: 20px;
+	    line-height: 20px;
+	    font-size: 14px;
+	    margin-top: 5px;
+	}
+
+	.newbonklobby_playerentry_menu_button_warn{
+		background-color: #a73e2d !important;
+		border-top: none !important;
+    	border-bottom: none !important;
+	}
+	.newbonklobby_playerentry_menu_button_warn:hover{
+		background-color: #b75545 !important;
+	}
+
+	.newbonklobby_playerentry_menu_submenu{
+		background-color: #b8cdd0;
+		position: absolute;
+		left: 0px;
+		top:5px;
+		padding: 5px;
+		padding-top: 0px;
+		z-index: 99;
+		width:120px;
+	}
+
+	.newbonklobby_playerentry_balancecontainer{
+		margin-top: 5px;
+	    position: relative;
+	    height:35px;
+	}
+	.newbonklobby_playerentry_balanceslider{
+		width: 116px;
+	    background: none;
+	    padding-top: 24px;
+	}
+	.newbonklobby_playerentry_balanceslider::-webkit-slider-thumb {
+	  background: #ffffff;
+	  margin-top:-3px;
+	}
+	.newbonklobby_playerentry_balanceslider::-webkit-slider-runnable-track {
+		background: #aaaaaa;
+		height: 6px;
+	}
+	.newbonklobby_playerentry_balanceslider:focus::-webkit-slider-runnable-track {
+ 		background: #aaaaaa;
+	}
+	.newbonklobby_playerentry_balanceslider::-moz-range-track {
+	  background: #aaaaaa;
+	}
+	.newbonklobby_playerentry_balancetext{
+		font-family: futurept_b1;
+	    position: absolute;
+	    top: 3px;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    text-align: center;
+	    font-size: 12px;
+	    color: #ffffff;
+	}
+
+#newbonklobby_chatbox{
+
+	background-color: #cfd8dc;
+	width:58%;
+	height:55.5%;
+	position: absolute;
+	left:1%;
+	bottom:1%;
+	border-radius: 7px;
+}
+	#newbonklobby_chat_lowerline{
+		border-top: 1px solid #a5acb0;
+	    position: absolute;
+	    width: 97%;
+	    height: 25px;
+	    bottom: 0px;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	}
+
+	#newbonklobby_chat_lowerinstruction{
+	    position: absolute;
+	    width: 97%;
+	    height: 24px;
+	    bottom: 0px;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    color: #656565;
+	    font-size: 16px;
+	    font-family: "futurept_b1";
+	    pointer-events: none;
+	}
+
+	#newbonklobby_chat_input{
+		position: absolute;
+	    width: 97%;
+	    height: 24px;
+	    bottom: 0px;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    border: 0px solid;
+	    background: none;
+	    font-family: "futurept_b1";
+	    font-size: 16px;
+	    color: #171717;
+	    pointer-events: none;
+	}
+
+	#newbonklobby_chat_input:focus{
+		outline:none;
+	}
+
+	#newbonklobby_chat_content{
+		position: absolute;
+	    width: 100%;
+	    box-sizing: border-box;
+	    height: calc(100% - 24px - 36px);
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    top: 32px;
+	    overflow-y: scroll;
+	    overflow-x: hidden;
+	    word-break: break-word;
+	    user-select: text;
+	    padding: 4px;
+	    scrollbar-width: thin; /*firefox*/
+
+	}
+
+	#newbonklobby_chat_content::-webkit-scrollbar-track {
+		background-color: #cfd8dc;
+	}
+
+	#newbonklobby_chat_content::-webkit-scrollbar {
+	  height: 12px;
+	  width: 0.6em;
+	  background-color: #cfd8dc;
+	}
+
+	#newbonklobby_chat_content::-webkit-scrollbar-thumb {
+	  background-color: #757575;
+	}
+
+
+	.newbonklobby_chat_msg_txt::selection, .newbonklobby_chat_msg_avatar::selection, #newbonklobby_chat_input::selection, .newbonklobby_chat_msg_name::selection, .newbonklobby_chat_br::selection, .newbonklobby_chat_status::selection, .newbonklobby_mapsuggest_low::selection, .newbonklobby_mapsuggest_high::selection, .newbonklobby_mapsuggest_link::selection {
+	  background-color: #5e6a78;
+	  color:#ffffff;
+	}
+
+	.newbonklobby_chat_msg_avatar{
+		
+	}
+
+	.newbonklobby_chat_msg_colorbox{
+		width: 8px;
+	    height: 8px;
+	    display: inline-block;
+	    margin-right: 8px;
+	    border-radius: 4px;
+	    margin-bottom: 1px;
+	}
+
+
+
+	.newbonklobby_chat_msg_name{
+		font-family: "futurept_b1";
+	    font-size: 16px;
+	    color: #484848;
+	    /*display:inline;*/
+   		margin-top: 7px;
+	}
+
+	.newbonklobby_chat_avatar{
+		display: inline;
+    	padding-right: 5px;
+    	position: relative;
+    	user-select: none;
+	}
+	.newbonklobby_chat_avatar_image{
+    	position: absolute;
+    	top: -1px;
+	}
+
+	.newbonklobby_chat_msg_txt{
+		font-family: "futurept_b1";
+	    font-size: 16px;
+	    color: #000000;
+	    /*margin-left: 3px;*/
+	}
+	.newbonklobby_chat_status{
+		font-family: "futurept_book";
+	    font-size: 16px;
+	}
+	.newbonklobby_mapsuggest_low{
+		font-family: "futurept_b1";
+	    font-size: 16px;
+	    color: #555555;
+	}
+	.newbonklobby_mapsuggest_high{
+		font-family: "futurept_book";
+	    font-size: 16px;
+	    color: #1f1f1f;
+	}
+	.newbonklobby_chat_link{
+		text-decoration: underline;
+	    cursor: pointer;
+	    word-break: keep-all;
+	    color: #19359a;
+	    font-family: "futurept_book";
+	    font-size: 16px;
+	}
+
+#newbonklobby_tooltip{
+	background-color: rgb(0,0,0,0.88);
+    width: 200px;
+    color: #ffffff;
+    font-family: futurept_b1;
+    font-size: 15px;
+    visibility: hidden;
+    position: absolute;
+   /* right: 38%;
+    bottom: 38%; */
+    pointer-events: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#newbonklobby_settingsbox{
+
+	background-color: #cfd8dc;
+	width:38%;
+	height:55.5%;
+	position: absolute;
+	right:1%;
+	bottom:1%;
+	font-family:"futurept_b1";
+	border-radius: 7px;
+
+}
+
+	#newbonklobby_mappreviewcontainer{
+
+		position: absolute;
+		left:15px;
+		top:108px;
+
+	}	
+
+	#newbonklobby_votebutton{
+		width:35px;
+		height:35px;
+		border-radius: 20px;
+
+		background-image: url(../graphics/thumb-up.png);
+	    background-repeat: no-repeat;
+	    background-position: center;
+
+	    position: absolute;
+	    left: 42px;
+    	top: 25px;
+   		visibility: hidden;
+
+	}
+
+	#newbonklobby_voteanimation{
+		width:35px;
+		height:35px;
+		border-radius: 20px;
+
+		background-image: url(../graphics/thumb-up.png);
+	    background-repeat: no-repeat;
+	    background-position: center;
+
+	    position: absolute;
+	    left: 42px;
+    	top: 25px;
+
+   		pointer-events: none !important;
+   		opacity: 0;
+	}
+
+	.newbonklobby_settings_button{
+
+		color: #ffffff;
+		font-family:"futurept_b1";
+		width: 116px;
+	    height: 30px;
+	    text-align: center;
+	    line-height: 30px;
+	    font-size: 18px;
+	    cursor: pointer;
+
+	}
+
+	#newbonklobby_startbutton{
+		position: absolute;
+		right:15px;
+		bottom:15px;
+	}
+
+	#newbonklobby_mapbutton{
+		position: absolute;
+		left:15px;
+		bottom:55px;
+	}
+
+	#newbonklobby_readybutton{
+		position: absolute;
+		left:15px;
+		bottom:15px;
+	}
+
+	#newbonklobby_modebutton{
+		position: absolute;
+		right:15px;
+		bottom:55px;
+	}
+	#newbonklobby_editorbutton{
+		position: absolute;
+		right:15px;
+		bottom:145px;
+		/*cursor: default !important;
+    	background-color: #777777 !important;*/
+	}
+	#newbonklobby_linkbutton{
+		position: absolute;
+	    right: 15px;
+	    bottom: 184px;
+	    width: 27px;
+	    height: 26px;
+	    border-radius: 2px;
+	    background-image: url(../graphics/share-variant-outline.svg);
+	    background-repeat: no-repeat;
+	    background-position: 40% 50%;
+	    background-size: 80%;
+	}
+	#newbonklobby_teamsbutton{
+		position: absolute;
+		right:15px;
+		bottom:95px;
+		height:41px;
+	}
+		#newbonklobby_teams_toptext{
+	
+		    font-family: "futurept_b1";
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    top: -1px;
+		    bottom: 0;
+		    margin: auto;
+
+		}
+		#newbonklobby_teams_middletext{
+			line-height: 41px;
+			pointer-events: none;
+		}
+		#newbonklobby_teams_bottomtext{
+			font-size: 12px;
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    top: 15px;
+		    bottom: 0;
+		    margin: auto;
+		}
+
+
+
+	.newbonklobby_mapthumb{
+		
+	}
+
+	#newbonklobby_modetext{
+		position: absolute;
+	    left: 15px;
+	    top: 45px;
+	    font-family: futurept_book;
+	    color: #313131;
+	    
+	}
+	#newbonklobby_maptext{
+		position: absolute;
+	    left: 15px;
+	    top: 67px;
+	    color: #232323;
+		width: 50%;
+    	font-size: 15px;
+    	overflow: hidden;
+    	white-space: nowrap;
+	}
+	#newbonklobby_mapauthortext{
+		position: absolute;
+	    left: 15px;
+	    top: 84px;
+	    color: #232323;
+		width: 50%;
+    	font-size: 15px;
+    	overflow: hidden;
+    	white-space: nowrap;
+	}		
+	#newbonklobby_roundslabel{
+		position: absolute;
+	    right:17px;
+	    top: 45px;
+	}
+	#newbonklobby_roundsinput{
+		position: absolute;
+	    right:36px;
+	    top: 69px;
+	    width: 65px;
+	    border: none;
+	    background: none;
+	    color: #232323;
+	}
+	#newbonklobby_roundsinput:focus{
+		outline-width: 0;
+	}
+	#newbonklobby_roundsinput::selection {
+	  background-color: #5e6a78;
+	  color:#ffffff;
+	}
+
+.newbonklobby_boxtop{
+
+	/*background-color: #009688;*/
+    color: #ffffff;
+    font-family: "futurept_b1";
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    font-size: 20px;
+
+    background-color: #344150;
+	/*border-bottom: 1px solid #00000047;*/
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+}
+
+#newbonklobby_votewindow{
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	width:300px;
+	height:325px;
+	background-color: #cfd8dc;
+	
+	margin:auto;
+	font-family: "futurept_b1";
+	color: #2f2f2f;
+	border-radius: 7px;
+	
+}
+
+
+#newbonklobby_votewindow_container{
+	visibility: hidden;
+}
+#newbonklobby_votewindow_fade{
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	width:200px;
+	height:100px;
+	outline: 3000px solid rgba(0,0,0,0.30);
+	margin:auto;
+}
+
+#newbonklobby_votewindow_close{
+
+}
+#newbonklobby_votewindow_top{
+	background-color: #607d8b;
+	width:100%;
+	height:30px;
+	line-height: 30px;
+	color:#ffffff;
+	font-family: "futurept_b1";
+	text-align: center;
+	font-size: 20px;
+	border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+#newbonklobby_votewindow_maptitle{
+	width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 159px;
+    font-size: 16px;
+    background-color: #ffffff45;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#newbonklobby_votewindow_mapauthor{
+	width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 180px;
+    font-size: 15px;
+    background-color: #ffffff45;
+    white-space: nowrap;
+    overflow: hidden;
+}
+	
+	#newbonklobby_votewindow_maptitle_name{
+
+	}
+	#newbonklobby_votewindow_maptitle_by{
+		color: #4a4a4a;
+	}
+	#newbonklobby_votewindow_maptitle_author{
+
+	}
+
+
+#newbonklobby_votewindow_thumbcontainer{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: -138px;
+    margin: auto;
+    bottom: 0;
+    width: 146px;
+    height: 100px;
+}
+#newbonklobby_votewindow_flexcontainer{
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:8px;
+	margin:auto;
+	width:250px;
+	height:100px;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+#newbonklobby_votewindow_votebutton_down{
+	background-image: url(../graphics/close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+#newbonklobby_votewindow_votebutton_up{
+	background-image: url(../graphics/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+#newbonklobby_votewindow_votebutton_favourite{
+	background-image: url(../graphics/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
+#newbonklobby_votewindow_votecount_down{
+
+}
+#newbonklobby_votewindow_votecount_up{
+
+}
+
+
+.newbonklobby_votewindow_flexitem{
+	height:100%;
+	width:80px;
+	position: relative;
+
+}
+.newbonklobby_votewindow_votelabel{
+	width: 100%;
+    text-align: center;
+    display: block;
+}
+.newbonklobby_votewindow_votebutton{
+	border-radius:25px;
+	width:50px;
+	height:50px;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+}
+.newbonklobby_votewindow_votecount{
+	position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    bottom: 5px;
+    font-size: 14px;
+}

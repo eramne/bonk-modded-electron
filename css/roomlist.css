@@ -1,0 +1,835 @@
+#roomListContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    visibility: hidden;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#roomlist{
+  /*
+	position:absolute;
+	left: 0;
+  right: 0;
+  margin: auto;
+	top: -60px;
+  bottom: 0;
+  
+	width:70%;
+  min-width:750px;
+  max-width: 1220px;
+
+  height: 70%;
+  
+	visibility: hidden;
+  background-color: #e2e2e2;
+
+  -webkit-box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+    -moz-box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+    box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+    */
+
+
+
+   /*position: absolute; */
+    top: calc(13% - 10px);
+    height: 68%;
+    flex-basis: 730px;
+    flex-grow: 1;
+    position: relative;
+    visibility: hidden;
+    background-color: #e2e2e2;
+    -webkit-box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+    -moz-box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+    box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+
+
+}
+#roomlistflexpadding{
+  height: 100%;
+  flex-basis: 10px;
+  flex-grow: 1;
+}
+#roomlisttopbar{
+  background-color: #15756b;
+  width:100%;
+  height:40px;
+  position: absolute;
+  top:0;
+  left:0;
+
+  background-color: #344150;
+  box-shadow: inset 0 7px 16px -7px rgb(96 195 239 / 0.11);
+
+}
+
+#roomlisttableheadercontainer{
+  width:100%;
+  height:18px;
+  line-height: 18px;
+  position: absolute;
+  left:0px;
+  top:40px;
+  background-color: #bababa;
+  color: #3c3c3c;
+  font-family: futurept_medium;
+  font-size: 12px;
+  white-space: nowrap;
+
+
+}
+
+#roomlisttableheader_roomname{
+  display:inline-block;
+  width:30%;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+
+#roomlisttableheader_players{
+    display:inline-block;
+    width:13%;
+    text-align: center;
+}
+#roomlisttableheader_mode{
+    display:inline-block;
+    width:19%;
+    text-align: center;
+}
+
+#roomlisttableheader_levelrequired{
+    display:inline-block;
+    width:14%;
+    text-align: center;
+}
+
+#roomlisttableheader_password{
+    display:inline-block;
+    width:10%;
+    text-align: center;
+}
+
+#roomlisttableheader_distance{
+    display:inline-block;
+    width:12%;
+    text-align: center;
+}
+
+
+#roomlisthidepasswordedcheckbox{
+	margin-top:2px;
+	position: absolute;
+}
+
+#roomlisthidepasswordedcheckboxlabel{
+	   color: #e8e8e8;
+    font-family: futurept_b1;
+    font-size: 17px;
+    position: absolute;
+    left: 24px;
+    top: -1px;
+}
+
+#roomlistsearchinput{
+
+	position: absolute;
+  right: 13px;
+  top: 7px;
+  width: 200px;
+  font-size:17px;
+  font-family: futurept_b1;
+  background: #fdfdfd;
+  border: 1px solid #bdbdbd;
+  color: #212121;
+  text-align: center;
+
+}
+
+
+
+#roomlistsearchinput:focus{
+  outline-color: #607d8b;
+}
+
+#roomliststatustext{
+  	text-align: center;
+    font-family: futurept_book;
+    color: #404040;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 20px;
+}
+
+
+#roomlistscrollbox{
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+	
+	height: calc(100% - 58px);
+	width:100%;
+	position: absolute;
+	top: 58px;
+
+  box-sizing: border-box;
+
+}
+
+#roomlistscrollbox.ROOMLIST::-webkit-scrollbar-track {
+  background-color: #dddddd;
+}
+
+#roomlistscrollbox.ROOMLIST::-webkit-scrollbar {
+  width: 12px;
+ 
+}
+
+#roomlistscrollbox.ROOMLIST::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+}
+
+
+#roomlisttable{
+	width:100%;
+	text-align: center;
+	color: #000000;
+	font-family: "futurept_b1";
+	border-collapse: collapse;
+	
+	font-size:17px;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+#roomlisttable th{
+	color: #3c3c3c;
+  font-family: futurept_medium;
+  font-size: 12px;
+  background-color: rgba(58, 58, 58, 0.13);
+}
+#roomlisttable td{
+	height: 30px;
+	cursor: pointer;
+}
+
+#roomlisttable tr:nth-child(odd) {
+	background-color:  rgba(58, 58, 58, 0.13);
+}
+
+#roomlisttable tr.SELECTED td {
+  background-color: #9cc8d6;
+
+  cursor: pointer;
+}
+
+#roomlisttable tr.HOVERUNSELECTED:hover td {
+  background-color: #aac5d7;
+  cursor: pointer;
+}
+
+#roomlisttable tr.HOVERSELECTED:hover td {
+	/* same as just selected */
+  background-color: #9cc8d6;
+
+  cursor: pointer;
+}
+
+tr.FRIENDSPRESENT{
+  color: #032a71 !important;
+}
+
+#roomlisttableheader1{
+	text-align: left;
+	padding-left:6px;
+	width:56%;
+}
+#roomlisttableheader2{
+	width:10%;
+}
+#roomlisttableheader3{
+	width:10%;
+	
+}
+#roomlisttableheader4{
+	width:10%;
+	
+}
+#roomlisttableheader5{
+	width:12%;
+}
+
+.roomlistflagcontainer{
+	position: absolute;
+	right:0;
+	margin-top:-9px;
+}
+
+.roomlisttablejoined{
+  color: #989696;
+    float: right;
+    font-size: 10px;
+    padding-top: 4px;
+}
+
+
+.roomlistbottombutton{
+	position: absolute;
+
+	margin: auto;
+  bottom:-40px;
+
+	width: 90px;
+	height: 30px;
+  background-color: #795548;
+  color:#ffffff;
+	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+	/*same as div height*/
+	font-family: "futurept_b1";
+	
+	font-size: 15px;
+	user-select: none;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 0.3px;
+
+  
+}
+
+.roomlistbottombutton:focus {
+  outline-color: #35414a;
+}
+
+.roomlistbottombutton:hover {
+  background-color: #806257;
+}
+
+
+#roomlistjoinbutton{
+	right:0;
+
+}
+
+#roomlistrefreshbutton{
+	right:100px;
+
+}
+#roomlistcreatebutton{
+	left:0;
+
+}
+
+#roomlistfilterbutton{
+  right:200px;
+}
+
+.roomlistbottombutton_dynamic{
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#roomlistfilterwindow{
+    background-color: #1e2833;
+    width: 147px;
+    height: 184px;
+    position: absolute;
+    bottom: 2px;
+    right: 182px;
+    color: white;
+    font-family: 'futurept_b1';
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display:none;
+}
+
+.roomlistfilterwindow_a{
+  padding-left:5px;
+  background-color: #222e3a;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.roomlistfilterwindow_b{
+  padding-left:5px;
+  background-color: #303943;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#roomlistfilterwindow_title{
+  margin-bottom: 7px;
+}
+
+.roomlistfilterwindowlabel{
+  padding-left:3px;
+  cursor: pointer;
+}
+
+.roomlistfilterwindowcheckbox{
+  cursor: pointer;
+}
+
+
+
+
+/*
+
+CREATE WINDOW CREATE WINDOW CREATE WINDOW CREATE WINDOW CREATE WINDOW CREATE WINDOW CREATE WINDOW CREATE WINDOW 
+
+*/
+
+
+#roomlistcreatewindowcontainer{
+  position: absolute;
+
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 280px;
+  height: 363px;
+  visibility: hidden;
+}
+
+#roomlistcreatewindow {
+  /*position: absolute;
+
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;*/
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--greyWindowBGColor);
+  color: #5d858d;
+ 
+  
+  pointer-events : auto !important;
+  border-radius: 7px;
+
+}
+
+#roomlistcreatewindowtoptext{
+  font-family: "futurept_b1";
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    line-height: 32px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.roomlistcreatewindowlabel {
+
+  font-family: "futurept_b1";
+  color: #000000;
+  font-size: 16px;
+  user-select: none;
+}
+
+#roomlistcreatewindowlabel1{
+  position:absolute;
+  top:47px;
+  left: 35px;
+}
+
+#roomlistcreatewindowlabel2{
+  position:absolute;
+  top:104px;
+  left: 35px;
+}
+
+#roomlistcreatewindowlabel3{
+  position:absolute;
+  top:161px;
+  left: 35px;
+}
+
+#roomlistcreatewindowlabel4{
+  position:absolute;
+  top:220px;
+  left: 66px;
+  text-align: center;
+}
+
+#roomlistcreatewindowlabel5{
+  position:absolute;
+  top:220px;
+  right: 64px;
+  text-align: center;
+}
+
+#roomlistcreatewindowlabel6{
+  position:absolute;
+
+  text-align: center;
+}
+
+.roomlistcreatewindowinput {
+  position:absolute;
+  right: 0;
+  margin: auto;
+  width: 203px;
+  padding: 4px;
+  font-size: 13px;
+
+  background: #fdfdfd;
+  border: 1px solid #bdbdbd;
+  color: #4e4e4e;
+  text-align: center;
+
+}
+
+.roomlistcreatewindowinput:focus{
+  outline-color: #999999;
+}
+.roomlistcreatewindowinput::selection {
+    background-color: #5e6a78;
+    color:#ffffff;
+  }
+
+
+#roomlistcreatewindowgamename{
+  top: 69px;
+  left: 0;
+}
+
+#roomlistcreatewindowpassword{
+  top:126px;
+  left: 0;
+}
+
+#roomlistcreatewindowmaxplayers{
+  top: 183px;
+  left: 0;
+}
+
+#roomlistcreatewindowminlevel{
+  top:242px;
+  left: -90px;
+  width: 50px !important;
+  text-align: center;
+}
+
+#roomlistcreatewindowmaxlevel{
+  top: 242px;
+  left: 90px;
+  width: 50px !important;
+  text-align: center;
+
+}
+
+#roomlistcreatewindowunlisted{
+
+  position:absolute;
+  top:271px;
+  left:81px;
+}
+
+#roomlistcreatewindowunlistedlabel{ /* div for the label */
+
+  position:absolute;
+
+  height:35px;
+  
+  text-align: left;
+  vertical-align: middle;
+  /* the same as your div height */
+  font-size: 14px;
+  user-select: none;
+
+  top:1px;
+  left:25px;
+  width: 100px;
+
+}
+
+#roomlistcreatewindowunlistedcheckbox{
+
+}
+
+.roomlistcreatewindowinputcheckbox{
+
+}
+
+.roomlistcreatebottombutton{
+	position: absolute;
+	bottom: 15px;
+
+	text-align: center;
+	vertical-align: middle;
+	height:30px;
+	width:90px;
+	line-height: 30px;
+	/*same as div height*/
+	font-size: 15px;
+	user-select: none;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 0.3px;
+}
+.roomlistcreatebottombutton:hover {
+  background-color: #35414a;
+}
+#roomlistcreatecreatebutton{
+
+  right:30px;
+
+}
+#roomlistcreatecancelbutton{
+
+  left: 30px;
+
+}
+
+
+/* PASSWORD WINDOW/* PASSWORD WINDOW */ /* PASSWORD WINDOW */
+
+#roomlistjoinpasswordwindowcontainer{
+  position: absolute;
+
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 300px;
+  height: 170px;
+
+  visibility: hidden;
+}
+
+#roomlistjoinpasswordwindow {
+  
+  position: relative;
+  width:100%;
+  height:100%;
+  background-color: #e2e2e2;
+  pointer-events : auto !important;
+  border-radius: 7px;
+
+}
+
+#roomlistjoinpasswordtop{
+  font-family: "futurept_b1";
+  color: #ffffff;
+  text-align: center;
+  line-height: 32px;
+  font-size: 19px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+}
+
+#roomlistjoinpasswordwindowlabel{
+	position: absolute;
+    height: 35px;
+    left: 34px;
+    top: 40px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 35px;
+    font-size: 16px;
+    user-select: none;
+    font-family: "futurept_b1";
+}
+
+.roomlistpassbottombutton{
+	position: absolute;
+	bottom: 15px;
+
+	text-align: center;
+	vertical-align: middle;
+	height:30px;
+	width:90px;
+	line-height: 30px;
+	/*same as div height*/
+
+	font-size: 16px;
+	user-select: none;
+	cursor: pointer;
+
+
+}
+
+
+
+#roomlistpassjoinbutton{
+
+  right:35px;
+
+}
+
+#roomlistpasscancelbutton{
+
+  left: 35px;
+}
+
+#roomlistjoinpasswordtext {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 222px;
+  padding: 3px;
+  font-size: 17px;
+  text-align: center;
+  font-family: futurept_b1;
+  border: 1px solid #bdbdbd;
+
+}
+
+#roomlistjoinpasswordtext:focus { 
+    outline-color: #999999;
+}
+#roomlistjoinpasswordtext::selection {
+  background-color: #5e6a78;
+  color:#ffffff;
+}
+
+
+
+/*   CONNECTING WINDOW         CONNECTING WINDOW         CONNECTING WINDOW         CONNECTING WINDOW        */
+
+#roomlistconnectingwindow{
+
+	position: absolute;
+
+  top:-50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 300px;
+  height: 230px;
+  z-index: 10;
+  overflow: hidden;
+  background-color: var(--greyWindowBGColor);
+  
+ 
+  visibility: hidden;
+  
+  pointer-events : auto !important;
+
+}
+
+#roomlistconnectingwindowlabeltop{
+	position:absolute;
+	height:35px;
+  left:35px;
+  top:30px;
+  
+  text-align: left;
+  vertical-align: middle;
+  line-height: 35px;
+  /* the same as your div height */
+  font-size: 16px;
+  user-select: none;
+}
+
+#roomlistconnectingwindowinner{
+	position: absolute;
+  
+  bottom:0;
+  left: 0;
+  right: 0;
+  top:10px;
+
+  margin: auto;
+
+  width: 228px;
+  height: 100px;
+
+  background: #c3c3c3;
+  border: 1px solid #a7a7a7;
+  color: #292929;
+  font-family: futurept_book;
+}
+
+#roomlistconnectingwindowinnerspan{
+	font-size:12px;
+	padding:5px;
+	padding-top:2px;
+	display: inline-block;
+	height:100%;
+}
+
+#roomlistconnectingwindowcancelbutton{
+	position: absolute;
+  
+  bottom:15px;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+
+  width: 230px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+  /*same as div height*/
+
+  font-size: 16px;
+  user-select: none;
+  cursor: pointer;
+}
+
+
+
+#friendsToolTip{
+
+    width: 130px;
+    color: #ffffff;
+    font-family: futurept_b1;
+    font-size: 15px;
+    visibility: hidden;
+    position: absolute;
+   /* right: 38%;
+    bottom: 38%; */
+    pointer-events: none;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+    border-radius: 3px;
+    background-color: #1e2833;
+}
+
+
+#friendsToolTip_title{
+  display: block;
+  font-size: 16px;
+  padding-bottom: 4px;
+
+}
+
+#friendsToolTip_list{
+  display: block;
+   white-space: pre;
+
+}
+
+

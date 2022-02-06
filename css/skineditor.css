@@ -1,0 +1,562 @@
+#skineditorcontainer{
+
+	width:730px;
+	height:500px;
+	visibility: hidden;
+
+	position: absolute;
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*outline: 3000px solid rgba(0,0,0,0.30);
+    background-color: rgba(0,0,0,0.30);*/
+
+}
+
+#skineditor_layerbox{
+
+	width:28%;
+	height:90%;
+	position: relative;
+	background-color: #b4bcbf;
+	order:1;
+	border-radius: 7px;
+
+}
+
+#skineditor_previewbox{
+	width:41%;
+	height:90%;
+	position: relative;
+	background-color: #cfd8dc;
+	order:2;
+	border-radius: 7px;
+}
+
+	#skineditor_previewbox_skincontainer{
+		position: absolute;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    top: 55px;
+	    box-shadow: 2px 2px 3px #949494;
+	    width: 245px;
+	    height: 245px;
+	    background-color: #1e3146;
+	    
+	}
+
+	#skineditor_previewbox_teamdropdown{
+		position: absolute;
+		left:0;
+		right:0;
+		margin:auto;
+		top:320px;
+		color:#ffffff;
+		width:125px;
+	}
+
+#skineditor_propertiesbox{
+	width:26%;
+	height:90%;
+	position: relative;
+	background-color: #cfd8dc;
+	order:3;
+	border-radius: 7px;
+}
+
+	#skineditor_propertiesbox_blocker{
+		width:100%;
+		height:100%;
+		background-color:#cfd8dceb;
+		position: absolute;
+		left:0;
+		top:0;
+		line-height: 425px;
+	    text-align: center;
+	    font-family: futurept_b1;
+	    border-radius: 7px;
+	}
+
+
+	#skineditor_layerbox_baselabel{
+		position: absolute;
+		bottom:7px;
+		left:20px;
+		font-family: futurept_b1;
+		color:#000000;
+	}
+	#skineditor_layerbox_colorrect{
+		position: absolute;
+		bottom:7px;
+		right:20px;
+		width:70px;
+		height:20px;
+		background-color: #ccff22;
+		cursor:pointer;
+		box-shadow: 1px 1px 3px -2px rgb(0 0 0 / 63%);
+    	border: 1px solid #636363;
+	}
+
+
+	#skineditor_layerbox_scrollcontainer{
+
+		position: absolute;
+		top:35px;
+		width:100%;
+		height:calc(100% - 70px);
+		overflow-y:scroll;
+
+	}
+
+	#skineditor_layerbox_scrollcontainer::-webkit-scrollbar-track {
+		background-color: #ebebeb;
+	}
+
+	#skineditor_layerbox_scrollcontainer::-webkit-scrollbar {
+	  height: 12px;
+	  width: 0.7em;
+	  background-color: #ebebeb;
+	}
+
+	#skineditor_layerbox_scrollcontainer::-webkit-scrollbar-thumb {
+	  background-color: #c3c3c3;
+	}
+
+	#skineditor_layerbox_layertable{
+		width:100%;
+		color: #000000;
+	    font-family: "futurept_b1";
+	    border-collapse: collapse;
+	}
+
+	#skineditor_layerbox_layertable tr{
+		height:40px;
+		cursor:pointer;
+	}
+	#skineditor_layerbox_layertable tr:nth-child(odd) {
+		background-color:  #c4cdd0/*rgba(58, 58, 58, 0.07);*/
+	}
+	#skineditor_layerbox_layertable tr:nth-child(even) {
+		background-color:  #cfd8dc/*rgba(58, 58, 58, 0.07);*/
+	}
+	#skineditor_layerbox_layertable tr.HOVERUNSELECTED:hover td {
+	  background-color: #aac5d7;
+	}
+
+	#skineditor_layerbox_layertable tr.HOVERSELECTED:hover td {
+	  background-color: #9cc8d6;
+	}
+	#skineditor_layerbox_layertable tr.HOVERSELECTED td {
+		background-color: #9cc8d6;
+	}
+
+
+
+	.skineditor_layerbox_layername{
+		padding-left:10px;
+		display: inline-block;
+		pointer-events: none;
+		vertical-align: middle;
+	}
+
+	.skineditor_layerbox_layerpreview{
+		height:27px;
+		width:50px;
+		margin-top:-3px;
+		float:right;
+		overflow:hidden;
+		margin-right: 7px;
+	}
+	.skineditor_layerbox_layerpreview_image{
+		height:100%;
+		pointer-events: none;
+		float: right;
+	}
+
+	#skineditor_propertiesbox_table{
+		width:100%;
+		color: #000000;
+	    font-family: "futurept_b1";
+	    border-collapse: collapse;
+	    position: absolute;
+		top:34px;
+	}
+
+	#skineditor_propertiesbox_table tr:nth-child(odd) {
+		background-color:  rgba(58, 58, 58, 0.07);
+	}
+
+	#skineditor_propertiesbox_table tr{
+		height:35px;
+	}
+
+	.skineditor_propertiesbox_table_leftcell{
+		padding-left:10px;
+	}
+	.skineditor_propertiesbox_table_rightcell{
+		text-align: right;
+		padding-right:10px;
+	}
+	.skineditor_propertiesbox_table_righttext{
+		text-decoration: underline;
+		cursor:pointer;
+	}
+
+	#skineditor_propertiesbox_colorrect{
+		width:70px;
+		height:20px;
+		background-color: #ccff22;
+		float:right;
+		cursor:pointer;
+		box-shadow: 1px 1px 3px -2px rgb(0 0 0 / 63%);
+    	border: 1px solid #636363;
+
+	}
+
+	.skineditor_propertiesbox_layerbutton{
+		width: 155px;
+	    height: 24px;
+	    line-height: 24px;
+	    display: block;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    font-size: 15px;
+	}
+
+	#skineditor_propertiesbox_upbutton{
+		bottom:80px;
+	}
+	#skineditor_propertiesbox_downbutton{
+		bottom:45px;
+	}
+	#skineditor_propertiesbox_deletebutton{
+		bottom:10px;
+	}
+
+	.skineditor_field{
+		font-size: 13px;
+	    background: #fdfdfd;
+	    border: 1px solid #bdbdbd;
+	    color: #4e4e4e;
+	    width: 65px;
+	    height: 20px;
+	    text-align: right;
+	    padding-right: 4px;
+	    /*display: inline-block;*/
+	    margin-top: 1px;
+	}
+
+	.skineditor_field:focus{
+	  outline-color: #999999;
+	}
+	.skineditor_field::selection {
+		background-color: #5e6a78;
+		color:#ffffff;
+	}
+	.skineditor_field_button{
+		background: #eeeeee;
+	    border: 1px solid #bdbdbd;
+	    height: 22px;
+	    line-height: 22px;
+	    width: 14px;
+	    display: inline-block;
+		margin-left: -3px;
+    	margin-right: -3px;
+	    text-align: center;
+	    cursor:pointer;
+	}
+	.skineditor_field_button:hover{
+		background: #dddddd;
+	}
+
+	
+	.skineditor_basiccolorpicker_closebutton{
+		background-color: #795548;
+	    width: 23px;
+	    height: 41px;
+	    position: absolute;
+	    right: -29px;
+	    top: 4px;
+	    color: #ffffff;
+	    background-image: url(../graphics/close.png);
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    background-size: 90%;
+	    border-radius: 2px;
+	    cursor: pointer;
+	}
+
+	.skineditor_basiccolorpicker_closebutton:hover{
+		background-color: #806257;
+	}
+	
+
+
+.skineditor_shapewindow{
+	position: absolute;
+    width: 524px;
+    right: 100px;
+    top: 55px;
+    padding: 4px;
+    background-color: #1e2833; 
+    outline: 3000px solid rgba(0,0,0,0.30);
+    pointer-events: auto !important;
+}
+
+
+.skineditor_shapewindow_inner{
+
+	width: 1200px;
+
+}
+
+.skineditor_shapewindow_imagecontainer{
+	height:34px;
+	width:34px;
+	margin:3px;
+	display: inline-block;
+	cursor:pointer;
+	vertical-align: top;
+	background-color: #1e2833;
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+
+}
+
+
+
+.skineditor_shapewindow_imagecontainer:hover{
+	
+	transform:scale(1.6);
+	background-color: #263240;
+	
+
+}
+
+.skineditor_shapewindow_image{
+	max-width: 100%;
+    max-height: 100%;
+	background-color: #1e2833; 
+	pointer-events: none;
+}
+
+#skineditor_cancelbutton{
+	position: absolute;
+	width:100px;
+	height:30px;
+	line-height: 30px;
+	bottom:15px;
+	left:30px;
+}
+#skineditor_savebutton{
+	position: absolute;
+	width:100px;
+	height:30px;
+	line-height: 30px;
+	bottom:15px;
+	right:30px;
+}
+
+
+
+#skinmanager{
+	width:700px;
+	height:200px;
+	background-color:#cfd8dc;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	visibility: hidden;
+	border-radius: 7px;
+}
+
+#skinmanager_allicons{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	position: absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	width:100%;
+	height:100px;
+	top:55px;
+
+
+}
+
+	.skinmanager_icon{
+		position: absolute;
+		width:100px;
+		height:100px;
+		background-color: #2c3e50;
+		box-shadow: 2px 2px 3px #949494;
+		cursor:pointer;
+		border-radius: 2px;
+	}
+
+	.skinmanager_icon:hover{
+		background-color: #384859;
+		
+	}
+
+	.skinmanager_iconcontainer{
+		
+		position: relative;
+		width:100px;
+
+	}
+
+	.skinmanager_activetext{
+		margin-top: 115px;
+	    display: block;
+	    text-align: center;
+	    font-family: futurept_b1;
+	}
+
+#skinmanager_setactive{
+	width: 120px;
+	height:30px;
+	line-height: 30px;
+	position: absolute;
+	left:170px;
+	bottom:-40px;
+}
+
+#skinmanager_edit{
+	width: 120px;
+	height:30px;
+	line-height: 30px;
+	position: absolute;
+	right:170px;
+	bottom:-40px;
+}
+
+
+
+
+
+
+#skineditor_colorpicker{
+
+	width: 170px;
+    background-color: #1e2833;
+    position: absolute;
+    padding: 10px;
+    padding-top: 3px;
+    display:none;
+    font-family: 'futurept_b1';
+    bottom: 50px;
+    right: 0px;
+    z-index: 1;	/* necessary for firefox */
+
+}
+
+#skineditor_colorpicker_canvas_container{
+    display:grid;
+}
+
+#skineditor_colorpicker_canvas{
+    grid-area: 1 / 1;
+}
+
+#skineditor_colorpicker_canvas_crosshair{
+    grid-area: 1 / 1;
+    pointer-events: none;
+}
+
+#skineditor_colorpicker_saturationlabel{
+	color:#ffffff;
+}
+
+#skineditor_colorpicker_currentlabel{
+	color:#ffffff;
+	display:inline-block;
+}
+#skineditor_colorpicker_newlabel{
+	color:#ffffff;
+	display:inline-block;
+	float:right;
+}
+#skineditor_colorpicker_lefttile{
+	display:inline-block;
+	height:30px;
+	width:48.5%;
+	background-color:#000000;
+}
+#skineditor_colorpicker_righttile{
+	display:inline-block;
+	float:right;
+	height:30px;
+	width:48.5%;
+	background-color:#000000;
+}
+
+#skineditor_colorpicker_brightness_slider{
+	margin-left: 0px;
+	background-color: transparent;
+	margin-top: -2px;
+}
+
+#skineditor_colorpicker_closebutton{
+	background-color: #795548;
+    width: 23px;
+    height: 41px;
+    position: absolute;
+    right: -29px;
+    top: 0px;
+    color: #ffffff;
+    background-image: url(../graphics/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#skineditor_colorpicker_closebutton:hover{
+	background-color: #806257;
+}
+
+#skineditor_colorpicker_existingcontainer{
+	font-size: 0;
+}
+.skineditor_colorpicker_existingtile{
+	width: 23px;
+    height: 10px;
+    margin: 1px;
+    display: inline-block;
+    cursor:pointer;
+}
+
+#skineditor_colorpicker_savebutton{
+	margin-top:7px;
+	margin-bottom:2px;
+	width:48.5%;
+	display:inline-block;
+	float:right;
+	height: 25px;
+    line-height: 25px;
+}
+#skineditor_colorpicker_cancelbutton{
+	margin-top:7px;
+	margin-bottom:2px;
+	width:48.5%;
+	display:inline-block;
+	height: 25px;
+    line-height: 25px;
+	
+}

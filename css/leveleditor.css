@@ -1,0 +1,1785 @@
+
+#leveleditor{
+	 
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	margin: auto;
+	/*border-style: solid;
+	border-width: 1px;*/
+
+	/*overflow: hidden;*/
+	
+	visibility:hidden;
+
+	width: 800px;
+	height: 500px;
+	display: none;
+		
+}
+
+#leveleditorrender{
+
+/*
+			width: 800px;
+			height: 500px;
+			
+
+			position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		margin: auto;*/
+		/*overflow: hidden;*/
+}
+
+
+/* hide up/down arrows ("spinners") on input fields marked type="number" */
+.no-spinners {
+	-moz-appearance:textfield;
+}
+
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+#leveleditorcolorbox{
+	position: absolute;
+	top: -26px;
+	right:0px;
+	width: 26px;
+	height: 26px;
+	background-color: #2f3a42;
+}
+
+.leveleditorcolorboxinner{
+	border: 1px solid #56baca;
+	width: 18px;
+	height:18px;
+	position: absolute;
+	left:4px;
+	top:4px;
+	font-size: 0px;
+}
+
+.leveleditorcolorboxinner:focus{
+	outline:none;
+}
+
+.leveleditortopbutton{
+	top: -26px;
+	width: 52px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 15px;
+	position: absolute;
+	margin: auto;
+
+	background-color: #2f3a42;
+	text-align: center;
+	vertical-align: middle;
+	font-family: "titillium_regular";
+	color: #56baca;
+	user-select: none;
+	cursor: pointer;
+}
+
+#leveleditorfilebutton{
+
+}
+
+.leveleditorfilesubbutton{
+	left: 0px;
+	width: 120px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 15px;
+	position: absolute;
+	margin: auto;
+	/* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35); */
+	background-color: #2f3a42;
+	/* text-align: center; */
+	/* vertical-align: middle; */
+	font-family: titillium_regular;
+	color: #56baca;
+	user-select: none;
+	cursor: pointer;
+	padding-left:19px;
+}
+.leveleditorfilesubbutton:hover, .leveleditortopbutton:hover, .leveleditorviewsubbutton:hover, .leveleditorcreateelement:hover{
+	background-color: #344049;
+}
+
+#leveleditorfilenewbutton{
+	top:0px;
+}
+#leveleditorfilesavebutton{
+	top:56px;
+}
+#leveleditorfilesaveasbutton{
+	top:84px;
+}
+#leveleditorfileloadbutton{
+	top:28px;
+}
+#leveleditorfilepublishbutton{
+	top:112px;
+}
+
+
+#leveleditorcreatebutton{
+	left:52px;
+}
+
+#leveleditorviewbutton{
+	left:104px;
+}
+
+.leveleditorviewsubbutton{
+	left: 105px;
+	width: 115px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 15px;
+	position: absolute;
+	margin: auto;
+	/* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35); */
+	background-color: #2f3a42;
+	/* text-align: center; */
+	/* vertical-align: middle; */
+	font-family: titillium_regular;
+	color: #56baca;
+	user-select: none;
+	cursor: pointer;
+	padding-left:12px;
+}
+
+
+#leveleditorcolorpalettebutton{
+
+	top:0px;
+
+
+}
+
+
+#leveleditorgeneralsettingsbutton{
+
+	top:28px;
+
+}
+
+
+
+
+
+
+
+.leveleditorcreateelement{
+	
+		left: 57px;
+		 width: 106px;
+		height: 28px;
+		line-height: 28px;
+		font-size: 15px;
+		position: absolute;
+		margin: auto;
+		/* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35); */
+		background-color: #2f3a42;
+		/* text-align: center; */
+		/* vertical-align: middle; */
+		font-family: titillium_regular;
+		color: #56baca;
+		user-select: none;
+		cursor: pointer;
+		padding-left:5px;
+}
+
+#leveleditorcreatebodyshapebutton{
+	top:0px;
+}
+
+#leveleditorcreatejointbutton{
+	top:28px;
+}
+#leveleditorcreatespawnbutton{
+	top:56px;
+}
+
+#leveleditorcreatecapzonebutton{
+	top:84px;
+}
+#leveleditorcreatelaserbutton{
+	top:112px;
+}
+#leveleditorcreatelightbutton{
+	top:140px;
+ 
+}
+
+.leveleditorjointwindowbutton{
+	
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	width:90px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+}
+
+#leveleditorjointwindowcancelbutton{
+	bottom:5px;
+	left:5px;
+
+}
+#leveleditorjointwindowsavebutton{
+	bottom:5px;
+	right:5px;
+}
+
+
+
+
+
+.leveleditorcreateshape{	/*CLASS FOR THE SHAPE CHOICE BOXES*/
+
+	left: 150px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 15px;
+	position: absolute;
+	background-color: #2f3a42;
+	vertical-align: middle;
+	font-family: "titillium_regular";
+	color: #56baca;
+	user-select: none;
+	cursor: pointer;
+	padding-left: 25px;
+	width: 86px;
+
+}
+
+#leveleditorcreateboxbutton{
+	top:0px;
+	
+}
+#leveleditorcreatecirclebutton{
+	top:28px;
+	
+}
+#leveleditorcreatepolybutton{
+	top:56px;
+	
+}
+#leveleditorcreateedgebutton{
+	top:84px;
+}
+
+
+
+
+
+
+
+#leveleditorbodyshapelistwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+	right:-160px;
+
+	width: 140px;
+	height: 500px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: auto;
+
+ user-select: none;
+	
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+#leveleditorbodyshapelistwindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorbodyshapelistwindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorbodyshapelistwindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+#leveleditorbodyshapelistwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorbodyshapelistwindowtable{
+position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+	border-collapse: collapse;
+}
+
+#leveleditorbodyshapelistwindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorbodyshapelistwindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorbodyshapelistwindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+
+/*                JOINT LIST              */
+
+#leveleditorjointlistwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+	right:-160px;
+
+	width: 150px;
+	height: 500px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+#leveleditorjointlistwindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorjointlistwindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorjointlistwindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+#leveleditorjointlistwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorjointlistwindowtable{
+position: absolute;
+	top:25px;
+	font-family: "FutureP_light";
+	white-space: nowrap;
+	border-collapse: collapse;
+}
+
+#leveleditorjointlistwindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorjointlistwindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorjointlistwindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+/*               END JOINT LIST       */
+
+
+
+
+
+/*         elements window    */
+
+
+
+#leveleditorentitieswindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+	left:-280px;
+
+	width: 120px;
+	height: 500px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: auto;
+
+ user-select: none;
+	
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+#leveleditorentitieswindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorentitieswindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorentitieswindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+#leveleditorentitieswindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorentitieswindowtable{
+position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+	border-collapse: collapse;
+}
+
+#leveleditorentitieswindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorentitieswindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorentitieswindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+
+
+
+
+/*          end elements window    */
+
+
+
+
+
+
+
+/* color palette window */
+
+
+
+
+#leveleditorpalettewindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+	right:-360px;
+
+	width: 100px;
+	height: 300px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+	
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+#leveleditorpalettewindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorpalettewindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorpalettewindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+#leveleditorpalettewindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+
+
+
+/* end color palette window */
+
+
+
+
+
+/*     spawn properties window   */
+
+
+
+#leveleditorspawnwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+	right:-160px;
+
+	width: 110px;
+	height: 180px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorspawnwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorspawnwindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+
+
+/*    end spawn properties window   */
+
+
+/*     laser properties window   */
+
+
+
+#leveleditorlaserwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+
+	width: 166px;
+	height: 216px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorlaserwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorlaserwindowtoptext{
+	text-align: center;
+	background-color: #607d8b;
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	border: none;
+}
+
+#leveleditorlaserwindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+.leveleditorlaserwindowbutton{
+	
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	width:90px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT_light";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+}
+
+#leveleditorlaserwindowcancelbutton{
+	bottom:5px;
+	left:38px;
+
+}
+#leveleditorlaserwindowsavebutton{
+	bottom:5px;
+	right:5px;
+}
+
+
+/*    end laser properties window   */
+
+/*     cap zone properties window   */
+
+
+
+#leveleditorcapzonewindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+
+	width: 182px;
+	height: 120px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorcapzonewindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorcapzonewindowtoptext{
+	text-align: center;
+	background-color: #607d8b;
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	border: none;
+}
+
+#leveleditorcapzonewindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+.leveleditorcapzonewindowbutton{
+	
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	width:90px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT_light";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+
+}
+
+
+#leveleditorcapzonewindowcancelbutton{
+	bottom:5px;
+	left:46px;
+
+}
+
+
+
+/*    end capzone properties window   */
+
+/* SAVE WINDOW */
+
+
+#leveleditorsavewindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+
+	width: 240px;
+	height: 188px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorsavewindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorsavewindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+#leveleditorsavewindowexplain{
+		font-size: 12px;
+		position: absolute;
+		top: 100px;
+}
+
+
+/* end save window */
+
+
+
+/* PUBLISH WINDOW */
+
+
+#leveleditorpublishwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+
+	width: 240px;
+	height: 168px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorpublishwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorpublishwindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+#leveleditorpublishwindowexplain{
+		font-size: 12px;
+		position: absolute;
+		top: 100px;
+}
+
+
+/* end publish window */
+
+
+/* LOAD WINDOW */
+
+#leveleditorloadwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+
+	width: 400px;
+	height: 350px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorloadwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorloadwindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+
+/* END LOAD WINDOW  */
+
+
+/*     general settings window   */
+
+
+
+#leveleditorgeneralsettingswindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+
+	width: 290px;
+	height: 220px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorgeneralsettingswindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorgeneralsettingswindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+
+/*    end general settings window   */
+
+
+
+
+/*     import map window   */
+
+
+
+#leveleditorimportmapwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+	right:400px;
+
+	width: 200px;
+	height: 168px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorimportmapwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorimportmapwindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	white-space: nowrap;
+}
+
+
+
+/*    end import map window   */
+
+/*     save map window   */
+
+
+
+#leveleditorsavemapwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+	right:400px;
+
+	width: 200px;
+	height: 168px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorsavemapwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+
+
+/*    end save map window   */
+
+
+
+/* light window  */
+
+
+
+
+
+#leveleditorlightwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	top:0px;
+
+	/* w and h set dynamically in leveleditor */
+	width: 186px;
+	height: 240px;
+	z-index: 20;
+	overflow-y: auto;
+	overflow-x: hidden;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+ user-select: none;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+
+#leveleditorlightwindowtop{
+
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+
+
+}
+
+#leveleditorlightwindowtoptext{
+	text-align: center;
+	background-color: #607d8b;
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	border: none;
+
+
+}
+
+#leveleditorlightwindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+	
+}
+
+.leveleditorlightwindowbutton{
+	
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	width:90px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT_light";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+}
+
+
+
+
+
+
+/* end light window */
+
+
+
+
+
+#leveleditorbodyshapelistlockbutton{
+
+	border-radius: 50%;
+	bottom:10px;
+	left:70px;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 16px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT_light";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+
+}
+
+#leveleditorlayerupbutton{
+
+	border-radius: 50%;
+	bottom:10px;
+	left:10px;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 16px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT_light";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+
+}
+
+#leveleditorlayerdownbutton{
+
+	border-radius: 50%;
+	bottom:10px;
+	left:40px;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 16px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT_light";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+.leveleditorclosewindowbutton{
+
+	border-radius: 50%;
+	right:1px;
+	top:1px;
+	width: 20px;
+	height: 20px;
+	line-height: 18px;
+	font-size: 16px;
+
+	position: absolute;
+	margin:auto;
+
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+
+	
+	background-color: #795548;
+	text-align: center;
+	vertical-align: middle;
+	
+	/*same as div height*/
+	font-family: "FuturePT_light";
+	color: #ffffff;
+	user-select: none;
+	cursor: pointer;
+
+
+}
+
+
+
+
+
+
+#leveleditorbodywindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	width: 169px;
+	height: 250px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+ visibility: hidden;
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+#leveleditorbodywindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorbodywindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorbodywindow::-webkit-scrollbar-thumb {
+	background-color: #009688;
+}
+
+#leveleditorbodywindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+}
+
+#leveleditorbodywindowtable tr:nth-child(odd) td {
+	background-color: #d2dbde;
+}
+
+#leveleditorbodywindowtable tr:nth-child(even) td {
+	background-color: #c1cdd2;
+}
+
+#leveleditorbodywindowtoptext{
+	text-align: center;
+	background-color: #009688;
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	border: none;
+
+
+}
+
+#leveleditorbodywindowtoptext:focus {
+		outline: 2px solid #11A799;
+}
+
+
+#leveleditorbodywindowtop {
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #009688;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+}
+
+
+
+
+/*
+
+LEVEL EDITOR SHAPE WINDOW!!!!
+
+*/
+
+
+#leveleditorshapewindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	width: 169px;
+	height: 235px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+	visibility: hidden;
+ 
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+#leveleditorshapewindow::-webkit-scrollbar-track {
+	background-color: #a0aaae;
+}
+
+#leveleditorshapewindow::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#leveleditorshapewindow::-webkit-scrollbar-thumb {
+	background-color: #607d8b;
+}
+
+#leveleditorshapewindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+}
+
+#leveleditorshapewindowtable tr:nth-child(odd) td {
+	background-color: #d2dbde;
+}
+
+#leveleditorshapewindowtable tr:nth-child(even) td {
+	background-color: #c1cdd2;
+}
+
+#leveleditorshapewindowtoptext{
+	text-align: center;
+	background-color: #607d8b;
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	border: none;
+
+
+}
+
+#leveleditorshapewindowtoptext:focus {
+		outline: 2px solid #11A799;
+}
+
+
+#leveleditorshapewindowtop {
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #607d8b;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+}
+
+
+/*
+
+LEVEL EDITOR JOINT WINDOW
+
+*/
+
+
+#leveleditorjointwindow {
+	position: absolute;
+/*
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;*/
+
+	width: 210px;
+	height: 490px;
+	z-index: 20;
+	overflow: auto;
+	resize:both;
+	background-color: #cfd8dc;
+	visibility: hidden;
+ 
+
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+
+}
+
+#leveleditorjointwindowtable{
+	position: absolute;
+	top:25px;
+	font-family: "FuturePT_light";
+}
+
+#leveleditorjointwindowtable tr:nth-child(odd) td {
+	background-color: #d2dbde;
+}
+
+#leveleditorjointwindowtable tr:nth-child(even) td {
+	background-color: #c1cdd2;
+}
+
+#leveleditorjointwindowtoptext{
+	text-align: center;
+	background-color: #8b607c;
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	border: none;
+
+
+}
+
+#leveleditorjointwindowtoptext:focus {
+		outline: 2px solid #11A799;
+}
+
+
+#leveleditorjointwindowtop {
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	background-color: #8b607c;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	/* the same as your div height */
+	font-family: 'FuturePT_light';
+	color: #fffffe;
+	font-size: 16px;
+	user-select: none;
+	cursor: move;
+}
+
+#leveleditorbottomhelper{
+	position: absolute;
+    left: 0px;
+    top: 504px;
+    width: 800px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "titillium_regular";
+    font-size: 14px;
+    color: #56baca;
+
+}

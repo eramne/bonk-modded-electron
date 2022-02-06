@@ -1,0 +1,118 @@
+.classicTopBar{
+	background-color: #009688 !important;
+	box-shadow: none !important;
+}
+
+.windowTopBar_classic{
+	background-color: #009688 !important;
+	border-bottom: none !important;
+}
+
+.brownButton_classic{
+	background-color:#795548;
+	border-top: none;
+	border-bottom: none;
+}
+
+.brownButton_classic:hover{
+	background-color: #7f5d51 !important;
+}
+
+.brownButton_disabled_classic{
+	pointer-events: none !important;
+    cursor: default !important;
+    background-color: #777777 !important;
+}
+
+.roomlist_classic{
+	outline: 3000px solid rgb(0 0 0 / 0.4) !important;
+	background-color: #d2dbde !important;
+}
+
+#roomlisttable tr:nth-child(odd) {
+	background-color: #c1cdd2;
+}
+
+.newbonklobby_boxtop_classic{
+	background-color: #009688 !important;
+}
+
+.dropdown_classic{
+	background-color: #795548;
+}
+
+.dropdown_classic:hover{
+	background-color: #7f5d51 !important;
+}
+
+.compactSlider_classic{
+
+}
+.compactSlider_classic::-moz-range-thumb {
+	background-color: #795548 !important;;
+}
+
+.compactSlider_classic::-ms-thumb {
+	background-color: #795548 !important;;
+}
+
+
+
+#classic_mid{
+	width:168px;
+	height:380px;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: absolute;
+	pointer-events: auto;
+	visibility: hidden;
+
+}
+
+.classic_mid_buttons{
+	width: 100%;
+    height: 42px;
+    line-height: 42px;
+	color:#ffffff;
+	font-family: futurept_book_fixed;
+	text-shadow: 1px 1px 2px #00000047;
+
+	text-align: center;
+	font-size: 16px;
+	box-shadow: 2px 2px 3px #00000040, 0px 0px 7px #00000045;
+    border-top: 1px solid rgb(255 255 255 / 6%) !important;
+    border-bottom: 1px solid #00000038 !important;
+    cursor:pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.classic_mid_buttons:hover{
+
+	background-color: #7f5d51 !important;
+
+}
+
+#classic_mid_quickplay{
+	height: 50px;
+    line-height: 50px;
+}
+#classic_mid_customgame{
+	height: 58px;
+    line-height: 58px;
+}
+#classic_mid_news{
+
+}
+#classic_mid_skins{
+
+}
+#classic_mid_friendlist{
+
+}

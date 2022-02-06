@@ -1,0 +1,98 @@
+#ingamechatbox {
+  position: absolute;
+
+  bottom:10px;
+  left: 10px;
+  
+  margin: auto;
+
+  width: 422px;
+  height: 128px;
+  overflow: hidden;
+  
+ 
+  visibility: hidden;
+  pointer-events : none;
+
+
+}
+
+#ingamechatinputtext{
+  position:absolute;
+
+  bottom: 0;
+  left: 5px;
+  right: 0;
+  margin: auto;
+
+  width: 98%;
+  height: 24px;
+  font-family: "futurept_book";
+  color:#ffffff;
+  border: 0px;
+  padding: 0px;
+  padding-left:3px;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.ingamechatinputtextbg{
+ background-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+#ingamechatinputtext:focus {
+    outline: none;
+}
+#ingamechatinputtext::selection {
+    background-color: #9aaec5;
+    color:#ffffff;
+  }
+
+#ingamechatcontent{
+  position:absolute;
+  font-family: "futurept_book";
+  bottom: 27px;
+  left: 5px;
+  right: 0;
+  margin: auto;
+  max-height:210px;
+  /*overflow-y: auto;
+  overflow-x: hidden;*/
+  overflow: hidden;
+  font-size: 16px;
+      font-size: 19px;
+  text-shadow: 1px 1px black;
+}
+
+.ingamechatmessage{
+  /*background-color: rgba(0,0,0,0.45);*/
+  display:inline;
+  color:#ffffffd6;
+  padding-right: 2px;
+}
+.ingamechatname{
+  /*background-color: rgba(0,0,0,0.45);*/
+  display:inline;
+  color:#e3e3e3a0;
+  padding-left: 2px;
+}
+.ingamechatstatus{
+  /*background-color: rgba(0,0,0,0.45);*/
+  display:inline;
+  color:#ffffffd6;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+
+#ingamechatcontent::-webkit-scrollbar-track {
+  background-color: #a0aaae;
+}
+
+#ingamechatcontent::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+#ingamechatcontent::-webkit-scrollbar-thumb {
+  background-color: #607d8b;
+}

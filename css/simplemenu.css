@@ -1,0 +1,1936 @@
+#simpleMenuContainer{
+
+	background-color: #131c27;
+	background-position: center; 
+ 	background-repeat: no-repeat;
+	display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display:none;
+
+}
+
+#simpleMenuConainer_UIContainer{
+	width:100%;
+	height:100%;
+	/*display:none;*/
+}
+
+
+#autoLoginContainer{
+
+	visibility: hidden;
+    width: 310px;
+    height: 155px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #cfd8dc;
+    border-radius: 7px;
+
+}
+
+	#autoLogin_topbar{
+
+	}
+	#autoLogin_text{
+		color: #2f2f2f;
+	    font-family: futurept_b1;
+	    font-size: 14px;
+	    padding: 5px;
+	    width: 250px;
+	    height: 35px;
+	    line-height: 35px;
+	    background-color: #ffffff;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    top: 50px;
+	    text-align: center;
+	}
+	#autoLogin_cancelButton{
+		width: 90px;
+		height: 30px;
+  		color:#ffffff;
+	
+		text-align: center;
+		vertical-align: middle;
+		line-height: 30px;
+
+		position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    bottom: 10px;
+	    cursor: pointer;
+	}
+
+#guestOrAccountContainer{
+
+	width:700px;
+	height:400px;
+
+	position: absolute;
+	margin:auto;
+	left:0;
+	right:0;
+	top: 0;
+	bottom:0;
+	font-size: 20px;
+	visibility: hidden;
+	font-size:21px;
+
+}
+
+	#guestOrAccountContainer_guestBox{
+		position: absolute;
+		margin:auto;
+		left:0;
+		top:0;
+		bottom:0;
+		height:200px;
+		width:300px;
+		background-color: #e2e2e2;
+		border-radius: 7px;
+	}
+
+	.guestOrAccountContainerLabelSingleLine{
+		line-height: 68px;
+	}
+
+	#guestOrAccountContainer_accountBox{
+		position: absolute;
+		margin:auto;
+		right:0;
+		top:0;
+		bottom:0;
+		height:200px;
+		width:300px;
+		background-color: #e2e2e2;
+		border-radius: 7px;
+	}
+	.guestOrAccountContainerLabelBox{
+		background-color: #ffffff;
+	    width: 258px;
+	    height: 68px;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    top: -23px;
+	    bottom: 0;
+	    font-size: 17px;
+	    font-family: futurept_b1;
+	    margin: auto;
+	    padding: 7px;
+	    text-align: center;
+	    -webkit-box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.4);
+	    -moz-box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.4);
+	    box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.4);
+	    border: 1px solid #bdbdbd;
+
+	    font-family: futurept_light;
+    	-webkit-text-stroke: 0.2px rgb(0 0 0 / 30%);
+	}
+
+	#guestOrAccountContainer_guestButton{
+		position: absolute;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    bottom: 15px;
+	    height: 40px;
+	    line-height: 40px;
+	    width: 150px;
+	    font-size: 18px;
+
+	}
+
+	#guestOrAccountContainer_accountButton{
+		position: absolute;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    bottom: 15px;
+	    height: 40px;
+	    line-height: 40px;
+	    width: 150px;
+	    font-size: 18px;
+
+	    font-family: futurept_light;
+    	-webkit-text-stroke: 0.2px rgb(255 255 255 / 30%);
+	}
+
+	#guestOrAccountContainer_flashButton{
+		position: absolute;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    top: 240px;
+	    bottom: 0;
+	    height: 32px;
+	    line-height: 32px;
+	    width: 270px;
+	    font-size: 15px;
+	}
+
+#guestContainer{
+
+	visibility: hidden;
+
+	width:270px;
+	height:369px;
+
+	position: absolute;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+
+	background-color: #e2e2e2;
+
+	color: #2f2f2f;
+	border-radius: 7px;
+	
+	
+}
+
+	#guest_nametext{
+
+		top:265px;
+
+	}
+	#guest_nametext:focus { 
+    outline-color: #999999;
+}
+	#guest_nametext::selection {
+	  background-color: #5e6a78;
+	  color:#ffffff;
+	}
+
+	#guest_skinbox{
+		box-shadow: 2px 2px 3px #0b0f15;
+	    cursor: pointer;
+	    width:150px;
+	    height:150px;
+	    background-color:#1e3146;
+	    position: absolute;
+	    left:0;
+	    right:0;
+	    margin:auto;
+	    top:70px;
+	}
+
+	#guest_colorlabel{
+		position: absolute;
+		left:0;
+		right:0;
+		margin:auto;
+		top:45px;
+		text-align: center;
+		font-family: futurept_b1;
+	}
+
+	#guest_namelabel{
+		position: absolute;
+		left:0;
+		right:0;
+		margin:auto;
+		top:240px;
+		text-align: center;
+		font-family: futurept_b1;
+	}
+
+
+
+#sm_namelabel{
+	font-family: futurept_book;
+    color: #ffffff;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:35px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000000;
+}
+#sm_nametext{
+	position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:65px;
+    height: 25px;
+    width: 200px;
+    font-family: futurept_book;
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+    text-align: center;
+}
+
+#sm_skinbox{
+	position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:140px;
+    box-shadow: 2px 2px 3px #0b0f15;
+    cursor: pointer;
+    width:200px;
+    height:200px;
+    background-color:#1e3146;
+}
+
+#guestPlayButton{
+
+	position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    width: 206px;
+    height: 30px;
+    line-height: 30px;
+
+
+}
+
+
+#accountContainer{
+
+	visibility: hidden;
+
+	width:660px;
+	height:400px;
+
+	position: absolute;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	
+
+}
+
+
+
+
+
+#sm_centerBox{
+	width:930px;
+	height:540px;
+
+	position: absolute;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	visibility: hidden;
+}
+
+	#sm_centerBox_left{
+		width:50%;
+		height:100%;
+		position: absolute;
+		left:0;
+		top:80px;
+		border-right: 1px solid rgba(121,121,121,0.3);
+		overflow:hidden;
+	}
+		#sm_centerBox_left_inner{
+			height:100%;
+			width:70%;
+			position: absolute;
+		}
+	
+
+		
+
+	#sm_centerBox_right{
+		width:50%;
+		height:100%;
+		position: absolute;
+		top:0;
+		right:0;
+		font-size: 17px;
+   		line-height: 50px;
+   		overflow:hidden;
+   		
+	}
+
+		#sm_centerBox_right_inner{
+			height:100%;
+			width:70%;
+			position: absolute;
+		}
+
+		.mainMenuButton{
+			height:50px;
+			line-height:50px;
+			width: 150px;
+		}
+
+		
+
+		#sm_playbutton{
+			
+		    color: #ffffff;
+		    cursor: pointer;
+		    position: absolute;
+		    margin:auto;
+		    left: -50px;
+		    right: 0;
+		    top: -480px;
+		    bottom:0;
+	    	
+	    	font-family: futurept_book;
+		}
+
+
+
+		#sm_roomlistbutton{
+
+		    color: #ffffff;
+		    cursor: pointer;
+
+		    position: absolute;
+		    margin:auto;
+			left: -50px;
+		    right: 0;
+		    top: -320px;
+		    bottom:0;
+	   		font-family: futurept_book;
+		}
+
+		#sm_newsbutton{
+			
+		    color: #ffffff;
+		    cursor: pointer;
+		    position: absolute;
+		    margin:auto;
+		    left: -50px;
+		    right: 0;
+		    top: 0;
+		    bottom:0;
+
+	    	font-family: futurept_book;
+		}
+
+		#sm_friendsbutton{
+			
+		    color: #ffffff;
+		    cursor: pointer;
+		    position: absolute;
+		    margin:auto;
+		    left: -50px;
+		    right: 0;
+		    top: -160px;
+		    bottom:0;
+
+	    	font-family: futurept_book;
+	    	text-align: center;
+		}
+
+		#sm_settingsbutton{
+			
+		    color: #ffffff;
+		    cursor: pointer;
+		    position: absolute;
+		    margin:auto;
+		    left: -50px;
+		    right: 0;
+		    top: 160px;
+		    bottom:0;
+
+	    	font-family: futurept_book;
+		}
+
+		#sm_tutorialbutton{
+
+		    color: #ffffff;
+		    cursor: pointer;
+
+		    position: absolute;
+		    margin:auto;
+		   	left: -50px;
+		    right: 0;
+		    top: 320px;
+		    bottom:0;
+
+	    	font-family: futurept_book;
+		}
+
+		#sm_logoutbutton{
+			position: absolute;
+		    margin:auto;
+		    left: -50px;
+		    right: 0;
+		    top: 480px;
+		    bottom:0;
+	
+
+			color: #ffffff;
+			font-family: futurept_book;
+			cursor: pointer;
+
+		}
+
+		#sm_quickplaymodescontainer{
+			position: absolute;
+		    left: 240px;
+		    top: 13px;
+		    visibility: hidden;
+		}
+
+			#sm_quickplay_classicbutton{
+				width: 100px;
+			    height: 30px;
+			    line-height: 30px;
+			    position: absolute;
+			    left: 0px;
+			}
+
+			#sm_quickplay_arrowsbutton{
+				position: absolute;
+			    left: 125px;
+			    width: 100px;
+			    height: 30px;
+			    line-height: 30px;
+			}
+
+
+	
+
+
+	.sm_mainbutton{
+		flex-basis: 50px;
+		flex-grow: 1;
+		flex-shrink: 1;
+		text-align: center;
+
+	}
+
+	.sm_maintext{
+		
+	}
+	.sm_maintext:hover{
+
+		color:#A62537;
+
+	}		
+
+
+#sm_gameChoiceWindow{
+	position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: calc(300px + 55%);
+    height: calc(260px + 15%);
+    visibility: hidden;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}	
+
+	.gameChoiceButtons{
+		
+	   /* position: absolute;
+	    width: 176px;
+	    height: 60px;
+	    line-height: 60px;
+	    font-size: 21px;
+	    top: -15px;
+	    */
+
+	    position: relative;
+	    height: 160px;
+	    text-align: center;
+	    font-family: futurept_book;
+	    /* font-family: futurept_demi; */
+	    border: 1px solid #ffffff29;
+	    outline: 1px solid #0000005c;
+	    font-size: 21px;
+	    background-size: 240px 175px;
+	    background-position-y: top;
+	    cursor: pointer;
+	    background-position: 0% 0%;
+	    background-position-x: center;
+	    width: 22%;
+    	max-width: 240px;
+	    
+	}
+
+	#sm_gameChoiceClassic{
+		
+
+		background-image: url("../graphics/thumb_classic.jpg");
+		background-repeat: no-repeat;
+		
+	}
+
+	#sm_gameChoiceSimple{
+		
+
+
+		background-image: url("../graphics/thumb_classic.jpg");
+		background-repeat: no-repeat;
+		
+	}
+
+	#sm_gameChoiceArrows{
+		
+
+		background-image: url("../graphics/thumb_arrows.jpg");
+		background-repeat: no-repeat;
+	
+
+
+	}
+
+	#sm_gameChoiceGrapple{
+		
+		background-image: url("../graphics/thumb_grapple.jpg");
+		background-repeat: no-repeat;
+		filter: grayscale(85%);
+		cursor: auto;
+		
+	}
+
+	#sm_gameChoiceCustom{
+		
+		left: 0;
+	    right: 0;
+	    margin: auto;
+	    position: absolute;
+	    bottom: 0;
+	    width: 384px;
+	    background-image: url(../graphics/thumb_custom_2.jpg);
+	    background-repeat: no-repeat;
+	    background-size: 404px 175px;
+	    background-position: 89% 0%;
+	    max-width: unset;
+		
+	}
+
+	.sm_gameChoiceT1{
+		display: block;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    bottom: 18px;
+	    font-size: 19px;
+	    pointer-events: none;
+	}
+	.sm_gameChoiceT2{
+		display: block;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    bottom: 3px;
+	    font-size: 12px;
+	    pointer-events: none;
+	}
+
+#sm_connectingContainer{
+
+	position: absolute;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	width:305px;
+	height:175px;
+	visibility: hidden;
+
+}
+
+	#sm_connectingWindow{
+		/*background-color: #cfd8dc;*/
+		background-color: #e2e2e2;
+		width:100%;
+		height: 100%;
+		border-radius: 7px;
+		position: relative;
+
+	}
+
+	#sm_connectingWindow_topbar{
+		/*background-color: #00887b;
+		width:100%;
+		height:34px;
+		position: absolute;
+		top:0;
+		left:0;
+
+		color: #ffffff;
+	    text-align: center;
+	    font-family: "futurept_b1";
+	    line-height: 34px;
+	    font-size: 19px;*/
+	}
+	#sm_connectingWindowCancelButton{
+		width: 90px;
+		height: 30px;
+  		color:#ffffff;
+	
+		text-align: center;
+		vertical-align: middle;
+		line-height: 30px;
+
+		position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    bottom: 10px;
+	    cursor: pointer;
+	}
+
+
+	
+
+	#sm_connectingWindow_text{
+
+		color: #2f2f2f;
+	    font-family: futurept_b1;
+	    font-size: 14px;
+	    padding: 5px;
+	    width: 250px;
+	    height: 60px;
+	    background-color: #ffffff;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    top: 50px;
+	    text-align: center;
+	    overflow: hidden;
+   		overflow-y: scroll;
+
+	}
+
+	#sm_connectingWindow_text::-webkit-scrollbar-track {
+		background-color: #ebebeb;
+	}
+
+	#sm_connectingWindow_text::-webkit-scrollbar {
+	  height: 12px;
+	  width: 0.7em;
+	  background-color: #ebebeb;
+	}
+
+	#sm_connectingWindow_text::-webkit-scrollbar-thumb {
+	  background-color: #c3c3c3;
+	}
+
+
+
+.sm_pickerContainer{
+	position: absolute;
+    width: 320px;
+    left: -290px;
+    top: 115px;
+    padding: 4px;
+    background-color: #1e2833;
+    font-family: "Arial" /* fixes the gap bug...*/
+}
+
+	.sm_pickerColorContainer{
+		width:20px;
+		height:20px;
+		display:inline-block;
+		vertical-align: top;
+		position: relative;
+	}
+	.sm_pickerColorInner{
+		width:20px;
+		height:20px;
+		cursor:pointer;
+	}
+	.sm_pickerColorInner:hover{
+		width:30px;
+		height:30px;
+		position: absolute;
+		left:-5px;
+		top:-5px;
+
+		z-index: 999;
+		border: 1px solid #233244;
+	}
+
+#loginwindow{
+	position: absolute;
+    left: 0;
+    /*right: 0;*/
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 280px;
+    height: 262px;
+    background-color: #e2e2e2;
+    font-family: futurept_b1;
+    color: #222222;
+    visibility: inherit;
+    border-radius: 7px;
+}
+
+	#loginwindow_usernamelabel{
+		position: absolute;
+	    top: 47px;
+	    left: 35px;
+	}
+	#loginwindow_passwordlabel{
+		position: absolute;
+	    top: 107px;
+	    left: 35px;
+	}
+
+	#loginwindow_explain{
+		padding-left: 43px;
+	    padding-right: 43px;
+	    position: absolute;
+	    bottom: 60px;
+	    text-align: center;
+	    font-size: 14px;
+	    width: 100%;
+    	box-sizing: border-box;
+	}
+
+	.loginwindow_field{
+		position: absolute;
+	    right: 0;
+	    left: 0;
+	    margin: auto;
+	    width: 200px;
+	    padding: 4px;
+	    font-size: 17px;
+	    background: #fdfdfd;
+	    border: 1px solid #bdbdbd;
+	    color: #4e4e4e;
+	    text-align: center;
+	}
+	.loginwindow_field:focus{
+	  outline-color: #999999;
+	}
+	.loginwindow_field::selection {
+		background-color: #5e6a78;
+		color:#ffffff;
+	}
+
+
+	#loginwindow_username{
+		top: 70px;
+	}
+	#loginwindow_password{
+		top: 130px;
+	}
+	#loginwindow_submitbutton{
+		bottom: 15px;
+	    position: absolute;
+	    width: 206px;
+	    height: 30px;
+	    line-height: 30px;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	}
+
+	.login_remember_container{
+		top: 163px;
+    	left: 76px;
+    	width: 130px;
+	}
+	#loginwindow_remember_label{
+		margin-left:20px;
+		font-family: futurept_b1;
+		color: #222222;
+	}
+
+
+#registerwindow{
+	position: absolute;
+    /*left: 360px;*/
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 280px;
+    height: 259px;
+    background-color: #e2e2e2;
+    font-family: futurept_b1;
+    color: #222222;
+    visibility: inherit;
+    border-radius: 7px;
+}
+	
+	#account_close{
+		right:-50px;
+		top:30px;
+	}
+
+	#registerwindow_usernamelabel{
+		position: absolute;
+	    top: 47px;
+	    left: 35px;
+	}
+	#registerwindow_passwordlabel{
+		position: absolute;
+	    top: 107px;
+	    left: 35px;
+	}
+
+	#registerwindow_username{
+		top: 70px;
+	}
+	#registerwindow_password{
+		top: 130px;
+	}
+	
+	#registerwindow_submitbutton{
+		bottom: 13px;
+	    position: absolute;
+	    width: 206px;
+	    height: 30px;
+	    line-height: 30px;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	}
+
+	.register_remember_container{
+		top: 163px;
+    	left: 76px;
+    	width: 130px;
+	}
+	#registerwindow_remember_label{
+		margin-left:20px;
+		font-family: futurept_b1;
+		color: #222222;
+	}
+
+
+
+
+#quickPlayWindow{
+	width:560px;
+	height:368px;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	background-color: #e2e2e2;
+	font-family: "futurept_b1";
+	visibility: hidden;
+	border-radius: 7px;
+	outline: 3000px solid rgb(0 0 0 / 0.4) !important;
+}
+
+	#quickPlayWindowModeContainer{
+		width: calc(100% - 10px);
+	    height: calc(100% - 50px);
+	    box-sizing: border-box;
+	    overflow-y: auto;
+	    overflow-x: hidden;
+    	white-space: nowrap;
+	    position: absolute;
+	    bottom: 5px;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    scrollbar-width: thin; /*firefox*/
+	}
+
+	#quickPlayWindowModeContainer::-webkit-scrollbar-track {
+		background-color: #d3d5d8;
+	}
+
+	#quickPlayWindowModeContainer::-webkit-scrollbar {
+		height: 12px;
+		width: 0.8em;
+		background-color: #d3d5d8;
+	}
+
+	#quickPlayWindowModeContainer::-webkit-scrollbar-thumb {
+		background-color: #abadb0;
+	}
+
+	#quickPlayWindow_GrappleButton{
+		/*filter: grayscale(85%);
+		cursor:auto;*/
+	}
+
+	.quickPlayWindowModeDiv{
+		display: inline-block;
+	    position: relative;
+	    margin-left: 5px;
+	    margin-right: 5px;
+	    margin-bottom: 8px;
+	    width: 200px;
+	    /*height: 310px;*/
+	    border: 1px solid #bdbdbd;
+	    cursor: pointer;
+	    background: hsl(0 0% 90% / 1);
+	    vertical-align: top;
+	    padding: 5px;
+	    zoom: 0.8;
+	    white-space: normal;
+	}
+
+	.quickPlayWindowModeDiv:hover{
+		background: hsl(0 0% 93% / 1);
+	}
+
+	.quickPlayWindowModeThumb{
+		width: 100%;
+	}
+
+	.quickPlayWindowHR{
+		padding:0px;
+	}
+
+	.quickPlayWindowText1{
+		font-family: "futurept_book";
+	    color: #222222;
+	    display: block;
+	    font-size: 22px;
+	    padding:6px;
+	    margin-bottom:2px;
+	    text-align: center;
+	    background-color: #0000000d;
+
+
+	}
+	.quickPlayWindowText2{
+		font-family: 'futurept_book';
+	    color: #1a2733;
+	    padding-left: 1px;
+	    padding-bottom: 2px;
+	    padding-top:13px;
+	    display: block;
+	    font-size: 17px;
+	    text-align: center;
+	    background-color: #0000000d;
+
+	}
+	.quickPlayWindowText3{
+		font-family: "futurept_b1";
+	    color: #333333;
+	    padding-left: 2px;
+	    padding-top: 3px;
+	    display: block;
+	    background-color: #0000000d;
+	    padding:10px;
+	    min-height: 128px;
+	}
+
+
+
+
+#newswindow{
+	width:346px;
+	height:430px;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	background-color: #e2e2e2;
+	font-family: "futurept_b1";
+	visibility: hidden;
+	border-radius: 7px;
+}
+	#newswindow_white{
+
+		background-color: #eeeeee;
+		width: 280px;
+	    height: 360px;
+	    position: absolute;
+	    left: 33px;
+	    top: 54px;
+	    color:#222222;
+	    overflow-y: auto;
+	    border-radius: 5px;
+	    user-select: text;
+	    
+	}
+	#newswindow_title{
+		display: block;
+	    text-align: left;
+	    font-size: 16px;
+	    padding-left: 10px;
+        padding-top: 8px;
+	}
+	#newswindow_content{
+		display: block;
+	    text-align: left;
+	    font-size: 15px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    line-height: 20px;
+	    white-space: pre-wrap;
+	    margin-top:4px;
+	}
+	.newswindow_button{
+		width: 20px;
+		height: 35px;
+		border-radius: 1px;
+		position: absolute;
+	}
+	#newswindow_back{
+		left:7px;
+		top: 190px;
+
+		background-image: url(../graphics/chevron-left.png);
+	    background-repeat: no-repeat;
+	    background-position: center;
+	}
+	#newswindow_forward{
+		right:7px;
+		top: 190px;
+
+		background-image: url(../graphics/chevron-right.png);
+	    background-repeat: no-repeat;
+	    background-position: center;
+	}
+
+
+
+.windowTopBar{
+	background-color: #15756b;
+	/*test:*/
+	background-color: #344150;
+	width:100%;
+	height:34px;
+	position: absolute;
+	top:0;
+	left:0;
+	color: #ffffff;
+    text-align: center;
+    font-family: "futurept_b1";
+    line-height: 34px;
+    font-size: 19px;
+    border-bottom: 1px solid #00000047;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    font-family: futurept_light;
+    -webkit-text-stroke: 0.2px rgb(255 255 255 / 30%);
+
+}
+
+#loginfieldtip {
+    position: absolute;
+    white-space: nowrap;
+    border-radius: 2px;
+    height: 28px;
+    line-height: 28px;
+    background-color: #7a2e2e;
+    /* width: 300px; */
+    top: 120px;
+    right: 620px;
+    font-family: futurept_medium;
+    color: #dddddd;
+    padding-left: 9px;
+    padding-right: 9px;
+    user-select: none;
+    visibility: hidden;
+    font-size: 13px;
+    z-index: 2;
+}
+
+	#loginfieldtippointer{
+		transform: rotate(45deg);
+	    background-color: #7a2e2e;
+	    width: 13px;
+	    height: 13px;
+	    position: absolute;
+	    top: 8px;
+	    right: -5px;
+	    z-index: -2;
+	}
+
+	#loginfieldtip_text{
+
+	}
+
+#registerfieldtip {
+    position: absolute;
+    white-space: nowrap;
+    border-radius: 2px;
+    height: 28px;
+    line-height: 28px;
+    background-color: #7a2e2e;
+    /* width: 300px; */
+    top: 120px;
+    left:620px;
+    font-family: futurept_medium;
+    color: #dddddd;
+    padding-left: 9px;
+    padding-right: 9px;
+    user-select: none;
+    visibility: hidden;
+    font-size: 13px;
+    z-index: 2;
+}
+
+	#registerfieldtippointer{
+		transform: rotate(45deg);
+	    background-color: #7a2e2e;
+	    width: 13px;
+	    height: 13px;
+	    position: absolute;
+	    top: 8px;
+	    left: -5px;
+	    z-index: -2;
+	}
+
+	#registerfieldtip_text{
+
+	}
+
+.disablefill{
+	
+	width: 100%;
+    height: 100%;
+    font-family: futurept_b1;
+    font-size: 20px;
+    color: #222222;
+    line-height: 263px;
+    text-align: center;
+
+}
+
+
+
+#settingsContainer{
+
+	width:450px;
+	height:385px;
+	background-color: #cfd8dc;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	visibility: hidden;
+	border-radius: 7px;
+	pointer-events: auto;
+	outline: 3000px solid rgba(0,0,0,0.30);
+
+}
+	
+	#settings_heading_controls{
+		position: absolute;
+		left:0;
+		right:0;
+		top:46px;
+		text-align: center;
+		margin:auto;
+		font-size: 18px;
+	}
+
+	#settings_heading_general{
+		position: absolute;
+	    left: 45px;
+	    /* right: 0; */
+	    top: 260px;
+	    bottom: 0;
+	    text-align: center;
+	    margin: auto;
+	    font-size: 18px;
+	}
+
+	#settings_heading_performance{
+		position: absolute;
+	    right: 52px;
+	    top: 260px;
+	    font-size: 18px;
+	}
+
+	#settings_heading_account{
+		position: absolute;
+	    left: 45px;
+	    top: 320px;
+	    font-size: 18px;
+	}
+
+	.settingsHeading{
+		color:#000000;
+		font-family: futurept_b1;
+	}
+
+	#redefineControls_table{
+		width:400px;
+		position: absolute;
+		top:78px;
+		left:25px;
+		font-family: futurept_b1;
+		font-size: 15px;
+		background-color: #f3f3f3;
+
+		-webkit-box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+	    -moz-box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+	    box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.63);
+	}
+
+	#redefineControls_table td, #redefineControls_table th, #redefineControls_table{
+		border: 1px solid #c5c5c5;
+		border-collapse: collapse;
+		text-align: center;
+	}
+
+	#redefineControls_table th{
+		background-color: #eaeaea;
+		font-weight: normal;
+	}
+
+	.redefineControls_selectionCell:hover{
+		background-color: #dddddd;
+		cursor: pointer;
+	}
+
+	.settings_profanity_container{
+		top: 277px;
+	    left: 40px;
+	    width: 130px;
+	}
+
+	.settings_hqg_container{
+		top: 277px;
+	    left: 245px;
+	    width: 170px;
+	    position: absolute;
+	}
+
+	.settings_fps_container{
+		left: 245px;
+	    top: 302px;
+	    width: 130px;
+	    position: absolute;
+	}
+
+
+
+	#settings_filterprofanity_label{
+		margin-left: 22px;
+    	font-family: futurept_b1;
+	}
+
+	#settings_hqg_label{
+		margin-left: 22px;
+    	font-family: futurept_b1;
+	}
+
+	#settings_graphicsquality_container{
+		top: 287px;
+	    left: 255px;
+	    position: absolute;
+	}
+
+	#settings_graphicsquality_label{
+		font-family: futurept_b1;
+	}
+	#settings_graphicsquality{
+		margin-left: 8px;
+	}
+
+	#settings_fps_label{
+		margin-left: 22px;
+    	font-family: futurept_b1;
+	}
+
+	#settings_change_password_label{
+
+		position: absolute;
+		left: 50px;
+		top: 346px;
+		font-size: 16px;
+		font-family: futurept_b1;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.settings_change_password_label_disable{
+		color: #b3babf;
+		text-decoration: none !important;
+		cursor:inherit !important;
+		pointer-events: none;
+	}
+
+	
+
+	#settings_cancelButton{
+		position: absolute;
+		left:-150px;
+		right:0;
+		margin:auto;
+		bottom:-40px;
+		width:90px;
+		height:30px;
+		line-height: 30px;
+
+	}
+
+	#settings_saveButton{
+		position: absolute;
+		left:150px;
+		right:0;
+		margin:auto;
+		bottom:-40px;
+		width:90px;
+		height:30px;
+		line-height: 30px;
+	}
+
+
+#passwordChangeContainer{
+
+	width: 304px;
+    height: 365px;
+    background-color: #cfd8dc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display:none;
+    border-radius: 7px;
+    pointer-events: auto;
+    outline: 3000px solid rgba(0,0,0,0.30);
+
+
+}
+
+	#passwordChange_topBar{
+
+	}
+	#passwordChange_close{
+
+	}
+
+	#passwordChange_cancelButton{
+		position: absolute;
+		left:-150px;
+		right:0;
+		margin:auto;
+		bottom:-40px;
+		width:90px;
+		height:30px;
+		line-height: 30px;
+	}
+	#passwordChange_saveButton{
+		position: absolute;
+		left:150px;
+		right:0;
+		margin:auto;
+		bottom:-40px;
+		width:90px;
+		height:30px;
+		line-height: 30px;
+	}
+
+	.passwordChange_fieldlabel{
+    	font-family: futurept_b1;
+		position: absolute;
+		left: 28px;
+	}
+
+	#passwordChange_oldpasslabel{
+		top:169px;
+	}
+	#passwordChange_newpass1label{
+		top:229px;
+	}
+	#passwordChange_newpass2label{
+		top:289px;
+	}
+
+	#passwordChange_oldpass{
+		top:190px;
+	}
+	#passwordChange_newpass1{
+		top:250px;
+	}
+	#passwordChange_newpass2{
+		top:310px;
+	}
+
+	#passwordChange_statuslabel{
+		font-family: futurept_b1;
+	    position: absolute;
+	    top: 53px;
+	    width: 250px;
+	    height: 95px;
+	    padding-top: 12px;
+	    padding-bottom: 12px;
+	    box-sizing: border-box;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    background-color: #ffffff;
+	    -webkit-box-shadow: 1px 1px 4px -2px rgb(0 0 0 / 40%);
+	    -moz-box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.4);
+	    box-shadow: 1px 1px 4px -2px rgb(0 0 0 / 40%);
+	    border: 1px solid #bdbdbd;
+	    font-family: futurept_light;
+	    -webkit-text-stroke: 0.2px rgb(0 0 0 / 30%);
+	    text-align: center;
+	    line-height: 23px;
+	}
+
+	.passwordChange_field{
+		position: absolute;
+	    right: 0;
+	    left: 0;
+	    margin: auto;
+	    width: 250px;
+	    padding: 4px;
+	    font-size: 17px;
+	    background: #fdfdfd;
+	    border: 1px solid #bdbdbd;
+	    color: #4e4e4e;
+	    text-align: center;
+	}
+	
+
+#friendsContainer{
+	width: 350px;
+    height: calc(80% - 100px);
+    background-color: #cfd8dc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -55px;
+    bottom: 0;
+    margin: auto;
+    visibility: hidden;
+    font-family: futurept_b1;
+    border-radius: 7px;
+}
+#friends_scrollcontainer{
+    width: 100%;
+    height: calc(100% - 34px);
+    margin-top: 34px;
+    overflow-y: auto;
+}
+#friends_scrollcontainer::-webkit-scrollbar-track {
+  background-color: #dddddd;
+}
+
+#friends_scrollcontainer::-webkit-scrollbar {
+  width: 10px;
+ 
+}
+#friends_scrollcontainer::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+}
+
+.friends_titles{
+	font-size: 19px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    padding-top: 5px;
+}
+
+#friends_title_legacy{
+
+	cursor:pointer;
+
+}
+.friends_table{
+	width: 100%;
+    border-collapse: collapse;
+}
+.friends_table tr{
+	height:40px;
+}
+.friends_table tr:nth-child(odd) {
+	background-color:  rgba(58, 58, 58, 0.12);
+}
+.friends_table tr:nth-child(even) {
+	background-color:  rgba(58, 58, 58, 0.03);
+}
+.friends_cell_name{
+	padding-left:25px;
+	width:45%;
+}
+
+.friends_request_button{
+	width:70px;
+	margin:auto;
+	font-size: 15px;
+	height: 24px;
+    line-height: 24px;
+}
+
+.friends_sendrequest_button{
+	width:140px;
+	margin:auto;
+	font-size: 15px;
+	height: 24px;
+    line-height: 24px;
+}
+
+.friends_button_accept{
+	
+
+}
+.friends_button_delete{
+	
+}
+
+.friends_empty_cell{
+	width:28%;
+}
+
+#friends_refresh_button{
+	position: absolute;
+	bottom:-40px;
+	right:0px;
+	width:160px;
+	height:30px;
+	line-height: 30px;
+}
+#friends_add_button{
+	position: absolute;
+	bottom:-40px;
+	left:0px;
+	width:160px;
+	height:30px;
+	line-height: 30px;
+}
+
+.friendsBottomButton{
+	
+}
+
+#friendsSendWindowContainer{
+
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	visibility: hidden;
+	width: 315px;
+  height: 190px;
+
+}
+
+#friendsSendWindow{
+  position: absolute;
+
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 100%;
+  height:100%;
+  background-color: #cfd8dc;
+  pointer-events : auto !important;
+  border-radius: 7px;
+}
+
+#friendsSendWindow_label{
+	position: absolute;
+    height: 35px;
+    top: 61px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    user-select: none;
+    font-family: "futurept_b1";
+}
+
+#friendsSendWindow_responselabel{
+	position: absolute;
+    height: 35px;
+    top: 85px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    user-select: none;
+    font-family: "futurept_b1";
+    visibility: hidden;
+}
+
+#friendsSendWindow_name{
+	position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 90px;
+    width: 232px;
+  padding: 3px;
+  font-size: 17px;
+  text-align: center;
+  font-family: futurept_b1;
+  border: 1px solid #bdbdbd;
+
+}
+
+#friendsSendWindow_name::selection {
+	background-color: #5e6a78;
+	color:#ffffff;
+}
+#friendsSendWindow_name:focus{
+	outline-color: #999999;
+}
+
+#friendsSendWindow_cancel{
+	position: absolute;
+	bottom:14px;
+	left:30px;
+	width:110px;
+}
+
+#friendsSendWindow_send{
+	position: absolute;
+	bottom:14px;
+	right:30px;
+	width:110px;
+}
+
+
+#mainmenubox{
+	position: absolute;
+    width: 215px;
+    height: 375px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #131c27eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+	.mainmenubox_buttonbig{
+		height: 48px;
+	    width: 170px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	.mainmenubox_buttonsmall{
+		height: 35px;
+	    width: 170px;
+	    line-height: 35px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	.mainmenubox_bigbutton_bigtext{
+		display: block;
+		padding-top: 4px;
+	}
+
+	.mainmenubox_bigbutton_smalltext{
+		display: block;
+	    font-size: 15px;
+	    font-family: futurept_light;
+	}
+
+
+
+
+#ingametutorial{
+	position: absolute;
+    right: 0;
+    top: 100px;
+    /* width: 180px; */
+    background-color: #00000033;
+    color: #dddddd;
+    font-family: futurept_b1;
+    text-align: right;
+    padding: 7px;
+    visibility: hidden;
+}
+#ingametutorial_title{
+	display: block;
+    font-size: 20px;
+    font-family: futurept_medium;
+    
+}
+#ingametutorial_text{
+	white-space: pre;
+}
+
+
+#ingamevotewindow{
+	position: absolute;
+    right: 0;
+    top: 245px;
+    width: 104px;
+    height: 72px;
+    background-color: #00000033;
+    color: #dddddd;
+    font-family: futurept_b1;
+    text-align: right;
+    padding: 7px;
+    visibility: hidden;
+}
+
+#ingamevotewindow_title{
+	display: block;
+    font-size: 20px;
+    font-family: futurept_medium;
+}
+#ingamevotewindow_upvote{
+	width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    position: absolute;
+    right: 18px;
+    top: 40px;
+
+    background-image: url(../graphics/vote_up_16.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+#ingamevotewindow_downvote{
+	width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    position: absolute;
+    left: 18px;
+    top: 40px;
+
+    background-image: url(../graphics/vote_down_16.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#ingamewinner{
+    position: absolute;
+    height: 300px;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    color: hsl(0 0% 90% / 1);
+    visibility: hidden;
+    pointer-events: none;
+
+}
+
+#ingamewinner_top{
+	position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    white-space: nowrap;
+
+    font-family: 'futurept_bold';
+    font-size: 85px;
+    letter-spacing: -1px;
+    text-shadow: 3px 3px 0px #000000bd;
+    text-align: center;
+}
+#ingamewinner_bottom{
+	position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    font-family: 'futurept_bold';
+    font-size: 85px;
+    letter-spacing: -1px;
+    text-shadow: 3px 3px 0px #000000bd;
+    text-align: center;
+}
+
+
+
+#ingamewinner_skin{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: -120px;
+    margin:auto;
+    width: 200px;
+    height: 218px;
+}
+
+#ingamewinner_skin_x{
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    visibility: hidden;
+}
+
+#ingamewinner_scores{
+	position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 260px;
+    top: 250px;
+    background-color: rgba(0,0,0,0.3);
+    font-family: 'futurept_medium_oblique';
+    font-size: 27px;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#ingamewinner_scores_left{
+	white-space: pre;
+    display: inline-block;
+
+}
+#ingamewinner_scores_right{
+	white-space: pre;
+    display: inline-block;
+    float: right;
+}
+
+#ingamewinner_scores_top{
+	width: 100%;
+    top: -31px;
+    left: 0px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+    font-size: 21px;
+    text-align: center;
+}
+
+.nomouse{
+	/*fixes bug with mouseover sound happening twice*/
+	pointer-events: none;
+}
+
