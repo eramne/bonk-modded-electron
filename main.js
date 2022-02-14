@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, dialog, BrowserWindow } = require('electron');
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
@@ -34,6 +34,18 @@ const createWindow = () => {
             }
         }
     });
+
+    win.on('close', (e) => {
+        const choice = dialog.showMessageBoxSync(win, {
+            type: 'question',
+            buttons: ['Yes', 'No'],
+            title: 'Confirm',
+            message: 'Are you sure you want to quit?'
+        });
+        if (choice === 1) {
+            e.preventDefault();
+        }
+    });
 }
 app.whenReady().then(() => {
     createWindow()
@@ -41,8 +53,6 @@ app.whenReady().then(() => {
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
     })
-
-    
 })
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
