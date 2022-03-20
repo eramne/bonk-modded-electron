@@ -1,4 +1,7 @@
 const { app, dialog, BrowserWindow } = require('electron');
+const fs = require('fs');
+const path = require("path");
+
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
@@ -9,6 +12,19 @@ const createWindow = () => {
 
     win.setMenu(null);
     win.loadFile('gameframe-release.html')
+    win.webContents.on("dom-ready", () => {
+        const scriptsFolder = app.getAppPath() + '/userscripts/';
+        const files = fs.readdirSync(scriptsFolder);
+        files.map(function(file) {
+            fs.readFile(path.normalize(`${scriptsFolder}${file}`), 'utf8' , (err, data) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                win.webContents.executeJavaScript(data);
+            });
+        });
+    });
 
     win.webContents.on("before-input-event", (event, input) => {
         if (input.type === 'keyDown') {
@@ -44,6 +60,8 @@ const createWindow = () => {
         });
         if (choice === 1) {
             e.preventDefault();
+        } else if (choice === 0) {
+            win.destroy();
         }
     });
 }

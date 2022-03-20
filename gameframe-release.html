@@ -1972,15 +1972,11 @@
 					<div class="xpbarsegment"></div>
 					<div class="xpbarsegment"></div>
 					<div class="xpbarsegment"></div>
-
 				</div>
 				<span id="xpbartext">+100xp</span>
-
 			</div>
 		</div>
-
 	</div>
-
 </body>
 
 <script src="electron-cookie-polyfill.js"></script>
@@ -1996,18 +1992,67 @@
 <script type="text/javascript" src="js/colorpicker/color-picker.js"></script>
 <script type="text/javascript" src="js/anime.min.js"></script>
 <script type="text/javascript" src="js/jQuery-FontSpy.js"></script>
-
 <script type="text/javascript" src="js/pson/long.js"></script>
 <script type="text/javascript" src="js/pson/bytebuffer.min.js"></script>
 <script type="text/javascript" src="js/pson/PSON.min.js"></script>
 <script type="text/javascript" src="js/pson/base64js.min.js"></script>
 <script type="text/javascript" src="js/pson/base64ArrayBuffer.js"></script>
-
 <script type="text/javascript" src="js/lz-string.min.js"></script>
 <script src="js/pixi-legacy-540.min.js"></script>
 <script src="js/pixi-filters-311.js"></script>
 <script src="GameResources.js"></script>
-<script data-main="js/alpha2s" src="js/require.js"></script>
+<script src="js/require.js"></script>
+<script>
+	window.addEventListener('DOMContentLoaded', (event) => {
+		require.config({
+			baseUrl: "./js/"
+		});
+		//Pretty much just a modified version of Excigma's bonk code injector, slightly tweaked to work with this electron wrapper
+		(async function () {
+			let shouldReplaceSource = true;
+			const log = (msg) => console.log(`%c[Injector] ${msg}`, "color: #06c26d");
+			const request = await fetch("./js/alpha2s.js").catch(error => console.error(error));
+			if (!request.ok) {
+				log("Failed to fetch alpha2s.js");
+				alert("An error occurred whilst fetching game code");
+			}
+			let code = await request.text();
+			log("Patching alpha2s.js...");
+			const start_time = performance.now();
+			if (!window.bonkCodeInjectors) {
+				log(
+					"Did not find any Bonk.io userscripts to load. This may be an error, make sure you have scripts installed."
+				);
+			} else {
+				let error_notified = false;
+				for (const injector of window.bonkCodeInjectors) {
+					try {
+						if (typeof injector === "function") code = injector(code);
+						else {
+							log("Injector was not a function");
+							console.log(injector);
+						}
+					} catch (error) {
+						if (!error_notified) {
+							alert("One of your Bonk.io userscripts was unable to be loaded");
+							error_notified = true;
+						}
+						console.error(error);
+					}
+				}
+			}
+			const end_time = performance.now();
+			log(`Patched alpha2s.js successfully (${(end_time - start_time).toFixed(0)}ms)`);
+			const script = document.createElement("script");
+			script.textContent = code;
+			document.head.appendChild(script);
+		})().catch(error => {
+			log("Failed to inject code into alpha2s.js");
+			console.error(error);
+			alert("An error occurred whilst patching game code");
+		});
+	});
+</script>
 
 
 </html>
